@@ -21,10 +21,13 @@ class PostController extends AbstractController
 
     private $imageServices;
 
-    public function __construct(EntityManagerInterface $manager, ImageServices $imageServices)
+    private $commentServices;
+
+    public function __construct(EntityManagerInterface $manager, ImageServices $imageServices, CommentController $commentServices)
     {
         $this->manager = $manager;
         $this->imageServices = $imageServices;
+        $this->commentServices = $commentServices;
     }
 
     /**
@@ -50,6 +53,7 @@ class PostController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->imageServices->thumbnailUpload($form,$post);
             $this->imageServices->ImageUpload($form,$post);
+            $post->setUser($this->getUser());
             $this->manager->persist($post);
             $this->manager->flush();
             return $this->redirectToRoute('post_index');
@@ -64,12 +68,18 @@ class PostController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="post_show", methods={"GET"})
+     * @Route("/{id}", name="post_show")
      */
-    public function show(Post $post): Response
+    public function show(Post $post, Request $request): Response
     {
+        $form = false;
+        if ($this->getUser())
+        {
+            $form = $this->commentServices->new($request,$post);
+        }
             return $this->render('post/show.html.twig', [
                 'post' => $post,
+                'form' => $form
             ]);
     }
 
@@ -78,7 +88,7 @@ class PostController extends AbstractController
      */
     public function edit(Request $request, Post $post): Response
     {
-        if ($this->getUser()) {
+        if ($this->getUser() && $this->getUser() === $post->getUser()) {
             $form = $this->createForm(PostType::class, $post);
             $form->handleRequest($request);
 
