@@ -54,6 +54,12 @@ class Post
      */
     private $images = [];
 
+    /**
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="posts")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $User;
+
     public function __construct()
     {
         $this->comment = new ArrayCollection();
@@ -162,6 +168,18 @@ class Post
     public function setImages(array $images): self
     {
         $this->images = $images;
+
+        return $this;
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->User;
+    }
+
+    public function setUser(?User $User): self
+    {
+        $this->User = $User;
 
         return $this;
     }
