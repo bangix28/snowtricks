@@ -1,0 +1,61 @@
+<div class="d-none d-lg-block">
+<nav class="navbar p-3 navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="{{ url('index') }}">
+    <img src="https://via.placeholder.com/30" class="img img-fluid" alt="logo de snowtricks">
+    </a>
+    <div class="collapse navbar-collapse float-right" id="navbarNav">
+        <ul class="ml-auto navbar-nav mr-4">
+            <li class="nav-item border-right">
+                <a class="nav-link" href="{{ url('index') }}">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item border-right">
+                <a class="nav-link" href="{{ url('post_index') }}">Tricks</a>
+            </li>
+            {% if not app.user %}
+            <li class="nav-item border-right">
+                <a class="nav-link" href="{{ url('app_login') }}">Sign in</a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link " href="{{ url('app_register') }}">Sign up</a>
+            </li>
+            {% else %}
+                <li class="nav-item ">
+                    <a class="nav-link " href="{{ url('app_logout') }}">Logout</a>
+                </li>
+            {% endif %}
+        </ul>
+    </div>
+</nav>
+</div>
+
+<div class="d-lg-none">
+<footer class="footer fixed-bottom">
+    <div id="buttonGroup" class="btn-group border-top col-sm-12"      role="group" aria-label="Basic example">
+        <button id="home" type="button" class="btn btn-secondary button-active">
+            <div
+                    class="selector-holder">
+                <i class="material-icons">home</i>
+                <span>Home</span>
+            </div>
+        </button>
+        <button id="feed" type="button" class="btn btn-secondary button-inactive">
+            <div class="selector-holder">
+                <i class="material-icons">view_list</i>
+                <span>Feed</span>
+            </div>
+        </button>
+        <button id="create" type="button" class="btn btn-secondary button-inactive">
+            <div class="selector-holder">
+                <i class="material-icons">create</i>
+                <span>Create</span>
+            </div>
+        </button>
+        <button id="account" type="button" class="btn btn-secondary button-inactive">
+            <div class="selector-holder">
+                <i class="material-icons">account_circle</i>
+                <span>Account</span>
+            </div>
+        </button>
+    </div>
+</footer>
+</div>
