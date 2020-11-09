@@ -17,16 +17,24 @@
             </tr>
             <tr>
                 <th>Content</th>
-                {% for image in post.images %}
-                <td>{{ image }}</td>
-                {% endfor %}
             </tr>
         <tr>
             <th>image</th>
-            {% dump(post.images) %}
+            <td>{% for image in post.images %}
+                {{ image }}
+            {% endfor %}
+            </td>
         </tr>
         </tbody>
     </table>
+
+    {% if form %}
+    {{ form_start(form) }}
+        {{ form_widget(form.content) }}
+        <button type="submit" class="btn btn-success">Envoyer</button>
+        {{ form_end(form) }}
+
+    {% endif %}
 
     <a href="{{ path('post_index') }}">back to list</a>
 
