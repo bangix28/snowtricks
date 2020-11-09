@@ -3,18 +3,26 @@
 {% block title %}Hello IndexController!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/xampp/htdocs/p6/snowtricks/src/Controller/IndexController.php'|file_link(0) }}">src/Controller/IndexController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/xampp/htdocs/p6/snowtricks/templates/index/index.html.twig'|file_link(0) }}">templates/index/index.html.twig</a></code></li>
-    </ul>
-</div>
+    <div class="text-center">
+        <img src="https://via.placeholder.com/500" class="img img-fluid">
+    </div>
+    <div class="mr-5 ml-5 row">
+        {% for t in tricks %}
+            <div class="mt-4 col-sm-12 col-md-10 mx-auto col-lg-2">
+                <div class="card">
+                    <img class="card-img" style="height: 250px;" src="assets/img/upload/{{ t.thumbnail }}"
+                         alt="image de l'article !">
+                    <div class="card-img-overlay pointer-event">
+                        <p class="btn btn-light btn-sm rounded">{{ t.user.firstName }} {{ t.user.lastName }}</p>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">{{ t.content|striptags|slice(0,75) }}</p>
+                        <a href="index.php?access=post!read&amp;id={{ t.id }}" class="stretched-link btn btn-dark">Lire
+                            l'article !</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        {{ knp_pagination_render(tricks) }}
+    </div>
 {% endblock %}
