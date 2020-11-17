@@ -1,0 +1,49 @@
+.banner{
+    display: inline-block;
+    position: relative;
+}
+.banner .text {
+    background: rgba(0, 0, 0, 0);
+    z-index: 1;
+    position: absolute;
+    text-align: center;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: 50%;
+    color: white;
+    width: 70%;
+}
+.banner .arrow {
+    background: rgba(0, 0, 0, 0);
+    z-index: 1;
+    position: absolute;
+    text-align: right;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: 80%;
+    color: white;
+    width: 95%;
+}
+.banner-img{
+    height: 90vh ;
+}
+@media (max-device-width: 768px) {
+    .banner-img{
+        height: 100vh;
+    }
+}
+
+.banner .icon {
+    background: rgba(0, 0, 0, 0);
+    z-index: 1;
+    position: absolute;
+    float: right;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: 10%;
+    color: white;
+    width: 95%;
+}

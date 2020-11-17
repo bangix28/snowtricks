@@ -1,0 +1,17 @@
+.body
+{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+}
+.content
+{
+    flex-grow: 1;
+}
+.login {
+
+        margin-left: auto;
+        margin-right: auto;
+    background: #5eb5e0;
+}
+
