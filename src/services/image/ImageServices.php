@@ -23,20 +23,9 @@ class ImageServices extends AbstractController
          );
          array_push($img,$folder);
      }
-     $post->setImages(array($img));
+     $post->setImages($img);
     }
 
-    public function thumbnailUpload($form, Post $post)
-    {
-        $image = $form->get('thumbnail')->getData();
-        $folder = md5(uniqid()).'.'.$image->guessExtension();
-
-        $image->move(
-            $this->getParameter('images_directory'),
-            $folder
-        );
-        $post->setThumbnail($folder);
-    }
     public function pictureUpload($form, $user)
     {
         $image = $form->get('image')->getData();
