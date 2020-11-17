@@ -1,37 +1,43 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Post index{% endblock %}
+{% block title %} Liste des article ! {% endblock %}
 
 {% block body %}
-    <h1>Post index</h1>
+    <div class="container">
+        <h1 class="text-center p-5">Liste des articles !</h1>
+        <div class="row">
+            <div class="col-12">
+                {{ form_start(search) }}
+                {{ form_widget(search.search) }}
+                        <button type="submit" class="btn btn-success rounded ml-4">Recherche</button>
+                {{ form_end(search) }}
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            {% for p in posts %}
+                {% if p.images[0] is defined %}
+                    {% set defaultImage = asset('assets/uploads/' ~ p.images[0]) %}
+                {% else %}
+                    {% set defaultImage = asset('assets/img/trickdefault.jpg') %}
+                {% endif %}
+                <div class="mt-4 col-12 col-sm-8 col-md-6 col-lg-4">
+                    <div class="card">
+                        <img class="card-img" style="height: 250px;" src="{{ defaultImage }}" alt="image de l'article !">
+                        <div class="card-body">
+                            <h4 class="card-title">{{ p.name }}</h4>
+                            <p class="card-text">{{ p.content|striptags|slice(0,150) }}</p>
+                            <a href="{{ url('post_show',{'id': p.id}) }}" class="stretched-link btn btn-dark">Lire l'article !</a>
+                        </div>
+                        <div class="card-footer text-muted d-flex justify-content-between bg-transparent border-top-0">
+                            <div class="views">
+                                {{ p.createdAt|date('d/m/y') }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Content</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for post in posts %}
-            <tr>
-                <td>{{ post.id }}</td>
-                <td>{{ post.name }}</td>
-                <td>{{ post.content }}</td>
-                <td>
-                    <a href="{{ path('post_show', {'id': post.id}) }}">show</a>
-                    <a href="{{ path('post_edit', {'id': post.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="4">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <a href="{{ path('post_new') }}">Create new</a>
+            {% endfor %}
+        </div>
+    </div>
 {% endblock %}
