@@ -2,9 +2,8 @@
 
 namespace App\Controller;
 
+use App\Repository\PostRepository;
 use Doctrine\ORM\EntityManagerInterface;
-use Knp\Component\Pager\Paginator;
-use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -22,14 +21,16 @@ class IndexController extends AbstractController
     /**
      * @Route("/", name="index")
      */
-    public function index(Request $request,PaginatorInterface $paginator): Response
+    public function index(Request $request, PostRepository $postRepository, $loop = 0): Response
     {
-        return $this->render('index/index.html.twig', [
-            'tricks' => $paginator->paginate(
-                $this->entityManager->getRepository('App:Post')->findAll(),
-                $request->query->getInt('page',1),
-                15
-            ),
-        ]);
+        $loop =+ $request->get('loop');
+       $tricks = 5 + $loop;
+       dump($tricks);
+        return new Response($this->render('index/index.html.twig', [
+            'tricks' => $postRepository->findBy(array(),array(),$tricks),
+            'loop' => $tricks
+        ]));
     }
+
+
 }

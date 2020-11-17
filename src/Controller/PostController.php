@@ -4,8 +4,10 @@ namespace App\Controller;
 
 use App\Entity\Post;
 use App\Form\PostType;
+use App\Form\SearchType;
 use App\Repository\PostRepository;
 use App\services\image\ImageServices;
+use App\services\post\PostServices;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -23,11 +25,14 @@ class PostController extends AbstractController
 
     private $commentServices;
 
-    public function __construct(EntityManagerInterface $manager, ImageServices $imageServices, CommentController $commentServices)
+    private $postServices;
+
+    public function __construct(EntityManagerInterface $manager, ImageServices $imageServices, CommentController $commentServices, PostServices $postServices)
     {
         $this->manager = $manager;
         $this->imageServices = $imageServices;
         $this->commentServices = $commentServices;
+        $this->postServices = $postServices;
     }
 
     /**
@@ -51,12 +56,19 @@ class PostController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $this->imageServices->thumbnailUpload($form,$post);
             $this->imageServices->ImageUpload($form,$post);
+            $url = [];
+            foreach($data = $form->get('video')->getData() as $video){
+               $a =  $this->postServices->verifyURL($video);
+               array_push($url,$a);
+
+            }
+            $post->setVideo($url);
+            $post->setCreatedAt(new \DateTime());
             $post->setUser($this->getUser());
             $this->manager->persist($post);
             $this->manager->flush();
-            return $this->redirectToRoute('post_index');
+            return $this->redirectToRoute('post_show', ['id' => $post->getId()]);
         }
 
         return $this->render('post/new.html.twig', [
@@ -68,15 +80,39 @@ class PostController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="post_show")
+     * @Route("/listPost", name="post_list")
+     * @param Request $request
+     * @param PostRepository $postRepository
+     * @return Response
+     */
+    public function handleSearch(Request $request, PostRepository $postRepository)
+    {
+        $form = $this->createForm(SearchType::class);
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid())
+        {
+            $search = $form->get('search')->getData();
+            return $this->render('post/index.html.twig', [
+                'posts' => $postRepository->search($search),
+                'search' => $form->createView()
+
+            ]);
+        }
+        return $this->render('post/index.html.twig', [
+            'posts' => $postRepository->findAll(),
+            'search' => $form->createView()
+        ]);
+    }
+
+    /**
+     * @Route("/show/{id}", name="post_show")
      */
     public function show(Post $post, Request $request): Response
     {
         $form = false;
-        if ($this->getUser())
-        {
-            $form = $this->commentServices->new($request,$post);
-        }
+            if ($this->getUser()) {
+                $form = $this->commentServices->new($request, $post);
+            }
             return $this->render('post/show.html.twig', [
                 'post' => $post,
                 'form' => $form
@@ -93,6 +129,7 @@ class PostController extends AbstractController
             $form->handleRequest($request);
 
             if ($form->isSubmitted() && $form->isValid()) {
+                $post->setModifiedAt(new \DateTime());
                 $this->getDoctrine()->getManager()->flush();
 
                 return $this->redirectToRoute('post_index');
@@ -120,4 +157,5 @@ class PostController extends AbstractController
         }
         return $this->render('security/403.html.twig');
     }
+
 }
