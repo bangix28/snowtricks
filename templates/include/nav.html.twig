@@ -9,7 +9,18 @@
                 <a class="nav-link" href="{{ url('index') }}">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item border-right">
-                <a class="nav-link" href="{{ url('post_index') }}">Tricks</a>
+            <div class="dropdown">
+                <a class="nav-link" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Tricks
+                </a>
+
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    {% if app.user %}
+                    <a class="dropdown-item" href="{{ url('post_new') }}">Create new tricks</a>
+                    {% endif %}
+                    <a class="dropdown-item" href="{{ url('post_list') }}">list of tricks</a>
+                </div>
+            </div>
             </li>
             {% if not app.user %}
             <li class="nav-item border-right">
@@ -29,33 +40,23 @@
 </div>
 
 <div class="d-lg-none">
-<footer class="footer fixed-bottom">
-    <div id="buttonGroup" class="btn-group border-top col-sm-12"      role="group" aria-label="Basic example">
-        <button id="home" type="button" class="btn btn-secondary button-active">
-            <div
-                    class="selector-holder">
-                <i class="material-icons">home</i>
-                <span>Home</span>
-            </div>
-        </button>
-        <button id="feed" type="button" class="btn btn-secondary button-inactive">
-            <div class="selector-holder">
-                <i class="material-icons">view_list</i>
-                <span>Feed</span>
-            </div>
-        </button>
-        <button id="create" type="button" class="btn btn-secondary button-inactive">
-            <div class="selector-holder">
-                <i class="material-icons">create</i>
-                <span>Create</span>
-            </div>
-        </button>
-        <button id="account" type="button" class="btn btn-secondary button-inactive">
-            <div class="selector-holder">
-                <i class="material-icons">account_circle</i>
-                <span>Account</span>
-            </div>
-        </button>
-    </div>
-</footer>
+    <nav class="navbar p-3 navbar-light bg-light fixed-bottom">
+        <div class="d-flex d-flex justify-content-between text-center col-12">
+            <a class="col-4" href="{{ url('index') }}">
+                <i class="fas fa-home"></i>
+            </a>
+            <a class="col-4" href="{{ url('index') }}">
+                <i class="fas fa-bookmark"></i>
+            </a>
+            {% if app.user %}
+                <a class="col-4 " href="{{ url('app_logout') }}">
+                    <i class="fas fa-sign-out-alt"></i>
+                </a>
+            {% else %}
+                <a class="col-4 " href="{{ url('app_login') }}">
+                    <i class="fas fa-sign-in-alt"></i>
+                </a>
+            {% endif %}
+        </div>
+    </nav>
 </div>
