@@ -41,7 +41,7 @@
             <div class="mx-5">{{ post.content|raw }}</div>
             <div class="row justify-content-between text-center mt-5">
                 <p class="border rounded mr-2 col-lg-3">Crée le {{ post.createdAt|date('d/m/y') }}</p>
-                <p class="border rounded mx-2 col-lg-3">group</p>
+                <p class="border rounded mx-2 col-lg-3">{{ post.groups.name}}</p>
                 {% if post.modifiedAt is not null %}
                     <p class="border rounded ml-2 col-lg-3">Modifier le {{ post.modifiedAt|date('d/m/y') }}</p>
                 {% endif %}
