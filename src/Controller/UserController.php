@@ -2,12 +2,17 @@
 
 namespace App\Controller;
 
+use App\Entity\Groups;
 use App\Entity\User;
+use App\Form\GroupsType;
 use App\Form\RegistrationFormType;
 use App\Form\UserEditType;
+use App\Repository\GroupsRepository;
+use App\Repository\PostRepository;
 use App\Repository\UserRepository;
 use App\services\image\ImageServices;
 use Doctrine\ORM\EntityManagerInterface;
+use phpDocumentor\Reflection\Types\False_;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -71,6 +76,28 @@ class UserController extends AbstractController
             'message' => $message
         ]);
     }
+    /**
+     * @Route("/show", name="user_show")
+     */
+    public function show(PostRepository $postRepository, Request $request)
+    {
+        $f = null;
+        if ($this->isGranted('ROLE_ADMIN')){
+            $groups = new Groups();
+            $form = $this->createForm(GroupsType::class, $groups);
+            $form->handleRequest($request);
+            if ($form->isSubmitted() && $form->isValid()){
+                $this->manager->persist($groups);
+                $this->manager->flush();
+                $this->addFlash('success', 'La catégorie a bien été crée');
+            }
+            $f = $form->createView();
+        }
+        return $this->render('user/show.html.twig',[
+            'post' => $postRepository->findBy(array('User'=> $this->getUser())),
+            'form' => $f,
+        ]);
+    }
 
     /**
      * @Route("/delete", name="user_delete", methods={"DELETE"})
@@ -87,4 +114,5 @@ class UserController extends AbstractController
 
         return $this->redirectToRoute('app_logout');
     }
+
 }
