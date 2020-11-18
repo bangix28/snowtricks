@@ -16,7 +16,8 @@
 
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                     {% if app.user %}
-                    <a class="dropdown-item" href="{{ url('post_new') }}">Create new tricks</a>
+                        <a class="dropdown-item" href="{{ url('post_new') }}">Create new tricks</a>
+                        <a class="dropdown-item" href="{{ url('user_show') }}">Show my tricks</a>
                     {% endif %}
                     <a class="dropdown-item" href="{{ url('post_list') }}">list of tricks</a>
                 </div>
