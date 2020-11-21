@@ -89,6 +89,7 @@ class UserController extends AbstractController
             if ($form->isSubmitted() && $form->isValid()){
                 $this->manager->persist($groups);
                 $this->manager->flush();
+
                 $this->addFlash('success', 'La catégorie a bien été crée');
             }
             $f = $form->createView();

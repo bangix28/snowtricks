@@ -56,18 +56,13 @@ class PostController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $this->imageServices->ImageUpload($form,$post);
-            $url = [];
-            foreach($data = $form->get('video')->getData() as $video){
-               $a =  $this->postServices->verifyURL($video);
-               array_push($url,$a);
-
-            }
-            $post->setVideo($url);
+            $this->imageServices->ImageUpload($form, $post, $img = []);
+            $this->imageServices->videoAdd($form, $post, $url = []);
             $post->setCreatedAt(new \DateTime());
             $post->setUser($this->getUser());
             $this->manager->persist($post);
             $this->manager->flush();
+            $this->addFlash('success', 'Tricks create with success');
             return $this->redirectToRoute('post_show', ['id' => $post->getId()]);
         }
 
@@ -127,14 +122,15 @@ class PostController extends AbstractController
         if ($this->getUser() && $this->getUser() === $post->getUser()) {
             $form = $this->createForm(PostType::class, $post);
             $form->handleRequest($request);
-
             if ($form->isSubmitted() && $form->isValid()) {
+                $this->imageServices->ImageUpload($form, $post, $img = $post->getImages());
+                $this->imageServices->videoAdd($form, $post, $url = $post->getVideo());
                 $post->setModifiedAt(new \DateTime());
-                $this->getDoctrine()->getManager()->flush();
-
-                return $this->redirectToRoute('post_index');
+                $this->manager->persist($post);
+                $this->manager->flush();
+                $this->addFlash('success', 'Post edited !');
+                return $this->redirectToRoute('post_show', ['id' => $post->getId()]);
             }
-
             return $this->render('post/edit.html.twig', [
                 'post' => $post,
                 'form' => $form->createView(),
@@ -155,6 +151,35 @@ class PostController extends AbstractController
             }
             return $this->redirectToRoute('post_index');
         }
+        return $this->render('security/403.html.twig');
+    }
+
+    /**
+     * @Route("/image/delete", name="image_delete")
+     */
+    public function imageDelete(Request $request, PostRepository $repository)
+    {
+
+        $post = $repository->findOneBy(array('id' => $request->request->get('id')));
+        if ($request->request->get('type') === 'image') {
+            $array = $post->getImages();
+            $type = "image";
+            $delete = $request->request->get('id_image');
+        } else {
+            $array = $post->getVideo();
+            dump($array);
+            $type = "video";
+            $delete = $request->request->get('id_video') - 1;
+            $set = 'setVideo';
+            dump($delete);
+        }
+        unset($array[$delete]);
+        $new = array_merge($array);
+        dump($new);
+        $post->$set($new);
+        $this->manager->persist($post);
+        $this->manager->flush();
+        $this->addFlash('success', $type . ' supprimer');
         return $this->render('security/403.html.twig');
     }
 
