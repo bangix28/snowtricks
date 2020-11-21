@@ -21,15 +21,15 @@ class IndexController extends AbstractController
     /**
      * @Route("/", name="index")
      */
-    public function index(Request $request, PostRepository $postRepository, $loop = 0): Response
+    public function index(Request $request, PostRepository $postRepository): Response
     {
         $loop =+ $request->get('loop');
        $tricks = 5 + $loop;
        dump($tricks);
-        return new Response($this->render('index/index.html.twig', [
+        return $this->render('index/index.html.twig', [
             'tricks' => $postRepository->findBy(array(),array(),$tricks),
             'loop' => $tricks
-        ]));
+        ]);
     }
 
 
