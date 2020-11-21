@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 {% block stylesheets %}<link rel="stylesheet" href="{{ asset('assets/css/banner.css') }}">{% endblock %}
-{% block title %}Hello IndexController!{% endblock %}
+{% block title %}Acceuil | Snowtricks{% endblock %}
 
 {% block body %}
     <div class="banner">
@@ -9,7 +9,7 @@
         <h2>Snowtricks trops fort</h2>
         </div>
         <div class="arrow">
-            <a href="#post" class="badge badge-pill badge-dark">
+            <a href="#post" class="badge badge-pill badge-dark float-right">
             <i class="fas fa-arrow-down fa-5x"></i>
             </a>
         </div>
@@ -40,7 +40,15 @@
             </div>
 
         {% endfor %}
+
+    </div>
+    <div class="text-center">
         <button id="load" class="btn btn-primary">Load more</button>
+    </div>
+    <div class="float-right mr-4">
+        <a href="#post" class="badge badge-pill badge-dark">
+            <i class="fas fa-arrow-up fa-5x"></i>
+        </a>
     </div>
 {% endblock %}
 {% block javascripts %}
