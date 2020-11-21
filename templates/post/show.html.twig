@@ -9,13 +9,11 @@
 
 {% block body %}
     <div class="container">
-        <div class="col-lg-12 border mt-5">
+        <div class="justify-content-center mt-5">
+            <div class="card">
             <div class="banner">
-                <img class="banner-img " src="{{ asset(defaultImages) }}" alt="Image du tricks {{ post.name }} ">
-                <div class="text">
-                    <h2 class="text-dark">{{ post.name }}</h2>
-                </div>
-                <div class="icon row ml-auto">
+                <img class="banner-img img img-fluid card-img-top" src="{{ asset(defaultImages) }}" alt="Image du tricks {{ post.name }} ">
+                <div class="icon row">
                     {{ include('post/_delete_form.html.twig') }}
                     <a href="{{ url('post_edit', {'id' : post.id}) }}">
                         <i class="fas fa-edit align-top"></i>
@@ -23,30 +21,68 @@
                 </div>
             </div>
             <hr>
-            <div class="mt-2 row">
-                {% for p in post.images|slice(1) %}
-                    <div class="col-lg-2">
-                    <img src="{{ asset("assets/uploads/" ~ p ) }}" class="img img-fluid">
-                    </div>
-                {% endfor %}
-                {% for v in post.video %}
-                    <div class="col-lg-3 col-sm-12">
-                    <iframe width="100%" height="80%" src="{{ v }}"
-                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen ></iframe>
-                    </div>
-                {% endfor %}
-            </div>
         <div class="col-lg-12">
-            <div class="mx-5">{{ post.content|raw }}</div>
-            <div class="row justify-content-between text-center mt-5">
-                <p class="border rounded mr-2 col-lg-3">Crée le {{ post.createdAt|date('d/m/y') }}</p>
-                <p class="border rounded mx-2 col-lg-3">{{ post.groups.name}}</p>
-                {% if post.modifiedAt is not null %}
-                    <p class="border rounded ml-2 col-lg-3">Modifier le {{ post.modifiedAt|date('d/m/y') }}</p>
-                {% endif %}
+            <div class="card-body">
+                <ul class="list-inline">
+                    <li class="list-inline-item">par {{ post.user.firstName }}.{{ post.user.lastName }}</li> |
+                    <li class="list-inline-item">Crée le {{ post.createdAt|date('d/m/yy') }} |</li>
+                    {% if post.modifiedAt is not null %}
+                        <li class="list-inline-item">Modifier le {{ post.modifiedAt|date('d/m/y') }} |</li>
+                    {% endif %}
+                    <li class="list-inline-item">Catégorie : {{ post.groups }}</li>
+                </ul>
+                <hr>
+                <h4 class="card-title">{{ post.name }}</h4>
+                <hr>
+                <div class="row d-none d-lg-flex load-media">
+                    <div class="col-lg-6 col-md-12">
+                    <div id="carousel" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            {% for image in post.images|slice(1) %}
+                            <div class="carousel-item {% if loop.index == 1 %}active{% endif %}" id="slide{{ loop.index }}">
+                                <img class="card-img img img-fluid rounded" src="{{ asset('assets/uploads/' ~ image) }}" alt="First slide">
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                    </div>
+                    <!-- Second Caroussel -->
+                    <div class="col-lg-6 col-md-12">
+                        <div id="carousel_v" class="carousel slide" data-ride="carousel_v">
+                            <div class="carousel-inner">
+                                {% for video in post.video %}
+                                    <div class="carousel-item {% if loop.index == 1 %}active{% endif %}" id="slide{{ loop.index }}" style="height: 450px">
+                                        <iframe width="100%" height="100%" src="{{ video }}"
+                                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                                allowfullscreen class="rounded" ></iframe>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                            <a class="carousel-control-prev" href="#carousel_v" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carousel_v" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <h4 class="card-title">Description du tricks</h4>
+                <p class="card-text text-jusitfy">{{ post.content|raw }}</p>
             </div>
         </div>
+        </div>
+            </div>
             <hr>
             {% if form %}
 
@@ -69,9 +105,19 @@
                 </div>
             </div>
             {% endfor %}
-
         </div>
     </div>
 
+
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+        $('.carousel').carousel();
+        $('.carousel.v').carousel()
+    </script>
+    <script>
+
+    </script>
 
 {% endblock %}

@@ -1,35 +1,5 @@
-{% import 'post/_upload_form.html.twig' as prototype %}
 {{ form_start(form) }}
-<ul id="image-fields-list"
-    class="images list-group list-group-horizontal col-12 row"
-    data-prototype="{{ prototype.uploadForm(form.images.vars.prototype)|e('html_attr') }}"
-    data-widget-tags="{{ '<li></li>'|e }}"
-    data-widget-counter="{{ form.images|length }}">
-
-    {% for image in form.images %}
-          {{ prototype.uploadForm(image) }}
-    {% endfor %}
-
-</ul>
-<button type="button" class="add_item_link col-sm-12 mt-5 " data-collection-holder-class="images">Add a tag</button>
-<div class="row">
-<ul id="video-fields-list"
-    class="video list-group list-group-horizontal col-12 row"
-    data-prototype="{{ form_widget(form.video.vars.prototype)|e }}"
-    data-widget-tags="{{ '<li></li>'|e }}"
-    data-widget-counter="{{ form.video|length }}">
-
-    {% for video in form.video %}
-        <li>
-            {{ form_errors(video) }}
-            {{ form_widget(video) }}
-        </li>
-    {% endfor %}
-
-</ul>
-</div>
-<button type="button" class="add_item_link col-sm-12 mt-3" data-collection-holder-class="video">Add a tag</button>
-<p class="small">N'ajouter que des vidéo Dailymotion ou Youtube.</p>
+{{ include('post/_add_media_form.html.twig') }}
     {{ form_row(form.name) }}
     {{ form_row(form.content) }}
     {{ form_row(form.groups) }}
