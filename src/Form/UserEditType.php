@@ -22,7 +22,7 @@ class UserEditType extends AbstractType
                 'required' => false,
                 'constraints' => [
                     new NotBlank([
-                        'message' => 'Veuillez entrer un mot de passe.',
+                        'message' => 'Please enter a mail.',
                     ]),
             ]])
             ->add('password', PasswordType::class, [
@@ -33,14 +33,14 @@ class UserEditType extends AbstractType
                 'required' => false,
                 'constraints' => [
                     new NotBlank([
-                        'message' => 'Veuillez entrer un mot de passe.',
+                        'message' => 'Please enter your first name.',
                     ]),
             ]])
             ->add('lastName', TextType::class, [
                 'required' => false,
                 'constraints' => [
                     new NotBlank([
-                        'message' => 'Veuillez entrer un mot de passe.',
+                        'message' => 'Please enter your last name',
                     ]),
 
             ]])
@@ -51,7 +51,7 @@ class UserEditType extends AbstractType
             ])
             ->add('plainPassword', PasswordType::class, [
                 'mapped' => false,
-                'label' => 'Confirmer avec votre mot de passe',
+                'label' => 'Confirm your password',
             ])
         ;
     }
