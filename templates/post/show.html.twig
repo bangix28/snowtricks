@@ -12,33 +12,33 @@
         <div class="justify-content-center mt-5">
             <div class="card">
             <div class="banner">
-                <img class="banner-img img img-fluid card-img-top" src="{{ asset(defaultImages) }}" alt="Image du tricks {{ post.name }} ">
+                <img class="banner-img img img-fluid card-img-top" src="{{ asset(defaultImages) }}" alt="Image of tricks {{ trick.name }} ">
                 <div class="icon row">
                     {{ include('post/_delete_form.html.twig') }}
-                    <a href="{{ url('post_edit', {'id' : post.id}) }}">
-                        <i class="fas fa-edit align-top"></i>
-                    </a>
+                    <a class=" change-link ml-3 mr-3 pt-2" href="{{ path('post_edit', {'id': trick.id}) }}" target="_blank">
+                        <i class="fas fa-pen fa-2x">
+                        </i></a>
                 </div>
             </div>
             <hr>
         <div class="col-lg-12">
             <div class="card-body">
                 <ul class="list-inline">
-                    <li class="list-inline-item">par {{ post.user.firstName }}.{{ post.user.lastName }}</li> |
-                    <li class="list-inline-item">Crée le {{ post.createdAt|date('d/m/yy') }} |</li>
-                    {% if post.modifiedAt is not null %}
-                        <li class="list-inline-item">Modifier le {{ post.modifiedAt|date('d/m/y') }} |</li>
+                    <li class="list-inline-item">by {{ trick.user.firstName }}.{{ trick.user.lastName }}</li> |
+                    <li class="list-inline-item">Created by {{ trick.createdAt|date('d/m/yy') }} |</li>
+                    {% if trick.modifiedAt is not null %}
+                        <li class="list-inline-item">Modified {{ trick.modifiedAt|date('d/m/y') }} |</li>
                     {% endif %}
-                    <li class="list-inline-item">Catégorie : {{ post.groups }}</li>
+                    <li class="list-inline-item">Group : {{ trick.groups }}</li>
                 </ul>
                 <hr>
-                <h4 class="card-title">{{ post.name }}</h4>
+                <h4 class="card-title">{{ trick.name }}</h4>
                 <hr>
                 <div class="row d-none d-lg-flex load-media">
                     <div class="col-lg-6 col-md-12">
                     <div id="carousel" class="carousel slide" data-ride="carousel">
                         <div class="carousel-inner">
-                            {% for image in post.images|slice(1) %}
+                            {% for image in trick.images|slice(1) %}
                             <div class="carousel-item {% if loop.index == 1 %}active{% endif %}" id="slide{{ loop.index }}">
                                 <img class="card-img img img-fluid rounded" src="{{ asset('assets/uploads/' ~ image) }}" alt="First slide">
                             </div>
@@ -58,7 +58,7 @@
                     <div class="col-lg-6 col-md-12">
                         <div id="carousel_v" class="carousel slide" data-ride="carousel_v">
                             <div class="carousel-inner">
-                                {% for video in post.video %}
+                                {% for video in trick.video %}
                                     <div class="carousel-item {% if loop.index == 1 %}active{% endif %}" id="slide{{ loop.index }}" style="height: 450px">
                                         <iframe width="100%" height="100%" src="{{ video }}"
                                                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
@@ -77,8 +77,8 @@
                         </div>
                     </div>
                 </div>
-                <h4 class="card-title">Description du tricks</h4>
-                <p class="card-text text-jusitfy">{{ post.content|raw }}</p>
+                <h4 class="card-title">Description of tricks</h4>
+                <p class="card-text text-jusitfy">{{ trick.content|raw }}</p>
             </div>
         </div>
         </div>
@@ -91,21 +91,22 @@
                     <div class="col-lg-6 ">
                 {{ form_widget(form.content) }}
                     </div>
-                <button type="submit" class="btn btn-success">Envoyer</button>
+                <button type="submit" class="btn btn-success">Send</button>
                 </div>
                 {{ form_end(form) }}
                 <hr>
             {% endif %}
-             {% for c in post.comment %}
+             {% for c in comment %}
             <div class="justify-content-center my-2 row">
                 <img src="{{ asset('assets/uploads/'~ c.user.image) }}"  class="img img-fluid col-lg-1">
                 <div class="border rounded col-lg-7">
-                    <p class="small">{{ c.user.firstName }}.{{ c.user.lastName }} le {{ c.createdAt|date('d/m/y') }} à {{ c.createdAt|date('H:i') }}</p>
+                    <p class="small">{{ c.user.firstName }}.{{ c.user.lastName }} the {{ c.createdAt|date('d/m/y') }} at {{ c.createdAt|date('H:i') }}</p>
                     <p>{{ c.content }}</p>
                 </div>
             </div>
             {% endfor %}
-        </div>
+        {{ knp_pagination_render(comment) }}
+    </div>
     </div>
 
 

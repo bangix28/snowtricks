@@ -6,10 +6,10 @@
     <div class="container">
         <h1 class="text-center p-5">Liste des articles !</h1>
         <div class="row">
-            <div class="col-12">
+            <div class="col-12 text-center">
                 {{ form_start(search) }}
                 {{ form_widget(search.search) }}
-                        <button type="submit" class="btn btn-success rounded ml-4">Recherche</button>
+                        <button type="submit" class="btn btn-success rounded p-2 mt-3">Recherche</button>
                 {{ form_end(search) }}
             </div>
         </div>
@@ -21,23 +21,25 @@
                 {% else %}
                     {% set defaultImage = asset('assets/img/trickdefault.jpg') %}
                 {% endif %}
-                <div class="mt-4 col-12 col-sm-8 col-md-6 col-lg-4">
-                    <div class="card">
+                <div class=" mt-4 col-12 col-sm-8 col-md-6 col-lg-4 p-4">
+                    <div class="card card-list">
                         <img class="card-img" style="height: 250px;" src="{{ defaultImage }}" alt="image de l'article !">
                         <div class="card-body">
                             <h4 class="card-title">{{ p.name }}</h4>
                             <p class="card-text">{{ p.content|striptags|slice(0,150) }}</p>
-                            <a href="{{ url('post_show',{'id': p.id}) }}" class="stretched-link btn btn-dark">Lire l'article !</a>
                         </div>
                         <div class="card-footer text-muted d-flex justify-content-between bg-transparent border-top-0">
                             <div class="views">
                                 {{ p.createdAt|date('d/m/y') }}
                             </div>
+                            <a href="{{ url('post_show',{'id': p.id}) }}" class="stretched-link btn btn-dark">Lire l'article !</a>
                         </div>
                     </div>
                 </div>
 
             {% endfor %}
+
         </div>
+        {{ knp_pagination_render(posts) }}
     </div>
 {% endblock %}

@@ -5,26 +5,26 @@
 
 {% block body %}
         <div class="container">
-            <h3 class="text-center p-3">Vos article !</h3>
+            <h3 class="text-center p-3">Your tricks !</h3>
             <table class="table" style="margin-bottom: 150px;">
 
                 <thead class="thead-dark">
                 <tr>
-                    <th scope="col">Utilisateur</th>
-                    <th scope="col">Contenu</th>
+                    <th scope="col">User</th>
+                    <th scope="col">Content</th>
                     <th scope="col">Post</th>
                     <th></th>
                 </tr>
                 </thead>
                 <tbody>
-                {% for post in post %}
+                {% for trick in trick %}
                     <tr>
-                        <td>{{ post.user.lastName }} {{ post.user.firstName }}</td>
-                        <td>{{ post.content|striptags|slice(0,75) }}</td>
-                        <td><a href="{{ url('post_show', {'id': post.id}) }}">Lien vers le post</a></td>
+                        <td>{{ trick.user.lastName }} {{ trick.user.firstName }}</td>
+                        <td>{{ trick.content|striptags|slice(0,75) }}</td>
+                        <td><a href="{{ url('post_show', {'id': trick.id}) }}">Link to the post</a></td>
                         <td class="row">
                             {{ include('post/_delete_form.html.twig') }}
-                            <a href="{{ url('post_edit', {'id': post.id}) }}">
+                            <a href="{{ url('post_edit', {'id': trick.id}) }}">
                                 <i class="fas fa-edit align-top"></i>
                             </a>
                         </td>
@@ -33,10 +33,10 @@
                 </tbody>
             </table>
             {% if form is not null %}
-            <h2>Crée une nouvelle catégories de tricks !</h2>
+            <h2>Create a new trick group</h2>
             {{ form_start(form) }}
             {{ form(form) }}
-                <button type="submit" class="btn btn-success ">Ajouter</button>
+                <button type="submit" class="btn btn-success ">Add</button>
             {{ form_end(form) }}
             {% endif %}
         </div>

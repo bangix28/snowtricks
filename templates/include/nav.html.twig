@@ -19,7 +19,7 @@
                         <a class="dropdown-item" href="{{ url('post_new') }}">Create new tricks</a>
                         <a class="dropdown-item" href="{{ url('user_show') }}">Show my tricks</a>
                     {% endif %}
-                    <a class="dropdown-item" href="{{ url('post_list') }}">list of tricks</a>
+                    <a class="dropdown-item" href="{{ url('index') }}">list of tricks</a>
                 </div>
             </div>
             </li>
@@ -31,6 +31,9 @@
                 <a class="nav-link " href="{{ url('app_register') }}">Sign up</a>
             </li>
             {% else %}
+                <li class="nav-item border-right">
+                    <a class="nav-link" href="{{ url('user_index') }}">My profile</a>
+                </li>
                 <li class="nav-item ">
                     <a class="nav-link " href="{{ url('app_logout') }}">Logout</a>
                 </li>

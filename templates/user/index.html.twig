@@ -1,41 +1,64 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}User index{% endblock %}
-
+{% block title %}{{ user.firstName }} {{ user.lastName }}{% endblock %}
+{% block style %} <link rel="stylesheet" href="{{ asset('assets/css/profil.css') }}" type="text/css"> {% endblock %}
 {% block body %}
-    <h1>User index</h1>
+    <div class="container emp-profile bg-dark text-light mt-5 p-5 rounded ">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="profile-img">
+                    <img src="{{ asset('assets/uploads/' ~ user.image) }}" alt="User Image"/>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="profile-head">
+                    <h2 class="text-light text-center p-5">
+                        {{ user.lastName }} {{ user.firstName }}
+                    </h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="offset-4 col-8">
+                <div class="row">
+                    <div class="col-md-6">
+                        <label class="text-light">Email :</label>
+                    </div>
+                        <div class="col-md-6">
+                            <p class="text-light">{{ user.mail }}</p>
+                        </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label>Nom :</label>
+                    </div>
+                        <div class="col-md-6">
+                            <p class="text-light">{{ user.lastName }}</p>
+                        </div>
+                </div>
+                </a>
+                <div class="row">
+                    <div class="col-6">
+                        <label>Prénom :</label>
+                    </div>
+                        <div class="col-6">
+                            <p class="text-light">{{ user.firstName }}</p>
+                        </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label>Mot de passe :</label>
+                    </div>
+                        <div class="col-md-6">
+                            <p class="text-light">**********</p>
+                        </div>
+                </div>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Mail</th>
-                <th>Roles</th>
-                <th>Password</th>
-                <th>IsVerified</th>
-                <th>FirstName</th>
-                <th>LastName</th>
-                <th>Image</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>{{ user.id }}</td>
-                <td>{{ user.mail }}</td>
-                <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
-                <td>{{ user.password }}</td>
-                <td>{{ user.isVerified ? 'Yes' : 'No' }}</td>
-                <td>{{ user.firstName }}</td>
-                <td>{{ user.lastName }}</td>
-                <td>{{ user.image }}</td>
-                <td>
-                    <a href="{{ path('user_edit', {'id': user.id}) }}">edit</a>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="9">no records found</td>
-            </tr>
-        </tbody>
-    </table>
+                <div class="row">
+                    <a class="btn btn-primary mr-5" href="{{ url('user_edit') }}">Modify the profil</a>
+                    {{ include('user/_delete_form.html.twig') }}
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}

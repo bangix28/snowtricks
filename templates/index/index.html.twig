@@ -9,47 +9,30 @@
         <h2>Snowtricks trops fort</h2>
         </div>
         <div class="arrow">
-            <a href="#post" class="badge badge-pill badge-dark float-right">
+            <a href="#tricks" class="badge badge-pill badge-dark float-right">
             <i class="fas fa-arrow-down fa-5x"></i>
             </a>
         </div>
     </div>
-    <div id="post" class="mr-3 ml-3 row">
-        {% for post in tricks %}
-            {% if post.images[0] is defined %}
-                {% set defaultImage = 'assets/uploads/' ~ post.images[0] %}
-            {% else %}
-                {% set defaultImage = 'assets/img/trickdefault.jpg' %}
-            {% endif %}
-            <div class="card mx-4 mt-4 col-lg-2">
-                <a href="{{ url('post_show',{'id' : post.id}) }}">
-                <img class="card-img-top img img-fluid" style="height: 200px" src="{{ defaultImage }}" alt="Card image cap"></a>
-                <div class="card-body row">
-                    <h6 class="card-title">{{ post.name }}</h6>
-
-                    {% if app.user and app.user is same as post.user%}
-                        <div class="ml-auto row">
-                            {{ include('post/_delete_form.html.twig') }}
-                            <a href="{{ url('post_edit', {'id' : post.id}) }}">
-                                <i class="fas fa-edit align-top"></i>
-                            </a>
-                        </div>
-                    {% endif %}
+    <!-- Start Tricks -->
+    <span class="tricks-anchor" id="tricks"></span>
+    <div class="container p-5">
+        <div class="row">
+           {{ include('index/_tricks_for.html.twig') }}
+            <div class="container">
+                <div class="row justify-content-center m-3">
+                    <a href="#" id="loadMoreTrick"><i class="fas fa-plus-circle fa-3x"></i></a>
+                    <a href="#" id="loadLessTrick"><i class="fas fa-minus-circle fa-3x"></i></a>
                 </div>
-
             </div>
-
-        {% endfor %}
-
+        </div>
     </div>
-    <div class="text-center">
-        <button id="load" class="btn btn-primary">Load more</button>
-    </div>
-    <div class="float-right mr-4">
-        <a href="#post" class="badge badge-pill badge-dark">
+    <div class="container-fluid cup text-right">
+        <a href="#tricks" class="badge badge-pill badge-dark float-right">
             <i class="fas fa-arrow-up fa-5x"></i>
         </a>
     </div>
+    <!-- End Tricks -->
 {% endblock %}
 {% block javascripts %}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
@@ -58,8 +41,9 @@
             $.ajax({
                 url: "{{ url('index') }}",
                 type: 'POST',
-                data: "loop=" + {{ loop }}
             })
         });
+    </script>
+    <script src=" {{ asset('assets/js/loadmore.js') }}">
     </script>
 {% endblock %}
