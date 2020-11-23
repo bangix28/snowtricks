@@ -9,6 +9,7 @@ use App\Repository\PostRepository;
 use App\services\image\ImageServices;
 use App\services\post\PostServices;
 use Doctrine\ORM\EntityManagerInterface;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -33,16 +34,6 @@ class PostController extends AbstractController
         $this->imageServices = $imageServices;
         $this->commentServices = $commentServices;
         $this->postServices = $postServices;
-    }
-
-    /**
-     * @Route("/", name="post_index", methods={"GET"})
-     */
-    public function index(PostRepository $postRepository): Response
-    {
-        return $this->render('post/index.html.twig', [
-            'posts' => $postRepository->findAll(),
-        ]);
     }
 
     /**
@@ -75,42 +66,18 @@ class PostController extends AbstractController
     }
 
     /**
-     * @Route("/listPost", name="post_list")
-     * @param Request $request
-     * @param PostRepository $postRepository
-     * @return Response
-     */
-    public function handleSearch(Request $request, PostRepository $postRepository)
-    {
-        $form = $this->createForm(SearchType::class);
-        $form->handleRequest($request);
-        if ($form->isSubmitted() && $form->isValid())
-        {
-            $search = $form->get('search')->getData();
-            return $this->render('post/index.html.twig', [
-                'posts' => $postRepository->search($search),
-                'search' => $form->createView()
-
-            ]);
-        }
-        return $this->render('post/index.html.twig', [
-            'posts' => $postRepository->findAll(),
-            'search' => $form->createView()
-        ]);
-    }
-
-    /**
      * @Route("/show/{id}", name="post_show")
      */
-    public function show(Post $post, Request $request): Response
+    public function show(Post $post, Request $request, PaginatorInterface $paginator): Response
     {
         $form = false;
             if ($this->getUser()) {
                 $form = $this->commentServices->new($request, $post);
             }
             return $this->render('post/show.html.twig', [
-                'post' => $post,
-                'form' => $form
+                'trick' => $post,
+                'form' => $form,
+                'comment' => $paginator->paginate($post->getComment(),$request->query->getInt('page', 1),10)
             ]);
     }
 
@@ -149,7 +116,7 @@ class PostController extends AbstractController
                 $this->manager->remove($post);
                 $this->manager->flush();
             }
-            return $this->redirectToRoute('post_index');
+            return $this->redirectToRoute('index');
         }
         return $this->render('security/403.html.twig');
     }
@@ -165,17 +132,15 @@ class PostController extends AbstractController
             $array = $post->getImages();
             $type = "image";
             $delete = $request->request->get('id_image');
+            $set = 'setImages';
         } else {
             $array = $post->getVideo();
-            dump($array);
             $type = "video";
             $delete = $request->request->get('id_video') - 1;
             $set = 'setVideo';
-            dump($delete);
         }
         unset($array[$delete]);
         $new = array_merge($array);
-        dump($new);
         $post->$set($new);
         $this->manager->persist($post);
         $this->manager->flush();

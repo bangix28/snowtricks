@@ -95,7 +95,7 @@ class UserController extends AbstractController
             $f = $form->createView();
         }
         return $this->render('user/show.html.twig',[
-            'post' => $postRepository->findBy(array('User'=> $this->getUser())),
+            'trick' => $postRepository->findBy(array('User'=> $this->getUser())),
             'form' => $f,
         ]);
     }
