@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 {% block stylesheets %}<link rel="stylesheet" href="{{ asset('assets/css/banner.css') }}">{% endblock %}
-{% block title %}Acceuil | Snowtricks{% endblock %}
+{% block title %}Home | Snowtricks{% endblock %}
 
 {% block body %}
     <div class="banner">
@@ -15,9 +15,10 @@
         </div>
     </div>
     <!-- Start Tricks -->
-    <span class="tricks-anchor" id="tricks"></span>
+
     <div class="container p-5">
         <div class="row">
+            <span class="tricks-anchor" id="tricks"></span>
            {{ include('index/_tricks_for.html.twig') }}
             <div class="container">
                 <div class="row justify-content-center m-3">
