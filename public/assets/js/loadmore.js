@@ -17,4 +17,23 @@ $(function () {
         $("#loadMoreTrick").show("slow");
 
     });
+
 });
+$(function () {
+    $(function () {
+        $("#loadMedia").on("click", function (e) {
+            e.preventDefault();
+            $(".media").removeClass("d-none");
+            $("#loadMedia").addClass("d-none");
+            $("#hiddenMedia").removeClass("d-none");
+        });
+        $("#hiddenMedia").on("click", function (e) {
+            e.preventDefault();
+            $(".media").addClass("d-none");
+            $("#loadMedia").removeClass("d-none");
+            $("#hiddenMedia").addClass("d-none");
+        });
+    });
+});
+
+
