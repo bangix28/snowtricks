@@ -1,8 +1,9 @@
-{{ include('include/base_block.html.twig') }}
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+    {{ include('include/base_block.html.twig') }}
     {% block head_css %}{% endblock %}
     {% block head_js %}{% endblock %}
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/img/logo.png') }}">
@@ -13,13 +14,10 @@
 <header>
     {{ include('include/nav.html.twig') }}
 </header>
-{% for flashError in app.flashes('error') %}
-    <div class="alert alert-danger" role="alert">{{ flashError }}</div>
-{% endfor %}
-{% for flashSuccess in app.flashes('success') %}
-    <div class="alert alert-success" role="alert">{{ flashSuccess }}</div>
-{% endfor %}
 <div class="body">
+    {% block flash %}
+    {% endblock %}
+
     <div class="content">
         {% block body %}{% endblock %}
     </div>
