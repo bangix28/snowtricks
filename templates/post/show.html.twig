@@ -1,36 +1,127 @@
 {% extends 'base.html.twig' %}
-
+{% block stylesheets %}<link rel="stylesheet" href="{{ asset('assets/css/banner.css') }}">{% endblock %}
+{% if trick.images[0] is defined %}
+    {% set defaultImages = 'assets/uploads/' ~ trick.images[0] %}
+{% else %}
+    {% set defaultImages = 'assets/img/trickdefault.jpg' %}
+{% endif %}
 {% block title %}Post{% endblock %}
 
 {% block body %}
-    <h1>Post</h1>
+    <div class="container">
+        <div class="justify-content-center mt-5">
+            <div class="card">
+            <div class="banner">
+                <img class="banner-img img img-fluid card-img-top" src="{{ asset(defaultImages) }}" alt="Image of tricks {{ trick.name }} ">
+                <div class="icon row">
+                    {{ include('post/_delete_form.html.twig') }}
+                    <a class=" change-link ml-3 mr-3 pt-2" href="{{ path('post_edit', {'id': trick.id}) }}" target="_blank">
+                        <i class="fas fa-pen fa-2x">
+                        </i></a>
+                </div>
+            </div>
+            <hr>
+        <div class="col-lg-12">
+            <div class="card-body">
+                <ul class="list-inline text-center">
+                    <li class="list-inline-item">by {{ trick.user.firstName }}.{{ trick.user.lastName }}</li> |
+                    <li class="list-inline-item">Created by {{ trick.createdAt|date('d/m/yy') }} |</li>
+                    {% if trick.modifiedAt is not null %}
+                        <li class="list-inline-item">Modified {{ trick.modifiedAt|date('d/m/y') }} |</li>
+                    {% endif %}
+                    <li class="list-inline-item">Group : {{ trick.groups }}</li>
+                </ul>
+                <hr>
+                <h4 class="card-title">{{ trick.name }}</h4>
+                <hr>
+                <button id="loadMedia" class="btn btn-success d-md-block d-lg-none">See Media</button>
+                <button id="hiddenMedia" class="btn btn-success d-none d-md-none d-lg-none">Hidden Media</button>
+                <div class="row d-lg-flex d-none d-sm-block media">
+                    <div class="col-lg-6 col-md-12">
+                    <div id="carousel" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            {% for image in trick.images|slice(1) %}
+                            <div class="carousel-item {% if loop.index == 1 %}active{% endif %}" id="slide{{ loop.index }}">
+                                <img class="card-img img img-fluid rounded" src="{{ asset('assets/uploads/' ~ image) }}"
+                                     alt="First slide" style="height: 450px">
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                    </div>
+                    <!-- Second Caroussel -->
+                    <div class="col-lg-6 col-md-12">
+                        <div id="carousel_v" class="carousel slide" data-ride="carousel_v">
+                            <div class="carousel-inner">
+                                {% for video in trick.video %}
+                                    <div class="carousel-item {% if loop.index == 1 %}active{% endif %}"
+                                         id="slide{{ loop.index }}">
+                                        <iframe width="100%" height="450px" src="{{ video }}"
+                                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                                allowfullscreen class="rounded" ></iframe>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                            <a class="carousel-control-prev" href="#carousel_v" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carousel_v" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <h4 class="card-title">Description of tricks</h4>
+                <p class="card-text text-jusitfy">{{ trick.content|raw }}</p>
+            </div>
+        </div>
+        </div>
+            </div>
+            <hr>
+            {% if form %}
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ post.id }}</td>
-            </tr>
-            <tr>
-                <th>Name</th>
-                <td>{{ post.name }}</td>
-            </tr>
-            <tr>
-                <th>Content</th>
-                {% for image in post.images %}
-                <td>{{ image }}</td>
-                {% endfor %}
-            </tr>
-        <tr>
-            <th>image</th>
-            {% dump(post.images) %}
-        </tr>
-        </tbody>
-    </table>
+                {{ form_start(form) }}
+                <div class="row justify-content-center">
+                    <div class="col-lg-6 ">
+                {{ form_widget(form.content) }}
+                    </div>
+                <button type="submit" class="btn btn-success">Send</button>
+                </div>
+                {{ form_end(form) }}
+                <hr>
+            {% endif %}
+             {% for c in comment %}
+            <div class="justify-content-center my-2 row">
+                <img src="{{ asset('assets/uploads/'~ c.user.image) }}"  class="img img-fluid col-lg-1">
+                <div class="border rounded col-lg-7">
+                    <p class="small">{{ c.user.firstName }}.{{ c.user.lastName }} the {{ c.createdAt|date('d/m/y') }} at {{ c.createdAt|date('H:i') }}</p>
+                    <p>{{ c.content }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        {{ knp_pagination_render(comment) }}
+    </div>
+    </div>
 
-    <a href="{{ path('post_index') }}">back to list</a>
 
-    <a href="{{ path('post_edit', {'id': post.id}) }}">edit</a>
+{% endblock %}
 
-    {{ include('post/_delete_form.html.twig') }}
+{% block javascripts %}
+    <script>
+        $('.carousel').carousel();
+        $('.carousel.v').carousel()
+    </script>
+    <script src="{{ asset('assets/js/loadmore.js') }}"></script>
+
+
 {% endblock %}

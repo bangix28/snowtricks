@@ -25,11 +25,6 @@ class Groups
     private $name;
 
     /**
-     * @ORM\Column(type="text")
-     */
-    private $description;
-
-    /**
      * @ORM\OneToMany(targetEntity=Post::class, mappedBy="groups")
      */
     private $post;
@@ -56,17 +51,6 @@ class Groups
         return $this;
     }
 
-    public function getDescription(): ?string
-    {
-        return $this->description;
-    }
-
-    public function setDescription(string $description): self
-    {
-        $this->description = $description;
-
-        return $this;
-    }
 
     /**
      * @return Collection|post[]
@@ -96,5 +80,11 @@ class Groups
         }
 
         return $this;
+    }
+    public function __toString(){
+        // to show the name of the Category in the select
+        return $this->name;
+        // to show the id of the Category in the select
+        // return $this->id;
     }
 }

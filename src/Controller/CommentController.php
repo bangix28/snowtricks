@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Comment;
 use App\Form\CommentType;
 use App\Repository\CommentRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -15,20 +16,13 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 class CommentController extends AbstractController
 {
-    /**
-     * @Route("/", name="comment_index", methods={"GET"})
-     */
-    public function index(CommentRepository $commentRepository): Response
+    private $entityManager;
+    public function __construct(EntityManagerInterface $entityManager)
     {
-        return $this->render('comment/index.html.twig', [
-            'comments' => $commentRepository->findAll(),
-        ]);
+        $this->entityManager = $entityManager;
     }
 
-    /**
-     * @Route("/new", name="comment_new", methods={"GET","POST"})
-     */
-    public function new(Request $request): Response
+    public function new(Request $request,$post)
     {
         if ($this->getUser()) {
             $comment = new Comment();
@@ -36,29 +30,15 @@ class CommentController extends AbstractController
             $form->handleRequest($request);
 
             if ($form->isSubmitted() && $form->isValid()) {
-                $entityManager = $this->getDoctrine()->getManager();
-                $entityManager->persist($comment);
-                $entityManager->flush();
-
-                return $this->redirectToRoute('comment_index');
+                $comment->setUser($this->getUser());
+                $comment->setCreatedAt(new \DateTime());
+                $comment->setPost($post);
+                $this->entityManager->persist($comment);
+                $this->entityManager->flush();
             }
-
-            return $this->render('comment/new.html.twig', [
-                'comment' => $comment,
-                'form' => $form->createView(),
-            ]);
+            return $form->createView();
         }
         return $this->render('security/403.html.twig');
-    }
-
-    /**
-     * @Route("/{id}", name="comment_show", methods={"GET"})
-     */
-    public function show(Comment $comment): Response
-    {
-        return $this->render('comment/show.html.twig', [
-            'comment' => $comment,
-        ]);
     }
 
     /**
@@ -71,7 +51,7 @@ class CommentController extends AbstractController
             $form->handleRequest($request);
 
             if ($form->isSubmitted() && $form->isValid()) {
-                $this->getDoctrine()->getManager()->flush();
+                $this->entityManager->flush();
 
                 return $this->redirectToRoute('comment_index');
             }

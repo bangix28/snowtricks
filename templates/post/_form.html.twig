@@ -1,38 +1,7 @@
 {{ form_start(form) }}
-    {{ form_row(form.thumbnail) }}
-<ul id="image-fields-list"
-    data-prototype="{{ form_widget(form.images.vars.prototype)|e }}"
-    data-widget-tags="{{ '<li></li>'|e }}"
-    data-widget-counter="{{ form.images|length }}">
-    {% for image in form.images %}
-        <li>
-            {{ form_errors(image) }}
-            {{ form_widget(image) }}
-
-        </li>
-    {% endfor %}
-</ul>
-
-<button type="button"
-        class="add-another-collection-widget"
-        data-list-selector="#image-fields-list">Add another email</button>
-<ul id="video-fields-list"
-    data-prototype="{{ form_widget(form.video.vars.prototype)|e }}"
-    data-widget-tags="{{ '<li></li>'|e }}"
-    data-widget-counter="{{ form.video|length }}">
-    {% for image in form.video %}
-        <li>
-            {{ form_errors(video) }}
-            {{ form_widget(video) }}
-        </li>
-    {% endfor %}
-</ul>
-
-<button type="button"
-        class="add-another-collection-widget"
-        data-list-selector="#video-fields-list">Add another video</button>
+{{ include('post/_add_media_form.html.twig') }}
     {{ form_row(form.name) }}
     {{ form_row(form.content) }}
     {{ form_row(form.groups) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+    <button class="btn btn-primary">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}

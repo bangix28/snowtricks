@@ -1,0 +1,66 @@
+<div class="d-none d-lg-block">
+<nav class="navbar p-4 navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="{{ url('index') }}">
+        <img src="{{ asset('assets/img/logo.png') }}" class="img img-fluid img-logo" alt="logo de snowtricks">
+    </a>
+    <div class="collapse navbar-collapse float-right mr-5" id="navbarNav">
+        <ul class="ml-auto navbar-nav mr-4">
+            <li class="nav-item border-right">
+                <a class="nav-link" href="{{ url('index') }}">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item border-right">
+            <div class="dropdown">
+                <a class="nav-link" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Tricks
+                </a>
+
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    {% if app.user %}
+                        <a class="dropdown-item" href="{{ url('post_new') }}">Create new tricks</a>
+                        <a class="dropdown-item" href="{{ url('user_show') }}">Show my tricks</a>
+                    {% endif %}
+                    <a class="dropdown-item" href="{{ url('index') }}">list of tricks</a>
+                </div>
+            </div>
+            </li>
+            {% if not app.user %}
+            <li class="nav-item border-right">
+                <a class="nav-link" href="{{ url('app_login') }}">Sign in</a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link " href="{{ url('app_register') }}">Sign up</a>
+            </li>
+            {% else %}
+                <li class="nav-item border-right">
+                    <a class="nav-link" href="{{ url('user_index') }}">My profile</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link " href="{{ url('app_logout') }}">Logout</a>
+                </li>
+            {% endif %}
+        </ul>
+    </div>
+</nav>
+</div>
+
+<div class="d-lg-none">
+    <nav class="navbar p-3 navbar-light bg-light fixed-bottom">
+        <div class="d-flex d-flex justify-content-between text-center col-12">
+            <a class="col-4" href="{{ url('index') }}">
+                <i class="fas fa-home"></i>
+            </a>
+            <a class="col-4" href="{{ url('index') }}">
+                <i class="fas fa-bookmark"></i>
+            </a>
+            {% if app.user %}
+                <a class="col-4 " href="{{ url('app_logout') }}">
+                    <i class="fas fa-sign-out-alt"></i>
+                </a>
+            {% else %}
+                <a class="col-4 " href="{{ url('app_login') }}">
+                    <i class="fas fa-sign-in-alt"></i>
+                </a>
+            {% endif %}
+        </div>
+    </nav>
+</div>

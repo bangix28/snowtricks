@@ -1,0 +1,40 @@
+{% import 'post/_upload_form.html.twig' as prototype %}
+
+<ul id="image-fields-list"
+    class="images list-group list-group-horizontal col-12 row"
+    data-prototype="{{ prototype.uploadForm(form.images.vars.prototype)|e('html_attr') }}"
+    data-widget-tags="{{ '<li></li>'|e }}"
+    data-widget-counter="{{ form.images|length }}">
+
+    {% for image in form.images %}
+        {{ prototype.uploadForm(image) }}
+    {% endfor %}
+
+</ul>
+<div class="text-center">
+    <button type="button" class="add_item_link col-sm-12 col-lg-2 mt-5 " data-collection-holder-class="images">Add Image</button>
+</div>
+<div class="row">
+    <ul id="video-fields-list"
+        class="video list-group list-group-horizontal col-12 row"
+        data-prototype="{{ form_widget(form.video.vars.prototype)|e }}"
+        data-widget-tags="{{ '<li></li>'|e }}"
+        data-widget-counter="{{ form.video|length }}">
+
+        {% for video in form.video %}
+            <li>
+                {{ form_errors(video) }}
+                {{ form_widget(video) }}
+            </li>
+        {% endfor %}
+
+    </ul>
+</div>
+<div class="text-center">
+    <button type="button" class="add_item_link col-sm-12 col-lg-2 mt-3" data-collection-holder-class="video">Add video</button>
+</div>
+<p class="small">Add only Dailymotion or Youtube videos.</p>
+
+{% block javascripts %}
+    <script src="{{ asset('assets/js/prototype.js') }}"></script>
+{% endblock %}

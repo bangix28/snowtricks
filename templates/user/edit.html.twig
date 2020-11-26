@@ -4,10 +4,10 @@
 
 {% block body %}
     <div class="container">
-    <h1>Modifier sont profil</h1>
-    {{ include('user/_form.html.twig', {'button_label': 'Valider'}) }}
+    <h1>Modify profil</h1>
+    {{ include('user/_form.html.twig', {'button_label': 'Submit'}) }}
 
-    <a href="{{ path('user_index') }}">Retour sur votre profil</a>
+    <a href="{{ path('user_index') }}">Back at the profil</a>
 
     {{ include('user/_delete_form.html.twig') }}
     </div>
