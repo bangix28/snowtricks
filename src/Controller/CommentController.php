@@ -22,16 +22,6 @@ class CommentController extends AbstractController
         $this->entityManager = $entityManager;
     }
 
-    /**
-     * @Route("/", name="comment_index", methods={"GET"})
-     */
-    public function index(CommentRepository $commentRepository): Response
-    {
-        return $this->render('comment/index.html.twig', [
-            'comments' => $commentRepository->findAll(),
-        ]);
-    }
-
     public function new(Request $request,$post)
     {
         if ($this->getUser()) {
@@ -49,16 +39,6 @@ class CommentController extends AbstractController
             return $form->createView();
         }
         return $this->render('security/403.html.twig');
-    }
-
-    /**
-     * @Route("/{id}", name="comment_show", methods={"GET"})
-     */
-    public function show(Comment $comment): Response
-    {
-        return $this->render('comment/show.html.twig', [
-            'comment' => $comment,
-        ]);
     }
 
     /**
