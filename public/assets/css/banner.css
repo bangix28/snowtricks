@@ -27,7 +27,7 @@
     color: white;
 }
 .banner-img{
-    height: 90vh ;
+    height: 90vh;
 }
 @media (max-device-width: 768px) {
     .banner-img{

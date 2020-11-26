@@ -7,8 +7,8 @@ jQuery(document).ready(function() {
     $tagsCollectionHolder.data('index', $tagsCollectionHolder.find('input').length);
 
     $('body').on('click', '.add_item_link', function(e) {
+        e.preventDefault();
         var $collectionHolderClass = $(e.currentTarget).data('collectionHolderClass');
-        console.log($collectionHolderClass);
         // add a new tag form (see next code block)
         addFormToCollection($collectionHolderClass);
     })
