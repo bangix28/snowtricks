@@ -9,8 +9,10 @@
             <a href="{{ path('post_show', {'id': trick.id}) }}"><img class="card-img-top home" src="{{ defaultImage }}" alt="Trick"></a>
             <div class="card-body">
                 <a class="btn btn-outline-info btn-sm trick-link" href="{{ path('post_show', {'id': trick.id}) }}" target="_blank">{{ trick.name }}</a>
+                {% if trick.user is same as app.user or is_granted('ROLE_ADMIN') %}
                 <a class="float-right change-link ml-3 mr-3 pt-2" href="{{ path('post_edit', {'id': trick.id}) }}" target="_blank"><i class="fas fa-pen fa-2x"></i></a>
                 {{ include('post/_delete_form.html.twig') }}
+                {% endif %}
             </div>
         </div>
     </div>
