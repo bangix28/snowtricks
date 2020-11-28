@@ -28,15 +28,15 @@ class PostType extends AbstractType
                 'label' => false,
                 'required' => false,
                 'constraints' => [
-                new All([
-                'constraints' => new File([
-                    'mimeTypes' => [
-                        'image/*'
-                    ],
-                    'mimeTypesMessage' => "Insere seulement des images",
-                ])
+        new All([
+            'constraints' => new File([
+                'mimeTypes' => [
+                    'image/*'
+                ],
+                'mimeTypesMessage' => "Only image are allowed",
             ])
-                    ]
+        ])
+            ]
             ])
             ->add('video', CollectionType::class,[
                 'entry_type' => UrlType::class,
