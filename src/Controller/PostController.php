@@ -4,7 +4,6 @@ namespace App\Controller;
 
 use App\Entity\Post;
 use App\Form\PostType;
-use App\Form\SearchType;
 use App\Repository\PostRepository;
 use App\services\image\ImageServices;
 use App\services\post\PostServices;
@@ -16,7 +15,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/post")
+ * @Route("/trick")
  */
 class PostController extends AbstractController
 {
@@ -111,7 +110,7 @@ class PostController extends AbstractController
      */
     public function delete(Request $request, Post $post): Response
     {
-        if ($this->getUser()) {
+        if ($this->getUser() && $this->getUser() === $post->getUser()) {
             if ($this->isCsrfTokenValid('delete' . $post->getId(), $request->request->get('_token'))) {
                 $this->manager->remove($post);
                 $this->manager->flush();
