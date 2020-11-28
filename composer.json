@@ -40,7 +40,7 @@
         "symfony/yaml": "5.1.*",
         "symfonycasts/verify-email-bundle": "^1.0",
         "twig/extra-bundle": "^2.12|^3.0",
-        "twig/twig": "^2.12|^3.0"
+        "twig/twig": "@stable"
     },
     "require-dev": {
         "symfony/browser-kit": "^5.1",

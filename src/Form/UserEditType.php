@@ -11,6 +11,8 @@ use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\All;
+use Symfony\Component\Validator\Constraints\File;
 use Symfony\Component\Validator\Constraints\NotBlank;
 
 class UserEditType extends AbstractType
@@ -47,7 +49,18 @@ class UserEditType extends AbstractType
             ->add('image', FileType::class,[
                 'required' => false,
                 'data_class' => null,
-                'mapped' => false
+                'mapped' => false,
+                'constraints' => [
+                    new All([
+                        'constraints' => new File([
+                            'mimeTypes' => [
+                                'image/*'
+                            ],
+                            'mimeTypesMessage' => "Only image are allowed",
+                        ])
+                    ])
+                ]
+
             ])
             ->add('plainPassword', PasswordType::class, [
                 'mapped' => false,

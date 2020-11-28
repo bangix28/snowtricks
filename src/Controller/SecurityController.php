@@ -10,7 +10,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Mailer\MailerInterface;
-use Symfony\Component\Mime\Email;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\Security\Csrf\TokenGenerator\TokenGeneratorInterface;
@@ -68,7 +67,7 @@ class SecurityController extends AbstractController
                 $email = (new TemplatedEmail())
                     ->from('contact@kenolane-granger.com')
                     ->to($form->get('mail')->getData())
-                    ->subject('Récuperation de mot de passe')
+                    ->subject('Password recovery')
                     ->htmlTemplate('security/forgotPassword.html.twig')
                     ->context([
                         'user' => $user,
@@ -76,10 +75,10 @@ class SecurityController extends AbstractController
                     ]);
 
                 $mailer->send($email);
-                $this->addFlash('success', 'Email envoyer avec success');
+                $this->addFlash('success', 'Email send with success');
                 return $this->redirectToRoute('index');
             } else {
-                $this->addFlash('error', "cette email n'existe pas");
+                $this->addFlash('error', "this email does not exist");
             }
         }
 
@@ -97,7 +96,7 @@ class SecurityController extends AbstractController
         $user = $this->manager->getRepository('App:User')->findOneBy(array('reset_token' => $token));
 
         if (!$user) {
-            $this->addFlash('error', 'Token inconnu');
+            $this->addFlash('error', 'Unknow token');
             return $this->redirectToRoute('app_login');
         }
         $form = $this->createForm(ChangePasswordType::class,$user);
@@ -111,7 +110,7 @@ class SecurityController extends AbstractController
             $this->manager->persist($user);
             $this->manager->flush();
 
-            $this->addFlash('success', 'Mot de passe changer');
+            $this->addFlash('success', 'Password change');
 
             return $this->redirectToRoute('app_login');
         }

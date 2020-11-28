@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5d229f01a301e30b1e68de768fb43eea",
+    "content-hash": "1e5ada44dd3c2f54a3940e589dae02f1",
     "packages": [
         {
             "name": "composer/package-versions-deprecated",
@@ -1471,16 +1471,16 @@
         },
         {
             "name": "knplabs/knp-components",
-            "version": "v2.5.0",
+            "version": "v2.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/KnpLabs/knp-components.git",
-                "reference": "64bf3b5dc974f9637707a447edc911d8da2781d2"
+                "reference": "ab7ced8a662e6aa1898b5c4919fe3eb78d62d963"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/KnpLabs/knp-components/zipball/64bf3b5dc974f9637707a447edc911d8da2781d2",
-                "reference": "64bf3b5dc974f9637707a447edc911d8da2781d2",
+                "url": "https://api.github.com/repos/KnpLabs/knp-components/zipball/ab7ced8a662e6aa1898b5c4919fe3eb78d62d963",
+                "reference": "ab7ced8a662e6aa1898b5c4919fe3eb78d62d963",
                 "shasum": ""
             },
             "require": {
@@ -1545,9 +1545,9 @@
             ],
             "support": {
                 "issues": "https://github.com/KnpLabs/knp-components/issues",
-                "source": "https://github.com/KnpLabs/knp-components/tree/v2.5.0"
+                "source": "https://github.com/KnpLabs/knp-components/tree/v2.5.1"
             },
-            "time": "2020-11-22T13:39:54+00:00"
+            "time": "2020-11-27T10:10:33+00:00"
         },
         {
             "name": "knplabs/knp-paginator-bundle",
@@ -7940,16 +7940,16 @@
         },
         {
             "name": "symfony/maker-bundle",
-            "version": "v1.23.0",
+            "version": "v1.24.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/maker-bundle.git",
-                "reference": "ffaee624a20a462ec2da82942d3c9d8fc8dd1421"
+                "reference": "87620ef23319ebbdfc5b51dd6b6e7d12003f4564"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/maker-bundle/zipball/ffaee624a20a462ec2da82942d3c9d8fc8dd1421",
-                "reference": "ffaee624a20a462ec2da82942d3c9d8fc8dd1421",
+                "url": "https://api.github.com/repos/symfony/maker-bundle/zipball/87620ef23319ebbdfc5b51dd6b6e7d12003f4564",
+                "reference": "87620ef23319ebbdfc5b51dd6b6e7d12003f4564",
                 "shasum": ""
             },
             "require": {
@@ -7959,6 +7959,7 @@
                 "symfony/config": "^3.4|^4.0|^5.0",
                 "symfony/console": "^3.4|^4.0|^5.0",
                 "symfony/dependency-injection": "^3.4|^4.0|^5.0",
+                "symfony/deprecation-contracts": "^2.2",
                 "symfony/filesystem": "^3.4|^4.0|^5.0",
                 "symfony/finder": "^3.4|^4.0|^5.0",
                 "symfony/framework-bundle": "^3.4|^4.0|^5.0",
@@ -7979,7 +7980,7 @@
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0-dev"
+                    "dev-main": "1.0-dev"
                 }
             },
             "autoload": {
@@ -8007,7 +8008,7 @@
             ],
             "support": {
                 "issues": "https://github.com/symfony/maker-bundle/issues",
-                "source": "https://github.com/symfony/maker-bundle/tree/v1.23.0"
+                "source": "https://github.com/symfony/maker-bundle/tree/v1.24.2"
             },
             "funding": [
                 {
@@ -8023,7 +8024,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-10-28T15:35:16+00:00"
+            "time": "2020-11-27T17:49:17+00:00"
         },
         {
             "name": "symfony/phpunit-bridge",
@@ -8187,7 +8188,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "twig/twig": 0
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

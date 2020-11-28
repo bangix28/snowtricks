@@ -13,12 +13,14 @@
             <div class="card">
             <div class="banner">
                 <img class="banner-img img img-fluid card-img-top" src="{{ asset(defaultImages) }}" alt="Image of tricks {{ trick.name }} ">
+                {% if trick.user is same as app.user or is_granted('ROLE_ADMIN') %}
                 <div class="icon row">
                     {{ include('post/_delete_form.html.twig') }}
                     <a class=" change-link ml-3 mr-3 pt-2" href="{{ path('post_edit', {'id': trick.id}) }}" target="_blank">
                         <i class="fas fa-pen fa-2x">
                         </i></a>
                 </div>
+                {% endif %}
             </div>
             <hr>
         <div class="col-lg-12">
@@ -90,6 +92,7 @@
             <hr>
             {% if form %}
 
+
                 {{ form_start(form) }}
                 <div class="row justify-content-center">
                     <div class="col-lg-6 ">
@@ -101,8 +104,13 @@
                 <hr>
             {% endif %}
              {% for c in comment %}
+                 {% if c.user.image is null  %}
+                 {% set defaultImages = 'assets/img/logo.png' %}
+                 {% else  %}
+                     {% set defaultImages = 'assets/uploads/' ~ c.user.image %}
+                     {% endif %}
             <div class="justify-content-center my-2 row">
-                <img src="{{ asset('assets/uploads/'~ c.user.image) }}"  class="img img-fluid col-lg-1">
+                <img src="{{ asset(defaultImages) }}"  class="img img-fluid col-lg-1" alt="image of profile">
                 <div class="border rounded col-lg-7">
                     <p class="small">{{ c.user.firstName }}.{{ c.user.lastName }} the {{ c.createdAt|date('d/m/y') }} at {{ c.createdAt|date('H:i') }}</p>
                     <p>{{ c.content }}</p>
