@@ -43,7 +43,6 @@ class RegistrationController extends AbstractController
                 )
 
             );
-            $user->setImage('user.png');
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($user);
             $entityManager->flush();
