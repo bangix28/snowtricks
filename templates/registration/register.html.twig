@@ -10,19 +10,19 @@
     <h1>Inscription</h1>
     {{ form_start(registrationForm) }}
         {{ form_row(registrationForm.mail, {
-            label: 'Email'
+            label: 'Mail'
         }) }}
         {{ form_row(registrationForm.plainPassword.first, {
-            label: 'Mot de passe'
+            label: 'Password'
         }) }}
         {{ form_row(registrationForm.plainPassword.second, {
-            label: 'Confirmer votre mot de passe'
+            label: 'Confirm your password'
         }) }}
         {{ form_row(registrationForm.firstName, {
-            label: 'Prénom'
+            label: 'FirstName'
         }) }}
         {{ form_row(registrationForm.lastName, {
-            label: 'Nom'
+            label: 'LastName'
         })}}
         <button type="submit" class="btn btn-danger">Register</button>
     {{ form_end(registrationForm) }}

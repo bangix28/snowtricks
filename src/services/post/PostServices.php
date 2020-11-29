@@ -27,7 +27,7 @@ class PostServices extends AbstractController
         if ($video !== false) {
            return $video;
         } else {
-
+            $this->addFlash('danger','Only Youtube or dalymotion video are allowed');
             return false;
         }
     }
