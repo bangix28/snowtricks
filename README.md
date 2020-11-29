@@ -1,5 +1,6 @@
 ## P6 OPENCLASSROOMS (Snowtricks)
 
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/739a09829167403a99ce452b646f2b24)](https://www.codacy.com/gh/bangix28/Symfony/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=bangix28/Symfony&amp;utm_campaign=Badge_Grade)
 
 ## Installation
 
