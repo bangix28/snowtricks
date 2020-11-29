@@ -1,8 +1,9 @@
-.banner{
+.banner {
     display: inline-block;
     position: relative;
     width: 100%;
 }
+
 .banner .text {
     background: rgba(0, 0, 0, 0);
     z-index: 1;
@@ -15,6 +16,7 @@
     color: white;
     width: 70%;
 }
+
 .banner .arrow {
     background: rgba(0, 0, 0, 0);
     z-index: 1;
@@ -26,11 +28,13 @@
     top: 80%;
     color: white;
 }
-.banner-img{
+
+.banner-img {
     height: 90vh;
 }
+
 @media (max-device-width: 768px) {
-    .banner-img{
+    .banner-img {
         height: 100vh;
     }
 }

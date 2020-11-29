@@ -1,28 +1,29 @@
-.body
-{
-    min-height:100vh;
-    display:flex;
-    flex-direction:column;
+.body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
-.content
-{
+
+.content {
     flex-grow: 1;
 }
+
 .login {
 
-        margin-left: auto;
-        margin-right: auto;
+    margin-left: auto;
+    margin-right: auto;
     background: #5eb5e0;
 }
-a{
+
+a {
     text-decoration: none;
 }
 
-.card-list
-{
+.card-list {
     height: 525px;
 
 }
-.img-logo{
+
+.img-logo {
     height: 50px;
 }
