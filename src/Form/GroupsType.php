@@ -12,8 +12,7 @@ class GroupsType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('name')
-        ;
+            ->add('name');
     }
 
     public function configureOptions(OptionsResolver $resolver)

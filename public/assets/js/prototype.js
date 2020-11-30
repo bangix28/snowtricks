@@ -1,4 +1,4 @@
-jQuery(document).ready(function() {
+jQuery(document).ready(function () {
     // Get the ul that holds the collection of tags
     var $tagsCollectionHolder = $('ul.images');
 
@@ -6,13 +6,14 @@ jQuery(document).ready(function() {
     // index when inserting a new item (e.g. 2)
     $tagsCollectionHolder.data('index', $tagsCollectionHolder.find('input').length);
 
-    $('body').on('click', '.add_item_link', function(e) {
+    $('body').on('click', '.add_item_link', function (e) {
         e.preventDefault();
         var $collectionHolderClass = $(e.currentTarget).data('collectionHolderClass');
         // add a new tag form (see next code block)
         addFormToCollection($collectionHolderClass);
     })
 });
+
 function addFormToCollection($collectionHolderClass) {
     // Get the ul that holds the collection of tags
     var $collectionHolder = $('.' + $collectionHolderClass);

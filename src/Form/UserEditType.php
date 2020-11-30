@@ -3,7 +3,6 @@
 namespace App\Form;
 
 use App\Entity\User;
-use Doctrine\DBAL\Types\StringType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
@@ -26,18 +25,18 @@ class UserEditType extends AbstractType
                     new NotBlank([
                         'message' => 'Please enter a mail.',
                     ]),
-            ]])
+                ]])
             ->add('password', PasswordType::class, [
                 'required' => false,
                 'mapped' => false
-                ])
-            ->add('firstName',TextType::class, [
+            ])
+            ->add('firstName', TextType::class, [
                 'required' => false,
                 'constraints' => [
                     new NotBlank([
                         'message' => 'Please enter your first name.',
                     ]),
-            ]])
+                ]])
             ->add('lastName', TextType::class, [
                 'required' => false,
                 'constraints' => [
@@ -45,8 +44,8 @@ class UserEditType extends AbstractType
                         'message' => 'Please enter your last name',
                     ]),
 
-            ]])
-            ->add('image', FileType::class,[
+                ]])
+            ->add('image', FileType::class, [
                 'required' => false,
                 'data_class' => null,
                 'mapped' => false,
@@ -65,8 +64,7 @@ class UserEditType extends AbstractType
             ->add('plainPassword', PasswordType::class, [
                 'mapped' => false,
                 'label' => 'Confirm your password',
-            ])
-        ;
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver)

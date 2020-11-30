@@ -50,7 +50,7 @@ class videoLinkServices
 
         }
 
-        return self::YOUTUBE_URL.$id;
+        return self::YOUTUBE_URL . $id;
     }
 
     /**
@@ -69,7 +69,7 @@ class videoLinkServices
 
         }
 
-        return self::DAILYMOTION_URL.$id;
+        return self::DAILYMOTION_URL . $id;
     }
 
 }

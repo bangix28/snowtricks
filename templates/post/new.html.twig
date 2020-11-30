@@ -4,13 +4,13 @@
 
 {% block body %}
     <div class="container">
-    <h1 class="text-center">Create new Post</h1>
-    {{ include('post/_form.html.twig') }}
+        <h1 class="text-center">Create new Post</h1>
+        {{ include('post/_form.html.twig') }}
 
         <a href="{{ path('index') }}">back</a>
     </div>
 {% endblock %}
 {% block javascripts %}
     <script src="{{ asset('assets/js/tinyMce.js') }}"></script>
-<script src="{{ asset('assets/js/prototype.js') }}"></script>
+    <script src="{{ asset('assets/js/prototype.js') }}"></script>
 {% endblock %}

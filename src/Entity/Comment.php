@@ -28,7 +28,6 @@ class Comment
     private $createdAt;
 
 
-
     /**
      * @ORM\ManyToOne(targetEntity=Post::class, inversedBy="comment")
      * @ORM\JoinColumn(nullable=false, onDelete="cascade")

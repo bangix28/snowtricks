@@ -1,12 +1,13 @@
 {% extends 'base.html.twig' %}
-{% if user.image is null  %}
+{% if user.image is null %}
     {% set defaultImage = 'assets/img/logo.png' %}
-{% else  %}
+{% else %}
     {% set defaultImage = 'assets/uploads/' ~ user.image %}
 {% endif %}
 
 {% block title %}{{ user.firstName }} {{ user.lastName }}{% endblock %}
-{% block style %} <link rel="stylesheet" href="{{ asset('assets/css/profil.css') }}" type="text/css"> {% endblock %}
+{% block style %}
+    <link rel="stylesheet" href="{{ asset('assets/css/profil.css') }}" type="text/css"> {% endblock %}
 {% block body %}
     <div class="container emp-profile bg-dark text-light mt-5 p-5 rounded ">
         <div class="row">
@@ -29,34 +30,34 @@
                     <div class="col-md-6">
                         <label class="text-light">Email :</label>
                     </div>
-                        <div class="col-md-6">
-                            <p class="text-light">{{ user.mail }}</p>
-                        </div>
+                    <div class="col-md-6">
+                        <p class="text-light">{{ user.mail }}</p>
+                    </div>
                 </div>
                 <div class="row">
                     <div class="col-md-6">
                         <label>last name :</label>
                     </div>
-                        <div class="col-md-6">
-                            <p class="text-light">{{ user.lastName }}</p>
-                        </div>
+                    <div class="col-md-6">
+                        <p class="text-light">{{ user.lastName }}</p>
+                    </div>
                 </div>
                 </a>
                 <div class="row">
                     <div class="col-6">
                         <label>First name :</label>
                     </div>
-                        <div class="col-6">
-                            <p class="text-light">{{ user.firstName }}</p>
-                        </div>
+                    <div class="col-6">
+                        <p class="text-light">{{ user.firstName }}</p>
+                    </div>
                 </div>
                 <div class="row">
                     <div class="col-md-6">
                         <label>Password :</label>
                     </div>
-                        <div class="col-md-6">
-                            <p class="text-light">**********</p>
-                        </div>
+                    <div class="col-md-6">
+                        <p class="text-light">**********</p>
+                    </div>
                 </div>
 
                 <div class="row">

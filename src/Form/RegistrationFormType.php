@@ -3,24 +3,14 @@
 namespace App\Form;
 
 use App\Entity\User;
-use Doctrine\DBAL\Types\StringType;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
-use Symfony\Component\Form\Form;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\Form\FormError;
-use Symfony\Component\Form\FormInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Validator\Constraints\Callback;
-use Symfony\Component\Validator\Constraints\IsTrue;
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
-use Symfony\Component\Validator\Constraints\NotCompromisedPassword;
-use Symfony\Component\Validator\ConstraintViolationList;
-use Symfony\Component\Validator\Context\ExecutionContextInterface;
 
 class RegistrationFormType extends AbstractType
 {
@@ -32,8 +22,8 @@ class RegistrationFormType extends AbstractType
                     new NotBlank([
                         'message' => 'Please enter a mail.',
                     ]),
-            ]])
-            ->add('plainPassword',RepeatedType::class,[
+                ]])
+            ->add('plainPassword', RepeatedType::class, [
                 'type' => PasswordType::class,
                 'invalid_message' => 'Password fields must match.',
                 // instead of being set onto the object directly,
@@ -52,8 +42,7 @@ class RegistrationFormType extends AbstractType
                 ],
             ])
             ->add('firstName')
-            ->add('lastName')
-        ;
+            ->add('lastName');
     }
 
     public function configureOptions(OptionsResolver $resolver)

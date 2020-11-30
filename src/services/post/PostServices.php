@@ -10,7 +10,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class PostServices extends AbstractController
 {
-    private  $videoEncode;
+    private $videoEncode;
 
     private $entityManager;
 
@@ -25,9 +25,9 @@ class PostServices extends AbstractController
     {
         $video = $this->videoEncode->extractPlatformFromURL($url);
         if ($video !== false) {
-           return $video;
+            return $video;
         } else {
-            $this->addFlash('danger','Only Youtube or dalymotion video are allowed');
+            $this->addFlash('danger', 'Only Youtube or dalymotion video are allowed');
             return false;
         }
     }

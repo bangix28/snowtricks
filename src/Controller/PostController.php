@@ -40,26 +40,26 @@ class PostController extends AbstractController
      */
     public function new(Request $request): Response
     {
-        if ($this->getUser()){
-        $post = new Post();
-        $form = $this->createForm(PostType::class, $post);
-        $form->handleRequest($request);
+        if ($this->getUser()) {
+            $post = new Post();
+            $form = $this->createForm(PostType::class, $post);
+            $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $this->imageServices->ImageUpload($form, $post, $img = []);
-            $this->imageServices->videoAdd($form, $post, $url = []);
-            $post->setCreatedAt(new \DateTime());
-            $post->setUser($this->getUser());
-            $this->manager->persist($post);
-            $this->manager->flush();
-            $this->addFlash('success', 'Tricks create with success');
-            return $this->redirectToRoute('post_show', ['id' => $post->getId()]);
-        }
+            if ($form->isSubmitted() && $form->isValid()) {
+                $this->imageServices->ImageUpload($form, $post, $img = []);
+                $this->imageServices->videoAdd($form, $post, $url = []);
+                $post->setCreatedAt(new \DateTime());
+                $post->setUser($this->getUser());
+                $this->manager->persist($post);
+                $this->manager->flush();
+                $this->addFlash('success', 'Tricks create with success');
+                return $this->redirectToRoute('post_show', ['id' => $post->getId()]);
+            }
 
-        return $this->render('post/new.html.twig', [
-            'post' => $post,
-            'form' => $form->createView(),
-        ]);
+            return $this->render('post/new.html.twig', [
+                'post' => $post,
+                'form' => $form->createView(),
+            ]);
         }
         return $this->render('security/403.html.twig');
     }
@@ -70,14 +70,14 @@ class PostController extends AbstractController
     public function show(Post $post, Request $request, PaginatorInterface $paginator): Response
     {
         $form = false;
-            if ($this->getUser()) {
-                $form = $this->commentServices->new($request, $post);
-            }
-            return $this->render('post/show.html.twig', [
-                'trick' => $post,
-                'form' => $form,
-                'comment' => $paginator->paginate($post->getComment(),$request->query->getInt('page', 1),10)
-            ]);
+        if ($this->getUser()) {
+            $form = $this->commentServices->new($request, $post);
+        }
+        return $this->render('post/show.html.twig', [
+            'trick' => $post,
+            'form' => $form,
+            'comment' => $paginator->paginate($post->getComment(), $request->query->getInt('page', 1), 10)
+        ]);
     }
 
     /**

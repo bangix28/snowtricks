@@ -25,9 +25,9 @@ class IndexController extends AbstractController
      * @param Response $response
      * @return Response
      */
-    public function index(Request $request, PostRepository $postRepository): Response
+    public function index(PostRepository $postRepository): Response
     {
-        return $this->render('index/index.html.twig',[
+        return $this->render('index/index.html.twig', [
             'tricks' => $postRepository->findAll()
         ]);
     }

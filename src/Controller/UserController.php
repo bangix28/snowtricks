@@ -3,16 +3,11 @@
 namespace App\Controller;
 
 use App\Entity\Groups;
-use App\Entity\User;
 use App\Form\GroupsType;
-use App\Form\RegistrationFormType;
 use App\Form\UserEditType;
-use App\Repository\GroupsRepository;
 use App\Repository\PostRepository;
-use App\Repository\UserRepository;
 use App\services\image\ImageServices;
 use Doctrine\ORM\EntityManagerInterface;
-use phpDocumentor\Reflection\Types\False_;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -29,7 +24,7 @@ class UserController extends AbstractController
 
     private $imageServices;
 
-    public function __construct(EntityManagerInterface $manager,ImageServices $imageServices)
+    public function __construct(EntityManagerInterface $manager, ImageServices $imageServices)
     {
         $this->manager = $manager;
         $this->imageServices = $imageServices;
@@ -50,43 +45,42 @@ class UserController extends AbstractController
     /**
      * @Route("/edit", name="user_edit")
      */
-    public function edit(Request $request,UserInterface $user,UserPasswordEncoderInterface $passwordEncoder)
+    public function edit(Request $request, UserInterface $user, UserPasswordEncoderInterface $passwordEncoder)
     {
         $form = $this->createForm(UserEditType::class, $user);
         $form->handleRequest($request);
         $message = false;
-        if ($form->isSubmitted() && $form->isValid())
-        {
-            if ($passwordEncoder->isPasswordValid($user,$form->get('plainPassword')->getData()))
-            {
-                if($form->get('image')->getData()) {
+        if ($form->isSubmitted() && $form->isValid()) {
+            if ($passwordEncoder->isPasswordValid($user, $form->get('plainPassword')->getData())) {
+                if ($form->get('image')->getData()) {
                     $this->imageServices->pictureUpload($form, $user);
                 }
                 $this->manager->persist($user);
                 $this->manager->flush();
                 $this->addFlash('success', 'Modification faites avec success');
 
-            }else {
+            } else {
                 $this->addFlash('error', 'Mot de passe erroné');
             }
         }
-        return $this->render('user/edit.html.twig',  [
+        return $this->render('user/edit.html.twig', [
             'form' => $form->createView(),
-            'user'=> $user,
+            'user' => $user,
             'message' => $message
         ]);
     }
+
     /**
      * @Route("/show", name="user_show")
      */
     public function show(PostRepository $postRepository, Request $request)
     {
         $f = null;
-        if ($this->isGranted('ROLE_ADMIN')){
+        if ($this->isGranted('ROLE_ADMIN')) {
             $groups = new Groups();
             $form = $this->createForm(GroupsType::class, $groups);
             $form->handleRequest($request);
-            if ($form->isSubmitted() && $form->isValid()){
+            if ($form->isSubmitted() && $form->isValid()) {
                 $this->manager->persist($groups);
                 $this->manager->flush();
 
@@ -94,8 +88,8 @@ class UserController extends AbstractController
             }
             $f = $form->createView();
         }
-        return $this->render('user/show.html.twig',[
-            'trick' => $postRepository->findBy(array('User'=> $this->getUser())),
+        return $this->render('user/show.html.twig', [
+            'trick' => $postRepository->findBy(array('User' => $this->getUser())),
             'form' => $f,
         ]);
     }
@@ -105,7 +99,7 @@ class UserController extends AbstractController
      */
     public function delete(Request $request, UserInterface $user): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$user->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $user->getId(), $request->request->get('_token'))) {
             $this->container->get('security.token_storage')->setToken(null);
 
             $this->manager->remove($user);

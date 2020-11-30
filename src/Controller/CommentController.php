@@ -16,12 +16,13 @@ use Symfony\Component\Routing\Annotation\Route;
 class CommentController extends AbstractController
 {
     private $entityManager;
+
     public function __construct(EntityManagerInterface $entityManager)
     {
         $this->entityManager = $entityManager;
     }
 
-    public function new(Request $request,$post)
+    public function new(Request $request, $post)
     {
         if ($this->getUser()) {
             $comment = new Comment();
