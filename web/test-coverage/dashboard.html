@@ -1,522 +1,1457 @@
 <!DOCTYPE html>
 <html lang="en">
- <head>
-  <meta charset="UTF-8">
-  <title>Dashboard for C:\xampp\htdocs\p6\snowtricks\src</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href=".css/bootstrap.min.css" rel="stylesheet" type="text/css">
-  <link href=".css/nv.d3.min.css" rel="stylesheet" type="text/css">
-  <link href=".css/style.css" rel="stylesheet" type="text/css">
-  <link href=".css/custom.css" rel="stylesheet" type="text/css">
- </head>
- <body>
-  <header>
-   <div class="container-fluid">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard for C:\xampp\htdocs\p6\snowtricks\src</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link href=".css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href=".css/nv.d3.min.css" rel="stylesheet" type="text/css">
+    <link href=".css/style.css" rel="stylesheet" type="text/css">
+    <link href=".css/custom.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<header>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html">C:\xampp\htdocs\p6\snowtricks\src</a></li>
+                        <li class="breadcrumb-item active">(Dashboard)</li>
+
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="container-fluid">
     <div class="row">
-     <div class="col-md-12">
-      <nav aria-label="breadcrumb">
-       <ol class="breadcrumb">
-         <li class="breadcrumb-item"><a href="index.html">C:\xampp\htdocs\p6\snowtricks\src</a></li>
-         <li class="breadcrumb-item active">(Dashboard)</li>
-
-       </ol>
-      </nav>
-     </div>
+        <div class="col-md-12">
+            <h2>Classes</h2>
+        </div>
     </div>
-   </div>
-  </header>
-  <div class="container-fluid">
-   <div class="row">
-    <div class="col-md-12">
-     <h2>Classes</h2>
+    <div class="row">
+        <div class="col-md-6">
+            <h3>Coverage Distribution</h3>
+            <div id="classCoverageDistribution" style="height: 300px;">
+                <svg></svg>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <h3>Complexity</h3>
+            <div id="classComplexity" style="height: 300px;">
+                <svg></svg>
+            </div>
+        </div>
     </div>
-   </div>
-   <div class="row">
-    <div class="col-md-6">
-     <h3>Coverage Distribution</h3>
-     <div id="classCoverageDistribution" style="height: 300px;">
-       <svg></svg>
-     </div>
+    <div class="row">
+        <div class="col-md-6">
+            <h3>Insufficient Coverage</h3>
+            <div class="scrollbox">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>Class</th>
+                        <th class="text-right">Coverage</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td><a href="Controller/CommentController.php.html#16">App\Controller\CommentController</a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Form/RegistrationFormType.php.html#25">App\Form\RegistrationFormType</a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="services/post/PostServices.php.html#11">App\services\post\PostServices</a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="services/image/ImageServices.php.html#13">App\services\image\ImageServices</a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Security/UserAuthenticator.php.html#23">App\Security\UserAuthenticator</a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Security/EmailVerifier.php.html#13">App\Security\EmailVerifier</a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Repository/UserRepository.php.html#15">App\Repository\UserRepository</a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Repository/PostRepository.php.html#15">App\Repository\PostRepository</a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Repository/GroupsRepository.php.html#15">App\Repository\GroupsRepository</a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Repository/CommentRepository.php.html#15">App\Repository\CommentRepository</a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Kernel.php.html#10">App\Kernel</a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Form/UserEditType.php.html#18">App\Form\UserEditType</a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Form/SearchType.php.html#10">App\Form\SearchType</a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Form/PostType.php.html#17">App\Form\PostType</a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Controller/IndexController.php.html#12">App\Controller\IndexController</a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Form/GroupsType.php.html#10">App\Form\GroupsType</a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Form/ForgotPasswordType.php.html#10">App\Form\ForgotPasswordType</a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Form/CommentType.php.html#11">App\Form\CommentType</a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Form/ChangePasswordType.php.html#14">App\Form\ChangePasswordType</a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/User.php.html#20">App\Entity\User</a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/Post.php.html#20">App\Entity\Post</a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/Groups.php.html#13">App\Entity\Groups</a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/Comment.php.html#11">App\Entity\Comment</a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Controller/UserController.php.html#26">App\Controller\UserController</a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Controller/SecurityController.php.html#18">App\Controller\SecurityController</a>
+                        </td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Controller/RegistrationController.php.html#19">App\Controller\RegistrationController</a>
+                        </td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Controller/PostController.php.html#20">App\Controller\PostController</a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="services/videoServices/videoLinkServices.php.html#7">App\services\videoServices\videoLinkServices</a>
+                        </td>
+                        <td class="text-right">0%</td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <h3>Project Risks</h3>
+            <div class="scrollbox">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>Class</th>
+                        <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td><a href="Entity/User.php.html#20">App\Entity\User</a></td>
+                        <td class="text-right">1640</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/Post.php.html#20">App\Entity\Post</a></td>
+                        <td class="text-right">1332</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Controller/PostController.php.html#20">App\Controller\PostController</a></td>
+                        <td class="text-right">342</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/Comment.php.html#11">App\Entity\Comment</a></td>
+                        <td class="text-right">272</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Controller/CommentController.php.html#16">App\Controller\CommentController</a></td>
+                        <td class="text-right">210</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Controller/UserController.php.html#26">App\Controller\UserController</a></td>
+                        <td class="text-right">182</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/Groups.php.html#13">App\Entity\Groups</a></td>
+                        <td class="text-right">182</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Security/UserAuthenticator.php.html#23">App\Security\UserAuthenticator</a></td>
+                        <td class="text-right">182</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Controller/SecurityController.php.html#18">App\Controller\SecurityController</a>
+                        </td>
+                        <td class="text-right">156</td>
+                    </tr>
+                    <tr>
+                        <td><a href="services/videoServices/videoLinkServices.php.html#7">App\services\videoServices\videoLinkServices</a>
+                        </td>
+                        <td class="text-right">132</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Controller/RegistrationController.php.html#19">App\Controller\RegistrationController</a>
+                        </td>
+                        <td class="text-right">42</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Kernel.php.html#10">App\Kernel</a></td>
+                        <td class="text-right">42</td>
+                    </tr>
+                    <tr>
+                        <td><a href="services/image/ImageServices.php.html#13">App\services\image\ImageServices</a></td>
+                        <td class="text-right">42</td>
+                    </tr>
+                    <tr>
+                        <td><a href="services/post/PostServices.php.html#11">App\services\post\PostServices</a></td>
+                        <td class="text-right">12</td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
-    <div class="col-md-6">
-     <h3>Complexity</h3>
-     <div id="classComplexity" style="height: 300px;">
-       <svg></svg>
-     </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Methods</h2>
+        </div>
     </div>
-   </div>
-   <div class="row">
-    <div class="col-md-6">
-     <h3>Insufficient Coverage</h3>
-     <div class="scrollbox">
-      <table class="table">
-       <thead>
-        <tr>
-         <th>Class</th>
-         <th class="text-right">Coverage</th>
-        </tr>
-       </thead>
-       <tbody>
-       <tr><td><a href="Controller/CommentController.php.html#16">App\Controller\CommentController</a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Form/RegistrationFormType.php.html#25">App\Form\RegistrationFormType</a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="services/post/PostServices.php.html#11">App\services\post\PostServices</a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="services/image/ImageServices.php.html#13">App\services\image\ImageServices</a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Security/UserAuthenticator.php.html#23">App\Security\UserAuthenticator</a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Security/EmailVerifier.php.html#13">App\Security\EmailVerifier</a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Repository/UserRepository.php.html#15">App\Repository\UserRepository</a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Repository/PostRepository.php.html#15">App\Repository\PostRepository</a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Repository/GroupsRepository.php.html#15">App\Repository\GroupsRepository</a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Repository/CommentRepository.php.html#15">App\Repository\CommentRepository</a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Kernel.php.html#10">App\Kernel</a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Form/UserEditType.php.html#18">App\Form\UserEditType</a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Form/SearchType.php.html#10">App\Form\SearchType</a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Form/PostType.php.html#17">App\Form\PostType</a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Controller/IndexController.php.html#12">App\Controller\IndexController</a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Form/GroupsType.php.html#10">App\Form\GroupsType</a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Form/ForgotPasswordType.php.html#10">App\Form\ForgotPasswordType</a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Form/CommentType.php.html#11">App\Form\CommentType</a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Form/ChangePasswordType.php.html#14">App\Form\ChangePasswordType</a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Entity/User.php.html#20">App\Entity\User</a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Entity/Post.php.html#20">App\Entity\Post</a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Entity/Groups.php.html#13">App\Entity\Groups</a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Entity/Comment.php.html#11">App\Entity\Comment</a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Controller/UserController.php.html#26">App\Controller\UserController</a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Controller/SecurityController.php.html#18">App\Controller\SecurityController</a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Controller/RegistrationController.php.html#19">App\Controller\RegistrationController</a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Controller/PostController.php.html#20">App\Controller\PostController</a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="services/videoServices/videoLinkServices.php.html#7">App\services\videoServices\videoLinkServices</a></td><td class="text-right">0%</td></tr>
-
-       </tbody>
-      </table>
-     </div>
+    <div class="row">
+        <div class="col-md-6">
+            <h3>Coverage Distribution</h3>
+            <div id="methodCoverageDistribution" style="height: 300px;">
+                <svg></svg>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <h3>Complexity</h3>
+            <div id="methodComplexity" style="height: 300px;">
+                <svg></svg>
+            </div>
+        </div>
     </div>
-    <div class="col-md-6">
-     <h3>Project Risks</h3>
-     <div class="scrollbox">
-      <table class="table">
-       <thead>
-        <tr>
-         <th>Class</th>
-         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
-        </tr>
-       </thead>
-       <tbody>
-       <tr><td><a href="Entity/User.php.html#20">App\Entity\User</a></td><td class="text-right">1640</td></tr>
-       <tr><td><a href="Entity/Post.php.html#20">App\Entity\Post</a></td><td class="text-right">1332</td></tr>
-       <tr><td><a href="Controller/PostController.php.html#20">App\Controller\PostController</a></td><td class="text-right">342</td></tr>
-       <tr><td><a href="Entity/Comment.php.html#11">App\Entity\Comment</a></td><td class="text-right">272</td></tr>
-       <tr><td><a href="Controller/CommentController.php.html#16">App\Controller\CommentController</a></td><td class="text-right">210</td></tr>
-       <tr><td><a href="Controller/UserController.php.html#26">App\Controller\UserController</a></td><td class="text-right">182</td></tr>
-       <tr><td><a href="Entity/Groups.php.html#13">App\Entity\Groups</a></td><td class="text-right">182</td></tr>
-       <tr><td><a href="Security/UserAuthenticator.php.html#23">App\Security\UserAuthenticator</a></td><td class="text-right">182</td></tr>
-       <tr><td><a href="Controller/SecurityController.php.html#18">App\Controller\SecurityController</a></td><td class="text-right">156</td></tr>
-       <tr><td><a href="services/videoServices/videoLinkServices.php.html#7">App\services\videoServices\videoLinkServices</a></td><td class="text-right">132</td></tr>
-       <tr><td><a href="Controller/RegistrationController.php.html#19">App\Controller\RegistrationController</a></td><td class="text-right">42</td></tr>
-       <tr><td><a href="Kernel.php.html#10">App\Kernel</a></td><td class="text-right">42</td></tr>
-       <tr><td><a href="services/image/ImageServices.php.html#13">App\services\image\ImageServices</a></td><td class="text-right">42</td></tr>
-       <tr><td><a href="services/post/PostServices.php.html#11">App\services\post\PostServices</a></td><td class="text-right">12</td></tr>
+    <div class="row">
+        <div class="col-md-6">
+            <h3>Insufficient Coverage</h3>
+            <div class="scrollbox">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>Method</th>
+                        <th class="text-right">Coverage</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td><a href="Controller/CommentController.php.html#19"><abbr
+                                title="App\Controller\CommentController::__construct">__construct</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/User.php.html#236"><abbr
+                                title="App\Entity\User::setImage">setImage</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Form/GroupsType.php.html#19"><abbr title="App\Form\GroupsType::configureOptions">configureOptions</abbr></a>
+                        </td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Form/GroupsType.php.html#12"><abbr
+                                title="App\Form\GroupsType::buildForm">buildForm</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Form/ForgotPasswordType.php.html#19"><abbr
+                                title="App\Form\ForgotPasswordType::configureOptions">configureOptions</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Form/ForgotPasswordType.php.html#12"><abbr
+                                title="App\Form\ForgotPasswordType::buildForm">buildForm</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Form/CommentType.php.html#22"><abbr title="App\Form\CommentType::configureOptions">configureOptions</abbr></a>
+                        </td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Form/CommentType.php.html#13"><abbr title="App\Form\CommentType::buildForm">buildForm</abbr></a>
+                        </td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Form/ChangePasswordType.php.html#41"><abbr
+                                title="App\Form\ChangePasswordType::configureOptions">configureOptions</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Form/ChangePasswordType.php.html#16"><abbr
+                                title="App\Form\ChangePasswordType::buildForm">buildForm</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/User.php.html#273"><abbr
+                                title="App\Entity\User::removePost">removePost</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/User.php.html#263"><abbr title="App\Entity\User::addPost">addPost</abbr></a>
+                        </td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/User.php.html#258"><abbr
+                                title="App\Entity\User::getPosts">getPosts</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/User.php.html#248"><abbr title="App\Entity\User::setResetToken">setResetToken</abbr></a>
+                        </td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/User.php.html#243"><abbr title="App\Entity\User::getResetToken">getResetToken</abbr></a>
+                        </td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/User.php.html#231"><abbr
+                                title="App\Entity\User::getImage">getImage</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Form/PostType.php.html#58"><abbr title="App\Form\PostType::configureOptions">configureOptions</abbr></a>
+                        </td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/User.php.html#224"><abbr
+                                title="App\Entity\User::setLastName">setLastName</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/User.php.html#219"><abbr
+                                title="App\Entity\User::getLastName">getLastName</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/User.php.html#212"><abbr
+                                title="App\Entity\User::setFirstName">setFirstName</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/User.php.html#207"><abbr
+                                title="App\Entity\User::getFirstName">getFirstName</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/User.php.html#195"><abbr title="App\Entity\User::removeComment">removeComment</abbr></a>
+                        </td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/User.php.html#185"><abbr
+                                title="App\Entity\User::addComment">addComment</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/User.php.html#180"><abbr
+                                title="App\Entity\User::getComments">getComments</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/User.php.html#171"><abbr title="App\Entity\User::eraseCredentials">eraseCredentials</abbr></a>
+                        </td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/User.php.html#163"><abbr title="App\Entity\User::getSalt">getSalt</abbr></a>
+                        </td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/User.php.html#153"><abbr title="App\Entity\User::setIsVerified">setIsVerified</abbr></a>
+                        </td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/User.php.html#148"><abbr
+                                title="App\Entity\User::isVerified">isVerified</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/User.php.html#141"><abbr
+                                title="App\Entity\User::setPassword">setPassword</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/User.php.html#136"><abbr
+                                title="App\Entity\User::getPassword">getPassword</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/User.php.html#126"><abbr
+                                title="App\Entity\User::setRoles">setRoles</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Form/PostType.php.html#19"><abbr
+                                title="App\Form\PostType::buildForm">buildForm</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Form/RegistrationFormType.php.html#27"><abbr
+                                title="App\Form\RegistrationFormType::buildForm">buildForm</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/User.php.html#109"><abbr
+                                title="App\Entity\User::getUsername">getUsername</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Security/UserAuthenticator.php.html#42"><abbr
+                                title="App\Security\UserAuthenticator::supports">supports</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="services/videoServices/videoLinkServices.php.html#37"><abbr
+                                title="App\services\videoServices\videoLinkServices::encodeYoutube">encodeYoutube</abbr></a>
+                        </td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="services/videoServices/videoLinkServices.php.html#16"><abbr
+                                title="App\services\videoServices\videoLinkServices::extractPlatformFromURL">extractPlatformFromURL</abbr></a>
+                        </td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="services/post/PostServices.php.html#24"><abbr
+                                title="App\services\post\PostServices::verifyURL">verifyURL</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="services/post/PostServices.php.html#17"><abbr
+                                title="App\services\post\PostServices::__construct">__construct</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="services/image/ImageServices.php.html#47"><abbr
+                                title="App\services\image\ImageServices::videoAdd">videoAdd</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="services/image/ImageServices.php.html#35"><abbr
+                                title="App\services\image\ImageServices::pictureUpload">pictureUpload</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="services/image/ImageServices.php.html#21"><abbr
+                                title="App\services\image\ImageServices::ImageUpload">ImageUpload</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="services/image/ImageServices.php.html#16"><abbr
+                                title="App\services\image\ImageServices::__construct">__construct</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Security/UserAuthenticator.php.html#102"><abbr
+                                title="App\Security\UserAuthenticator::getLoginUrl">getLoginUrl</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Security/UserAuthenticator.php.html#93"><abbr
+                                title="App\Security\UserAuthenticator::onAuthenticationSuccess">onAuthenticationSuccess</abbr></a>
+                        </td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Security/UserAuthenticator.php.html#88"><abbr
+                                title="App\Security\UserAuthenticator::getPassword">getPassword</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Security/UserAuthenticator.php.html#80"><abbr
+                                title="App\Security\UserAuthenticator::checkCredentials">checkCredentials</abbr></a>
+                        </td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Security/UserAuthenticator.php.html#63"><abbr
+                                title="App\Security\UserAuthenticator::getUser">getUser</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Security/UserAuthenticator.php.html#48"><abbr
+                                title="App\Security\UserAuthenticator::getCredentials">getCredentials</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Security/UserAuthenticator.php.html#34"><abbr
+                                title="App\Security\UserAuthenticator::__construct">__construct</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Form/RegistrationFormType.php.html#59"><abbr
+                                title="App\Form\RegistrationFormType::configureOptions">configureOptions</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Security/EmailVerifier.php.html#46"><abbr
+                                title="App\Security\EmailVerifier::handleEmailConfirmation">handleEmailConfirmation</abbr></a>
+                        </td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Security/EmailVerifier.php.html#26"><abbr
+                                title="App\Security\EmailVerifier::sendEmailConfirmation">sendEmailConfirmation</abbr></a>
+                        </td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Security/EmailVerifier.php.html#19"><abbr
+                                title="App\Security\EmailVerifier::__construct">__construct</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Repository/UserRepository.php.html#17"><abbr
+                                title="App\Repository\UserRepository::__construct">__construct</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Repository/PostRepository.php.html#22"><abbr
+                                title="App\Repository\PostRepository::search">search</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Repository/PostRepository.php.html#17"><abbr
+                                title="App\Repository\PostRepository::__construct">__construct</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Repository/GroupsRepository.php.html#17"><abbr
+                                title="App\Repository\GroupsRepository::__construct">__construct</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Repository/CommentRepository.php.html#17"><abbr
+                                title="App\Repository\CommentRepository::__construct">__construct</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Kernel.php.html#27"><abbr
+                                title="App\Kernel::configureRoutes">configureRoutes</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Kernel.php.html#14"><abbr
+                                title="App\Kernel::configureContainer">configureContainer</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Form/UserEditType.php.html#72"><abbr
+                                title="App\Form\UserEditType::configureOptions">configureOptions</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Form/UserEditType.php.html#20"><abbr title="App\Form\UserEditType::buildForm">buildForm</abbr></a>
+                        </td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Form/SearchType.php.html#21"><abbr title="App\Form\SearchType::configureOptions">configureOptions</abbr></a>
+                        </td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Form/SearchType.php.html#12"><abbr
+                                title="App\Form\SearchType::buildForm">buildForm</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/User.php.html#117"><abbr
+                                title="App\Entity\User::getRoles">getRoles</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/User.php.html#97"><abbr title="App\Entity\User::setMail">setMail</abbr></a>
+                        </td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Controller/CommentController.php.html#24"><abbr
+                                title="App\Controller\CommentController::new">new</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Controller/SecurityController.php.html#48"><abbr
+                                title="App\Controller\SecurityController::logout">logout</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/Comment.php.html#72"><abbr
+                                title="App\Entity\Comment::getUser">getUser</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/Comment.php.html#65"><abbr title="App\Entity\Comment::setCreatedAt">setCreatedAt</abbr></a>
+                        </td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/Comment.php.html#60"><abbr title="App\Entity\Comment::getCreatedAt">getCreatedAt</abbr></a>
+                        </td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/Comment.php.html#53"><abbr
+                                title="App\Entity\Comment::setContent">setContent</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/Comment.php.html#48"><abbr
+                                title="App\Entity\Comment::getContent">getContent</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/Comment.php.html#43"><abbr
+                                title="App\Entity\Comment::getId">getId</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Controller/UserController.php.html#106"><abbr
+                                title="App\Controller\UserController::delete">delete</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Controller/UserController.php.html#82"><abbr
+                                title="App\Controller\UserController::show">show</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Controller/UserController.php.html#53"><abbr
+                                title="App\Controller\UserController::edit">edit</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Controller/UserController.php.html#42"><abbr
+                                title="App\Controller\UserController::index">index</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Controller/UserController.php.html#32"><abbr
+                                title="App\Controller\UserController::__construct">__construct</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Controller/SecurityController.php.html#94"><abbr
+                                title="App\Controller\SecurityController::recoverPassword">recoverPassword</abbr></a>
+                        </td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Controller/SecurityController.php.html#56"><abbr
+                                title="App\Controller\SecurityController::forgotPassword">forgotPassword</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Controller/SecurityController.php.html#32"><abbr
+                                title="App\Controller\SecurityController::login">login</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/Comment.php.html#84"><abbr
+                                title="App\Entity\Comment::getPost">getPost</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Controller/SecurityController.php.html#22"><abbr
+                                title="App\Controller\SecurityController::__construct">__construct</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Controller/RegistrationController.php.html#76"><abbr
+                                title="App\Controller\RegistrationController::verifyUserEmail">verifyUserEmail</abbr></a>
+                        </td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Controller/RegistrationController.php.html#32"><abbr
+                                title="App\Controller\RegistrationController::register">register</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Controller/RegistrationController.php.html#23"><abbr
+                                title="App\Controller\RegistrationController::__construct">__construct</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Controller/PostController.php.html#126"><abbr
+                                title="App\Controller\PostController::imageDelete">imageDelete</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Controller/PostController.php.html#111"><abbr
+                                title="App\Controller\PostController::delete">delete</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Controller/PostController.php.html#86"><abbr
+                                title="App\Controller\PostController::edit">edit</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Controller/PostController.php.html#70"><abbr
+                                title="App\Controller\PostController::show">show</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Controller/PostController.php.html#41"><abbr
+                                title="App\Controller\PostController::new">new</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Controller/PostController.php.html#30"><abbr
+                                title="App\Controller\PostController::__construct">__construct</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Controller/IndexController.php.html#28"><abbr
+                                title="App\Controller\IndexController::index">index</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Controller/IndexController.php.html#16"><abbr
+                                title="App\Controller\IndexController::__construct">__construct</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Controller/CommentController.php.html#69"><abbr
+                                title="App\Controller\CommentController::delete">delete</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Controller/CommentController.php.html#46"><abbr
+                                title="App\Controller\CommentController::edit">edit</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/Comment.php.html#77"><abbr
+                                title="App\Entity\Comment::setUser">setUser</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/Comment.php.html#89"><abbr
+                                title="App\Entity\Comment::setPost">setPost</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/User.php.html#92"><abbr title="App\Entity\User::getMail">getMail</abbr></a>
+                        </td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/Post.php.html#127"><abbr title="App\Entity\Post::removeComment">removeComment</abbr></a>
+                        </td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/User.php.html#87"><abbr title="App\Entity\User::getId">getId</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/User.php.html#80"><abbr
+                                title="App\Entity\User::__construct">__construct</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/Post.php.html#204"><abbr title="App\Entity\Post::setModifiedAt">setModifiedAt</abbr></a>
+                        </td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/Post.php.html#199"><abbr title="App\Entity\Post::getModifiedAt">getModifiedAt</abbr></a>
+                        </td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/Post.php.html#192"><abbr
+                                title="App\Entity\Post::setCreatedAt">setCreatedAt</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/Post.php.html#187"><abbr
+                                title="App\Entity\Post::getCreatedAt">getCreatedAt</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/Post.php.html#180"><abbr title="App\Entity\Post::setUser">setUser</abbr></a>
+                        </td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/Post.php.html#175"><abbr title="App\Entity\Post::getUser">getUser</abbr></a>
+                        </td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/Post.php.html#168"><abbr title="App\Entity\Post::setImages">setImages</abbr></a>
+                        </td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/Post.php.html#163"><abbr title="App\Entity\Post::getImages">getImages</abbr></a>
+                        </td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/Post.php.html#156"><abbr
+                                title="App\Entity\Post::setVideo">setVideo</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/Post.php.html#151"><abbr
+                                title="App\Entity\Post::getVideo">getVideo</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/Post.php.html#144"><abbr title="App\Entity\Post::setGroups">setGroups</abbr></a>
+                        </td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/Post.php.html#139"><abbr title="App\Entity\Post::getGroups">getGroups</abbr></a>
+                        </td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/Post.php.html#117"><abbr
+                                title="App\Entity\Post::addComment">addComment</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/Groups.php.html#32"><abbr
+                                title="App\Entity\Groups::__construct">__construct</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/Post.php.html#112"><abbr
+                                title="App\Entity\Post::getComment">getComment</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/Post.php.html#102"><abbr
+                                title="App\Entity\Post::setContent">setContent</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/Post.php.html#97"><abbr
+                                title="App\Entity\Post::getContent">getContent</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/Post.php.html#90"><abbr title="App\Entity\Post::setName">setName</abbr></a>
+                        </td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/Post.php.html#85"><abbr title="App\Entity\Post::getName">getName</abbr></a>
+                        </td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/Post.php.html#80"><abbr title="App\Entity\Post::getId">getId</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/Post.php.html#75"><abbr
+                                title="App\Entity\Post::__construct">__construct</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/Groups.php.html#84"><abbr
+                                title="App\Entity\Groups::__toString">__toString</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/Groups.php.html#73"><abbr
+                                title="App\Entity\Groups::removePost">removePost</abbr></a></td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/Groups.php.html#63"><abbr title="App\Entity\Groups::addPost">addPost</abbr></a>
+                        </td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/Groups.php.html#58"><abbr title="App\Entity\Groups::getPost">getPost</abbr></a>
+                        </td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/Groups.php.html#47"><abbr title="App\Entity\Groups::setName">setName</abbr></a>
+                        </td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/Groups.php.html#42"><abbr title="App\Entity\Groups::getName">getName</abbr></a>
+                        </td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/Groups.php.html#37"><abbr title="App\Entity\Groups::getId">getId</abbr></a>
+                        </td>
+                        <td class="text-right">0%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="services/videoServices/videoLinkServices.php.html#60"><abbr
+                                title="App\services\videoServices\videoLinkServices::encodeDailymotion">encodeDailymotion</abbr></a>
+                        </td>
+                        <td class="text-right">0%</td>
+                    </tr>
 
-       </tbody>
-      </table>
-     </div>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <h3>Project Risks</h3>
+            <div class="scrollbox">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>Method</th>
+                        <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td><a href="Controller/CommentController.php.html#69"><abbr
+                                title="App\Controller\CommentController::delete">delete</abbr></a></td>
+                        <td class="text-right">30</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Controller/PostController.php.html#86"><abbr
+                                title="App\Controller\PostController::edit">edit</abbr></a></td>
+                        <td class="text-right">30</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Controller/UserController.php.html#53"><abbr
+                                title="App\Controller\UserController::edit">edit</abbr></a></td>
+                        <td class="text-right">30</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Controller/CommentController.php.html#24"><abbr
+                                title="App\Controller\CommentController::new">new</abbr></a></td>
+                        <td class="text-right">20</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Controller/UserController.php.html#82"><abbr
+                                title="App\Controller\UserController::show">show</abbr></a></td>
+                        <td class="text-right">20</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Controller/PostController.php.html#41"><abbr
+                                title="App\Controller\PostController::new">new</abbr></a></td>
+                        <td class="text-right">20</td>
+                    </tr>
+                    <tr>
+                        <td><a href="services/videoServices/videoLinkServices.php.html#37"><abbr
+                                title="App\services\videoServices\videoLinkServices::encodeYoutube">encodeYoutube</abbr></a>
+                        </td>
+                        <td class="text-right">20</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Controller/PostController.php.html#111"><abbr
+                                title="App\Controller\PostController::delete">delete</abbr></a></td>
+                        <td class="text-right">20</td>
+                    </tr>
+                    <tr>
+                        <td><a href="services/videoServices/videoLinkServices.php.html#16"><abbr
+                                title="App\services\videoServices\videoLinkServices::extractPlatformFromURL">extractPlatformFromURL</abbr></a>
+                        </td>
+                        <td class="text-right">20</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Controller/CommentController.php.html#46"><abbr
+                                title="App\Controller\CommentController::edit">edit</abbr></a></td>
+                        <td class="text-right">20</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Controller/SecurityController.php.html#56"><abbr
+                                title="App\Controller\SecurityController::forgotPassword">forgotPassword</abbr></a></td>
+                        <td class="text-right">20</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Controller/SecurityController.php.html#94"><abbr
+                                title="App\Controller\SecurityController::recoverPassword">recoverPassword</abbr></a>
+                        </td>
+                        <td class="text-right">20</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/User.php.html#195"><abbr title="App\Entity\User::removeComment">removeComment</abbr></a>
+                        </td>
+                        <td class="text-right">12</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/User.php.html#273"><abbr
+                                title="App\Entity\User::removePost">removePost</abbr></a></td>
+                        <td class="text-right">12</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Kernel.php.html#27"><abbr
+                                title="App\Kernel::configureRoutes">configureRoutes</abbr></a></td>
+                        <td class="text-right">12</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Kernel.php.html#14"><abbr
+                                title="App\Kernel::configureContainer">configureContainer</abbr></a></td>
+                        <td class="text-right">12</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/Groups.php.html#73"><abbr
+                                title="App\Entity\Groups::removePost">removePost</abbr></a></td>
+                        <td class="text-right">12</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Security/UserAuthenticator.php.html#63"><abbr
+                                title="App\Security\UserAuthenticator::getUser">getUser</abbr></a></td>
+                        <td class="text-right">12</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/Post.php.html#127"><abbr title="App\Entity\Post::removeComment">removeComment</abbr></a>
+                        </td>
+                        <td class="text-right">12</td>
+                    </tr>
+                    <tr>
+                        <td><a href="services/videoServices/videoLinkServices.php.html#60"><abbr
+                                title="App\services\videoServices\videoLinkServices::encodeDailymotion">encodeDailymotion</abbr></a>
+                        </td>
+                        <td class="text-right">12</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Controller/RegistrationController.php.html#32"><abbr
+                                title="App\Controller\RegistrationController::register">register</abbr></a></td>
+                        <td class="text-right">12</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/Comment.php.html#77"><abbr
+                                title="App\Entity\Comment::setUser">setUser</abbr></a></td>
+                        <td class="text-right">6</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Controller/SecurityController.php.html#32"><abbr
+                                title="App\Controller\SecurityController::login">login</abbr></a></td>
+                        <td class="text-right">6</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/User.php.html#207"><abbr
+                                title="App\Entity\User::getFirstName">getFirstName</abbr></a></td>
+                        <td class="text-right">6</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/User.php.html#219"><abbr
+                                title="App\Entity\User::getLastName">getLastName</abbr></a></td>
+                        <td class="text-right">6</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/User.php.html#231"><abbr
+                                title="App\Entity\User::getImage">getImage</abbr></a></td>
+                        <td class="text-right">6</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/User.php.html#243"><abbr title="App\Entity\User::getResetToken">getResetToken</abbr></a>
+                        </td>
+                        <td class="text-right">6</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/User.php.html#248"><abbr title="App\Entity\User::setResetToken">setResetToken</abbr></a>
+                        </td>
+                        <td class="text-right">6</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/User.php.html#263"><abbr title="App\Entity\User::addPost">addPost</abbr></a>
+                        </td>
+                        <td class="text-right">6</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Controller/UserController.php.html#106"><abbr
+                                title="App\Controller\UserController::delete">delete</abbr></a></td>
+                        <td class="text-right">6</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Security/UserAuthenticator.php.html#42"><abbr
+                                title="App\Security\UserAuthenticator::supports">supports</abbr></a></td>
+                        <td class="text-right">6</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Controller/RegistrationController.php.html#76"><abbr
+                                title="App\Controller\RegistrationController::verifyUserEmail">verifyUserEmail</abbr></a>
+                        </td>
+                        <td class="text-right">6</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/User.php.html#185"><abbr
+                                title="App\Entity\User::addComment">addComment</abbr></a></td>
+                        <td class="text-right">6</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Security/UserAuthenticator.php.html#88"><abbr
+                                title="App\Security\UserAuthenticator::getPassword">getPassword</abbr></a></td>
+                        <td class="text-right">6</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Security/UserAuthenticator.php.html#93"><abbr
+                                title="App\Security\UserAuthenticator::onAuthenticationSuccess">onAuthenticationSuccess</abbr></a>
+                        </td>
+                        <td class="text-right">6</td>
+                    </tr>
+                    <tr>
+                        <td><a href="services/image/ImageServices.php.html#21"><abbr
+                                title="App\services\image\ImageServices::ImageUpload">ImageUpload</abbr></a></td>
+                        <td class="text-right">6</td>
+                    </tr>
+                    <tr>
+                        <td><a href="services/image/ImageServices.php.html#47"><abbr
+                                title="App\services\image\ImageServices::videoAdd">videoAdd</abbr></a></td>
+                        <td class="text-right">6</td>
+                    </tr>
+                    <tr>
+                        <td><a href="services/post/PostServices.php.html#24"><abbr
+                                title="App\services\post\PostServices::verifyURL">verifyURL</abbr></a></td>
+                        <td class="text-right">6</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Controller/PostController.php.html#126"><abbr
+                                title="App\Controller\PostController::imageDelete">imageDelete</abbr></a></td>
+                        <td class="text-right">6</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Controller/PostController.php.html#70"><abbr
+                                title="App\Controller\PostController::show">show</abbr></a></td>
+                        <td class="text-right">6</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/Comment.php.html#43"><abbr
+                                title="App\Entity\Comment::getId">getId</abbr></a></td>
+                        <td class="text-right">6</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/User.php.html#92"><abbr title="App\Entity\User::getMail">getMail</abbr></a>
+                        </td>
+                        <td class="text-right">6</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/Comment.php.html#84"><abbr
+                                title="App\Entity\Comment::getPost">getPost</abbr></a></td>
+                        <td class="text-right">6</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/Post.php.html#117"><abbr
+                                title="App\Entity\Post::addComment">addComment</abbr></a></td>
+                        <td class="text-right">6</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/Comment.php.html#89"><abbr
+                                title="App\Entity\Comment::setPost">setPost</abbr></a></td>
+                        <td class="text-right">6</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/Groups.php.html#37"><abbr title="App\Entity\Groups::getId">getId</abbr></a>
+                        </td>
+                        <td class="text-right">6</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/Groups.php.html#42"><abbr title="App\Entity\Groups::getName">getName</abbr></a>
+                        </td>
+                        <td class="text-right">6</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/Groups.php.html#63"><abbr title="App\Entity\Groups::addPost">addPost</abbr></a>
+                        </td>
+                        <td class="text-right">6</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/Comment.php.html#72"><abbr
+                                title="App\Entity\Comment::getUser">getUser</abbr></a></td>
+                        <td class="text-right">6</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/Post.php.html#80"><abbr title="App\Entity\Post::getId">getId</abbr></a></td>
+                        <td class="text-right">6</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/Post.php.html#85"><abbr title="App\Entity\Post::getName">getName</abbr></a>
+                        </td>
+                        <td class="text-right">6</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/Post.php.html#97"><abbr
+                                title="App\Entity\Post::getContent">getContent</abbr></a></td>
+                        <td class="text-right">6</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/Comment.php.html#60"><abbr title="App\Entity\Comment::getCreatedAt">getCreatedAt</abbr></a>
+                        </td>
+                        <td class="text-right">6</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/User.php.html#87"><abbr title="App\Entity\User::getId">getId</abbr></a></td>
+                        <td class="text-right">6</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/Comment.php.html#48"><abbr
+                                title="App\Entity\Comment::getContent">getContent</abbr></a></td>
+                        <td class="text-right">6</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/Post.php.html#144"><abbr title="App\Entity\Post::setGroups">setGroups</abbr></a>
+                        </td>
+                        <td class="text-right">6</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/Post.php.html#151"><abbr
+                                title="App\Entity\Post::getVideo">getVideo</abbr></a></td>
+                        <td class="text-right">6</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/Post.php.html#156"><abbr
+                                title="App\Entity\Post::setVideo">setVideo</abbr></a></td>
+                        <td class="text-right">6</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/Post.php.html#163"><abbr title="App\Entity\Post::getImages">getImages</abbr></a>
+                        </td>
+                        <td class="text-right">6</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/Post.php.html#175"><abbr title="App\Entity\Post::getUser">getUser</abbr></a>
+                        </td>
+                        <td class="text-right">6</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/Post.php.html#180"><abbr title="App\Entity\Post::setUser">setUser</abbr></a>
+                        </td>
+                        <td class="text-right">6</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/Post.php.html#187"><abbr
+                                title="App\Entity\Post::getCreatedAt">getCreatedAt</abbr></a></td>
+                        <td class="text-right">6</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/Post.php.html#199"><abbr title="App\Entity\Post::getModifiedAt">getModifiedAt</abbr></a>
+                        </td>
+                        <td class="text-right">6</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Entity/Post.php.html#139"><abbr title="App\Entity\Post::getGroups">getGroups</abbr></a>
+                        </td>
+                        <td class="text-right">6</td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
-   </div>
-   <div class="row">
-    <div class="col-md-12">
-     <h2>Methods</h2>
-    </div>
-   </div>
-   <div class="row">
-    <div class="col-md-6">
-     <h3>Coverage Distribution</h3>
-     <div id="methodCoverageDistribution" style="height: 300px;">
-       <svg></svg>
-     </div>
-    </div>
-    <div class="col-md-6">
-     <h3>Complexity</h3>
-     <div id="methodComplexity" style="height: 300px;">
-       <svg></svg>
-     </div>
-    </div>
-   </div>
-   <div class="row">
-    <div class="col-md-6">
-     <h3>Insufficient Coverage</h3>
-     <div class="scrollbox">
-      <table class="table">
-       <thead>
-        <tr>
-         <th>Method</th>
-         <th class="text-right">Coverage</th>
-        </tr>
-       </thead>
-       <tbody>
-       <tr><td><a href="Controller/CommentController.php.html#19"><abbr title="App\Controller\CommentController::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Entity/User.php.html#236"><abbr title="App\Entity\User::setImage">setImage</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Form/GroupsType.php.html#19"><abbr title="App\Form\GroupsType::configureOptions">configureOptions</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Form/GroupsType.php.html#12"><abbr title="App\Form\GroupsType::buildForm">buildForm</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Form/ForgotPasswordType.php.html#19"><abbr title="App\Form\ForgotPasswordType::configureOptions">configureOptions</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Form/ForgotPasswordType.php.html#12"><abbr title="App\Form\ForgotPasswordType::buildForm">buildForm</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Form/CommentType.php.html#22"><abbr title="App\Form\CommentType::configureOptions">configureOptions</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Form/CommentType.php.html#13"><abbr title="App\Form\CommentType::buildForm">buildForm</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Form/ChangePasswordType.php.html#41"><abbr title="App\Form\ChangePasswordType::configureOptions">configureOptions</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Form/ChangePasswordType.php.html#16"><abbr title="App\Form\ChangePasswordType::buildForm">buildForm</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Entity/User.php.html#273"><abbr title="App\Entity\User::removePost">removePost</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Entity/User.php.html#263"><abbr title="App\Entity\User::addPost">addPost</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Entity/User.php.html#258"><abbr title="App\Entity\User::getPosts">getPosts</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Entity/User.php.html#248"><abbr title="App\Entity\User::setResetToken">setResetToken</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Entity/User.php.html#243"><abbr title="App\Entity\User::getResetToken">getResetToken</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Entity/User.php.html#231"><abbr title="App\Entity\User::getImage">getImage</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Form/PostType.php.html#58"><abbr title="App\Form\PostType::configureOptions">configureOptions</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Entity/User.php.html#224"><abbr title="App\Entity\User::setLastName">setLastName</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Entity/User.php.html#219"><abbr title="App\Entity\User::getLastName">getLastName</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Entity/User.php.html#212"><abbr title="App\Entity\User::setFirstName">setFirstName</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Entity/User.php.html#207"><abbr title="App\Entity\User::getFirstName">getFirstName</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Entity/User.php.html#195"><abbr title="App\Entity\User::removeComment">removeComment</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Entity/User.php.html#185"><abbr title="App\Entity\User::addComment">addComment</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Entity/User.php.html#180"><abbr title="App\Entity\User::getComments">getComments</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Entity/User.php.html#171"><abbr title="App\Entity\User::eraseCredentials">eraseCredentials</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Entity/User.php.html#163"><abbr title="App\Entity\User::getSalt">getSalt</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Entity/User.php.html#153"><abbr title="App\Entity\User::setIsVerified">setIsVerified</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Entity/User.php.html#148"><abbr title="App\Entity\User::isVerified">isVerified</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Entity/User.php.html#141"><abbr title="App\Entity\User::setPassword">setPassword</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Entity/User.php.html#136"><abbr title="App\Entity\User::getPassword">getPassword</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Entity/User.php.html#126"><abbr title="App\Entity\User::setRoles">setRoles</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Form/PostType.php.html#19"><abbr title="App\Form\PostType::buildForm">buildForm</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Form/RegistrationFormType.php.html#27"><abbr title="App\Form\RegistrationFormType::buildForm">buildForm</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Entity/User.php.html#109"><abbr title="App\Entity\User::getUsername">getUsername</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Security/UserAuthenticator.php.html#42"><abbr title="App\Security\UserAuthenticator::supports">supports</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="services/videoServices/videoLinkServices.php.html#37"><abbr title="App\services\videoServices\videoLinkServices::encodeYoutube">encodeYoutube</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="services/videoServices/videoLinkServices.php.html#16"><abbr title="App\services\videoServices\videoLinkServices::extractPlatformFromURL">extractPlatformFromURL</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="services/post/PostServices.php.html#24"><abbr title="App\services\post\PostServices::verifyURL">verifyURL</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="services/post/PostServices.php.html#17"><abbr title="App\services\post\PostServices::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="services/image/ImageServices.php.html#47"><abbr title="App\services\image\ImageServices::videoAdd">videoAdd</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="services/image/ImageServices.php.html#35"><abbr title="App\services\image\ImageServices::pictureUpload">pictureUpload</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="services/image/ImageServices.php.html#21"><abbr title="App\services\image\ImageServices::ImageUpload">ImageUpload</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="services/image/ImageServices.php.html#16"><abbr title="App\services\image\ImageServices::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Security/UserAuthenticator.php.html#102"><abbr title="App\Security\UserAuthenticator::getLoginUrl">getLoginUrl</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Security/UserAuthenticator.php.html#93"><abbr title="App\Security\UserAuthenticator::onAuthenticationSuccess">onAuthenticationSuccess</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Security/UserAuthenticator.php.html#88"><abbr title="App\Security\UserAuthenticator::getPassword">getPassword</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Security/UserAuthenticator.php.html#80"><abbr title="App\Security\UserAuthenticator::checkCredentials">checkCredentials</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Security/UserAuthenticator.php.html#63"><abbr title="App\Security\UserAuthenticator::getUser">getUser</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Security/UserAuthenticator.php.html#48"><abbr title="App\Security\UserAuthenticator::getCredentials">getCredentials</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Security/UserAuthenticator.php.html#34"><abbr title="App\Security\UserAuthenticator::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Form/RegistrationFormType.php.html#59"><abbr title="App\Form\RegistrationFormType::configureOptions">configureOptions</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Security/EmailVerifier.php.html#46"><abbr title="App\Security\EmailVerifier::handleEmailConfirmation">handleEmailConfirmation</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Security/EmailVerifier.php.html#26"><abbr title="App\Security\EmailVerifier::sendEmailConfirmation">sendEmailConfirmation</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Security/EmailVerifier.php.html#19"><abbr title="App\Security\EmailVerifier::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Repository/UserRepository.php.html#17"><abbr title="App\Repository\UserRepository::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Repository/PostRepository.php.html#22"><abbr title="App\Repository\PostRepository::search">search</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Repository/PostRepository.php.html#17"><abbr title="App\Repository\PostRepository::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Repository/GroupsRepository.php.html#17"><abbr title="App\Repository\GroupsRepository::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Repository/CommentRepository.php.html#17"><abbr title="App\Repository\CommentRepository::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Kernel.php.html#27"><abbr title="App\Kernel::configureRoutes">configureRoutes</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Kernel.php.html#14"><abbr title="App\Kernel::configureContainer">configureContainer</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Form/UserEditType.php.html#72"><abbr title="App\Form\UserEditType::configureOptions">configureOptions</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Form/UserEditType.php.html#20"><abbr title="App\Form\UserEditType::buildForm">buildForm</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Form/SearchType.php.html#21"><abbr title="App\Form\SearchType::configureOptions">configureOptions</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Form/SearchType.php.html#12"><abbr title="App\Form\SearchType::buildForm">buildForm</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Entity/User.php.html#117"><abbr title="App\Entity\User::getRoles">getRoles</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Entity/User.php.html#97"><abbr title="App\Entity\User::setMail">setMail</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Controller/CommentController.php.html#24"><abbr title="App\Controller\CommentController::new">new</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Controller/SecurityController.php.html#48"><abbr title="App\Controller\SecurityController::logout">logout</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Entity/Comment.php.html#72"><abbr title="App\Entity\Comment::getUser">getUser</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Entity/Comment.php.html#65"><abbr title="App\Entity\Comment::setCreatedAt">setCreatedAt</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Entity/Comment.php.html#60"><abbr title="App\Entity\Comment::getCreatedAt">getCreatedAt</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Entity/Comment.php.html#53"><abbr title="App\Entity\Comment::setContent">setContent</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Entity/Comment.php.html#48"><abbr title="App\Entity\Comment::getContent">getContent</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Entity/Comment.php.html#43"><abbr title="App\Entity\Comment::getId">getId</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Controller/UserController.php.html#106"><abbr title="App\Controller\UserController::delete">delete</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Controller/UserController.php.html#82"><abbr title="App\Controller\UserController::show">show</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Controller/UserController.php.html#53"><abbr title="App\Controller\UserController::edit">edit</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Controller/UserController.php.html#42"><abbr title="App\Controller\UserController::index">index</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Controller/UserController.php.html#32"><abbr title="App\Controller\UserController::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Controller/SecurityController.php.html#94"><abbr title="App\Controller\SecurityController::recoverPassword">recoverPassword</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Controller/SecurityController.php.html#56"><abbr title="App\Controller\SecurityController::forgotPassword">forgotPassword</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Controller/SecurityController.php.html#32"><abbr title="App\Controller\SecurityController::login">login</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Entity/Comment.php.html#84"><abbr title="App\Entity\Comment::getPost">getPost</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Controller/SecurityController.php.html#22"><abbr title="App\Controller\SecurityController::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Controller/RegistrationController.php.html#76"><abbr title="App\Controller\RegistrationController::verifyUserEmail">verifyUserEmail</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Controller/RegistrationController.php.html#32"><abbr title="App\Controller\RegistrationController::register">register</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Controller/RegistrationController.php.html#23"><abbr title="App\Controller\RegistrationController::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Controller/PostController.php.html#126"><abbr title="App\Controller\PostController::imageDelete">imageDelete</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Controller/PostController.php.html#111"><abbr title="App\Controller\PostController::delete">delete</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Controller/PostController.php.html#86"><abbr title="App\Controller\PostController::edit">edit</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Controller/PostController.php.html#70"><abbr title="App\Controller\PostController::show">show</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Controller/PostController.php.html#41"><abbr title="App\Controller\PostController::new">new</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Controller/PostController.php.html#30"><abbr title="App\Controller\PostController::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Controller/IndexController.php.html#28"><abbr title="App\Controller\IndexController::index">index</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Controller/IndexController.php.html#16"><abbr title="App\Controller\IndexController::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Controller/CommentController.php.html#69"><abbr title="App\Controller\CommentController::delete">delete</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Controller/CommentController.php.html#46"><abbr title="App\Controller\CommentController::edit">edit</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Entity/Comment.php.html#77"><abbr title="App\Entity\Comment::setUser">setUser</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Entity/Comment.php.html#89"><abbr title="App\Entity\Comment::setPost">setPost</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Entity/User.php.html#92"><abbr title="App\Entity\User::getMail">getMail</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Entity/Post.php.html#127"><abbr title="App\Entity\Post::removeComment">removeComment</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Entity/User.php.html#87"><abbr title="App\Entity\User::getId">getId</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Entity/User.php.html#80"><abbr title="App\Entity\User::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Entity/Post.php.html#204"><abbr title="App\Entity\Post::setModifiedAt">setModifiedAt</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Entity/Post.php.html#199"><abbr title="App\Entity\Post::getModifiedAt">getModifiedAt</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Entity/Post.php.html#192"><abbr title="App\Entity\Post::setCreatedAt">setCreatedAt</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Entity/Post.php.html#187"><abbr title="App\Entity\Post::getCreatedAt">getCreatedAt</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Entity/Post.php.html#180"><abbr title="App\Entity\Post::setUser">setUser</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Entity/Post.php.html#175"><abbr title="App\Entity\Post::getUser">getUser</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Entity/Post.php.html#168"><abbr title="App\Entity\Post::setImages">setImages</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Entity/Post.php.html#163"><abbr title="App\Entity\Post::getImages">getImages</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Entity/Post.php.html#156"><abbr title="App\Entity\Post::setVideo">setVideo</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Entity/Post.php.html#151"><abbr title="App\Entity\Post::getVideo">getVideo</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Entity/Post.php.html#144"><abbr title="App\Entity\Post::setGroups">setGroups</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Entity/Post.php.html#139"><abbr title="App\Entity\Post::getGroups">getGroups</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Entity/Post.php.html#117"><abbr title="App\Entity\Post::addComment">addComment</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Entity/Groups.php.html#32"><abbr title="App\Entity\Groups::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Entity/Post.php.html#112"><abbr title="App\Entity\Post::getComment">getComment</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Entity/Post.php.html#102"><abbr title="App\Entity\Post::setContent">setContent</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Entity/Post.php.html#97"><abbr title="App\Entity\Post::getContent">getContent</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Entity/Post.php.html#90"><abbr title="App\Entity\Post::setName">setName</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Entity/Post.php.html#85"><abbr title="App\Entity\Post::getName">getName</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Entity/Post.php.html#80"><abbr title="App\Entity\Post::getId">getId</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Entity/Post.php.html#75"><abbr title="App\Entity\Post::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Entity/Groups.php.html#84"><abbr title="App\Entity\Groups::__toString">__toString</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Entity/Groups.php.html#73"><abbr title="App\Entity\Groups::removePost">removePost</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Entity/Groups.php.html#63"><abbr title="App\Entity\Groups::addPost">addPost</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Entity/Groups.php.html#58"><abbr title="App\Entity\Groups::getPost">getPost</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Entity/Groups.php.html#47"><abbr title="App\Entity\Groups::setName">setName</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Entity/Groups.php.html#42"><abbr title="App\Entity\Groups::getName">getName</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Entity/Groups.php.html#37"><abbr title="App\Entity\Groups::getId">getId</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="services/videoServices/videoLinkServices.php.html#60"><abbr title="App\services\videoServices\videoLinkServices::encodeDailymotion">encodeDailymotion</abbr></a></td><td class="text-right">0%</td></tr>
+    <footer>
+        <hr/>
+        <p>
+            <small>Generated by <a href="https://github.com/sebastianbergmann/php-code-coverage" target="_top">php-code-coverage
+                6.1.4</a> using <a href="https://secure.php.net/" target="_top">PHP 7.4.2</a> with <a
+                    href="https://xdebug.org/">Xdebug 2.8.1</a> and <a href="https://phpunit.de/">PHPUnit 7.5.20</a> at
+                Sun Nov 29 13:42:35 CET 2020.</small>
+        </p>
+    </footer>
+</div>
+<script src=".js/jquery.min.js" type="text/javascript"></script>
+<script src=".js/d3.min.js" type="text/javascript"></script>
+<script src=".js/nv.d3.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        nv.addGraph(function () {
+            var chart = nv.models.multiBarChart();
+            chart.tooltips(false)
+                .showControls(false)
+                .showLegend(false)
+                .reduceXTicks(false)
+                .staggerLabels(true)
+                .yAxis.tickFormat(d3.format('d'));
 
-       </tbody>
-      </table>
-     </div>
-    </div>
-    <div class="col-md-6">
-     <h3>Project Risks</h3>
-     <div class="scrollbox">
-      <table class="table">
-       <thead>
-        <tr>
-         <th>Method</th>
-         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
-        </tr>
-       </thead>
-       <tbody>
-       <tr><td><a href="Controller/CommentController.php.html#69"><abbr title="App\Controller\CommentController::delete">delete</abbr></a></td><td class="text-right">30</td></tr>
-       <tr><td><a href="Controller/PostController.php.html#86"><abbr title="App\Controller\PostController::edit">edit</abbr></a></td><td class="text-right">30</td></tr>
-       <tr><td><a href="Controller/UserController.php.html#53"><abbr title="App\Controller\UserController::edit">edit</abbr></a></td><td class="text-right">30</td></tr>
-       <tr><td><a href="Controller/CommentController.php.html#24"><abbr title="App\Controller\CommentController::new">new</abbr></a></td><td class="text-right">20</td></tr>
-       <tr><td><a href="Controller/UserController.php.html#82"><abbr title="App\Controller\UserController::show">show</abbr></a></td><td class="text-right">20</td></tr>
-       <tr><td><a href="Controller/PostController.php.html#41"><abbr title="App\Controller\PostController::new">new</abbr></a></td><td class="text-right">20</td></tr>
-       <tr><td><a href="services/videoServices/videoLinkServices.php.html#37"><abbr title="App\services\videoServices\videoLinkServices::encodeYoutube">encodeYoutube</abbr></a></td><td class="text-right">20</td></tr>
-       <tr><td><a href="Controller/PostController.php.html#111"><abbr title="App\Controller\PostController::delete">delete</abbr></a></td><td class="text-right">20</td></tr>
-       <tr><td><a href="services/videoServices/videoLinkServices.php.html#16"><abbr title="App\services\videoServices\videoLinkServices::extractPlatformFromURL">extractPlatformFromURL</abbr></a></td><td class="text-right">20</td></tr>
-       <tr><td><a href="Controller/CommentController.php.html#46"><abbr title="App\Controller\CommentController::edit">edit</abbr></a></td><td class="text-right">20</td></tr>
-       <tr><td><a href="Controller/SecurityController.php.html#56"><abbr title="App\Controller\SecurityController::forgotPassword">forgotPassword</abbr></a></td><td class="text-right">20</td></tr>
-       <tr><td><a href="Controller/SecurityController.php.html#94"><abbr title="App\Controller\SecurityController::recoverPassword">recoverPassword</abbr></a></td><td class="text-right">20</td></tr>
-       <tr><td><a href="Entity/User.php.html#195"><abbr title="App\Entity\User::removeComment">removeComment</abbr></a></td><td class="text-right">12</td></tr>
-       <tr><td><a href="Entity/User.php.html#273"><abbr title="App\Entity\User::removePost">removePost</abbr></a></td><td class="text-right">12</td></tr>
-       <tr><td><a href="Kernel.php.html#27"><abbr title="App\Kernel::configureRoutes">configureRoutes</abbr></a></td><td class="text-right">12</td></tr>
-       <tr><td><a href="Kernel.php.html#14"><abbr title="App\Kernel::configureContainer">configureContainer</abbr></a></td><td class="text-right">12</td></tr>
-       <tr><td><a href="Entity/Groups.php.html#73"><abbr title="App\Entity\Groups::removePost">removePost</abbr></a></td><td class="text-right">12</td></tr>
-       <tr><td><a href="Security/UserAuthenticator.php.html#63"><abbr title="App\Security\UserAuthenticator::getUser">getUser</abbr></a></td><td class="text-right">12</td></tr>
-       <tr><td><a href="Entity/Post.php.html#127"><abbr title="App\Entity\Post::removeComment">removeComment</abbr></a></td><td class="text-right">12</td></tr>
-       <tr><td><a href="services/videoServices/videoLinkServices.php.html#60"><abbr title="App\services\videoServices\videoLinkServices::encodeDailymotion">encodeDailymotion</abbr></a></td><td class="text-right">12</td></tr>
-       <tr><td><a href="Controller/RegistrationController.php.html#32"><abbr title="App\Controller\RegistrationController::register">register</abbr></a></td><td class="text-right">12</td></tr>
-       <tr><td><a href="Entity/Comment.php.html#77"><abbr title="App\Entity\Comment::setUser">setUser</abbr></a></td><td class="text-right">6</td></tr>
-       <tr><td><a href="Controller/SecurityController.php.html#32"><abbr title="App\Controller\SecurityController::login">login</abbr></a></td><td class="text-right">6</td></tr>
-       <tr><td><a href="Entity/User.php.html#207"><abbr title="App\Entity\User::getFirstName">getFirstName</abbr></a></td><td class="text-right">6</td></tr>
-       <tr><td><a href="Entity/User.php.html#219"><abbr title="App\Entity\User::getLastName">getLastName</abbr></a></td><td class="text-right">6</td></tr>
-       <tr><td><a href="Entity/User.php.html#231"><abbr title="App\Entity\User::getImage">getImage</abbr></a></td><td class="text-right">6</td></tr>
-       <tr><td><a href="Entity/User.php.html#243"><abbr title="App\Entity\User::getResetToken">getResetToken</abbr></a></td><td class="text-right">6</td></tr>
-       <tr><td><a href="Entity/User.php.html#248"><abbr title="App\Entity\User::setResetToken">setResetToken</abbr></a></td><td class="text-right">6</td></tr>
-       <tr><td><a href="Entity/User.php.html#263"><abbr title="App\Entity\User::addPost">addPost</abbr></a></td><td class="text-right">6</td></tr>
-       <tr><td><a href="Controller/UserController.php.html#106"><abbr title="App\Controller\UserController::delete">delete</abbr></a></td><td class="text-right">6</td></tr>
-       <tr><td><a href="Security/UserAuthenticator.php.html#42"><abbr title="App\Security\UserAuthenticator::supports">supports</abbr></a></td><td class="text-right">6</td></tr>
-       <tr><td><a href="Controller/RegistrationController.php.html#76"><abbr title="App\Controller\RegistrationController::verifyUserEmail">verifyUserEmail</abbr></a></td><td class="text-right">6</td></tr>
-       <tr><td><a href="Entity/User.php.html#185"><abbr title="App\Entity\User::addComment">addComment</abbr></a></td><td class="text-right">6</td></tr>
-       <tr><td><a href="Security/UserAuthenticator.php.html#88"><abbr title="App\Security\UserAuthenticator::getPassword">getPassword</abbr></a></td><td class="text-right">6</td></tr>
-       <tr><td><a href="Security/UserAuthenticator.php.html#93"><abbr title="App\Security\UserAuthenticator::onAuthenticationSuccess">onAuthenticationSuccess</abbr></a></td><td class="text-right">6</td></tr>
-       <tr><td><a href="services/image/ImageServices.php.html#21"><abbr title="App\services\image\ImageServices::ImageUpload">ImageUpload</abbr></a></td><td class="text-right">6</td></tr>
-       <tr><td><a href="services/image/ImageServices.php.html#47"><abbr title="App\services\image\ImageServices::videoAdd">videoAdd</abbr></a></td><td class="text-right">6</td></tr>
-       <tr><td><a href="services/post/PostServices.php.html#24"><abbr title="App\services\post\PostServices::verifyURL">verifyURL</abbr></a></td><td class="text-right">6</td></tr>
-       <tr><td><a href="Controller/PostController.php.html#126"><abbr title="App\Controller\PostController::imageDelete">imageDelete</abbr></a></td><td class="text-right">6</td></tr>
-       <tr><td><a href="Controller/PostController.php.html#70"><abbr title="App\Controller\PostController::show">show</abbr></a></td><td class="text-right">6</td></tr>
-       <tr><td><a href="Entity/Comment.php.html#43"><abbr title="App\Entity\Comment::getId">getId</abbr></a></td><td class="text-right">6</td></tr>
-       <tr><td><a href="Entity/User.php.html#92"><abbr title="App\Entity\User::getMail">getMail</abbr></a></td><td class="text-right">6</td></tr>
-       <tr><td><a href="Entity/Comment.php.html#84"><abbr title="App\Entity\Comment::getPost">getPost</abbr></a></td><td class="text-right">6</td></tr>
-       <tr><td><a href="Entity/Post.php.html#117"><abbr title="App\Entity\Post::addComment">addComment</abbr></a></td><td class="text-right">6</td></tr>
-       <tr><td><a href="Entity/Comment.php.html#89"><abbr title="App\Entity\Comment::setPost">setPost</abbr></a></td><td class="text-right">6</td></tr>
-       <tr><td><a href="Entity/Groups.php.html#37"><abbr title="App\Entity\Groups::getId">getId</abbr></a></td><td class="text-right">6</td></tr>
-       <tr><td><a href="Entity/Groups.php.html#42"><abbr title="App\Entity\Groups::getName">getName</abbr></a></td><td class="text-right">6</td></tr>
-       <tr><td><a href="Entity/Groups.php.html#63"><abbr title="App\Entity\Groups::addPost">addPost</abbr></a></td><td class="text-right">6</td></tr>
-       <tr><td><a href="Entity/Comment.php.html#72"><abbr title="App\Entity\Comment::getUser">getUser</abbr></a></td><td class="text-right">6</td></tr>
-       <tr><td><a href="Entity/Post.php.html#80"><abbr title="App\Entity\Post::getId">getId</abbr></a></td><td class="text-right">6</td></tr>
-       <tr><td><a href="Entity/Post.php.html#85"><abbr title="App\Entity\Post::getName">getName</abbr></a></td><td class="text-right">6</td></tr>
-       <tr><td><a href="Entity/Post.php.html#97"><abbr title="App\Entity\Post::getContent">getContent</abbr></a></td><td class="text-right">6</td></tr>
-       <tr><td><a href="Entity/Comment.php.html#60"><abbr title="App\Entity\Comment::getCreatedAt">getCreatedAt</abbr></a></td><td class="text-right">6</td></tr>
-       <tr><td><a href="Entity/User.php.html#87"><abbr title="App\Entity\User::getId">getId</abbr></a></td><td class="text-right">6</td></tr>
-       <tr><td><a href="Entity/Comment.php.html#48"><abbr title="App\Entity\Comment::getContent">getContent</abbr></a></td><td class="text-right">6</td></tr>
-       <tr><td><a href="Entity/Post.php.html#144"><abbr title="App\Entity\Post::setGroups">setGroups</abbr></a></td><td class="text-right">6</td></tr>
-       <tr><td><a href="Entity/Post.php.html#151"><abbr title="App\Entity\Post::getVideo">getVideo</abbr></a></td><td class="text-right">6</td></tr>
-       <tr><td><a href="Entity/Post.php.html#156"><abbr title="App\Entity\Post::setVideo">setVideo</abbr></a></td><td class="text-right">6</td></tr>
-       <tr><td><a href="Entity/Post.php.html#163"><abbr title="App\Entity\Post::getImages">getImages</abbr></a></td><td class="text-right">6</td></tr>
-       <tr><td><a href="Entity/Post.php.html#175"><abbr title="App\Entity\Post::getUser">getUser</abbr></a></td><td class="text-right">6</td></tr>
-       <tr><td><a href="Entity/Post.php.html#180"><abbr title="App\Entity\Post::setUser">setUser</abbr></a></td><td class="text-right">6</td></tr>
-       <tr><td><a href="Entity/Post.php.html#187"><abbr title="App\Entity\Post::getCreatedAt">getCreatedAt</abbr></a></td><td class="text-right">6</td></tr>
-       <tr><td><a href="Entity/Post.php.html#199"><abbr title="App\Entity\Post::getModifiedAt">getModifiedAt</abbr></a></td><td class="text-right">6</td></tr>
-       <tr><td><a href="Entity/Post.php.html#139"><abbr title="App\Entity\Post::getGroups">getGroups</abbr></a></td><td class="text-right">6</td></tr>
+            d3.select('#classCoverageDistribution svg')
+                .datum(getCoverageDistributionData([28, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], "Class Coverage"))
+                .transition().duration(500).call(chart);
 
-       </tbody>
-      </table>
-     </div>
-    </div>
-   </div>
-   <footer>
-    <hr/>
-    <p>
-     <small>Generated by <a href="https://github.com/sebastianbergmann/php-code-coverage" target="_top">php-code-coverage 6.1.4</a> using <a href="https://secure.php.net/" target="_top">PHP 7.4.2</a> with <a href="https://xdebug.org/">Xdebug 2.8.1</a> and <a href="https://phpunit.de/">PHPUnit 7.5.20</a> at Sun Nov 29 13:42:35 CET 2020.</small>
-    </p>
-   </footer>
-  </div>
-  <script src=".js/jquery.min.js" type="text/javascript"></script>
-  <script src=".js/d3.min.js" type="text/javascript"></script>
-  <script src=".js/nv.d3.min.js" type="text/javascript"></script>
-  <script type="text/javascript">
-$(document).ready(function() {
-  nv.addGraph(function() {
-    var chart = nv.models.multiBarChart();
-    chart.tooltips(false)
-      .showControls(false)
-      .showLegend(false)
-      .reduceXTicks(false)
-      .staggerLabels(true)
-      .yAxis.tickFormat(d3.format('d'));
+            nv.utils.windowResize(chart.update);
 
-    d3.select('#classCoverageDistribution svg')
-      .datum(getCoverageDistributionData([28,0,0,0,0,0,0,0,0,0,0,0], "Class Coverage"))
-      .transition().duration(500).call(chart);
+            return chart;
+        });
 
-    nv.utils.windowResize(chart.update);
+        nv.addGraph(function () {
+            var chart = nv.models.multiBarChart();
+            chart.tooltips(false)
+                .showControls(false)
+                .showLegend(false)
+                .reduceXTicks(false)
+                .staggerLabels(true)
+                .yAxis.tickFormat(d3.format('d'));
 
-    return chart;
-  });
+            d3.select('#methodCoverageDistribution svg')
+                .datum(getCoverageDistributionData([133, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], "Method Coverage"))
+                .transition().duration(500).call(chart);
 
-  nv.addGraph(function() {
-    var chart = nv.models.multiBarChart();
-    chart.tooltips(false)
-      .showControls(false)
-      .showLegend(false)
-      .reduceXTicks(false)
-      .staggerLabels(true)
-      .yAxis.tickFormat(d3.format('d'));
+            nv.utils.windowResize(chart.update);
 
-    d3.select('#methodCoverageDistribution svg')
-      .datum(getCoverageDistributionData([133,0,0,0,0,0,0,0,0,0,0,0], "Method Coverage"))
-      .transition().duration(500).call(chart);
+            return chart;
+        });
 
-    nv.utils.windowResize(chart.update);
+        function getCoverageDistributionData(data, label) {
+            var labels = [
+                '0%',
+                '0-10%',
+                '10-20%',
+                '20-30%',
+                '30-40%',
+                '40-50%',
+                '50-60%',
+                '60-70%',
+                '70-80%',
+                '80-90%',
+                '90-100%',
+                '100%'
+            ];
+            var values = [];
+            $.each(labels, function (key) {
+                values.push({x: labels[key], y: data[key]});
+            });
 
-    return chart;
-  });
+            return [
+                {
+                    key: label,
+                    values: values,
+                    color: "#4572A7"
+                }
+            ];
+        }
 
-  function getCoverageDistributionData(data, label) {
-    var labels = [
-      '0%',
-      '0-10%',
-      '10-20%',
-      '20-30%',
-      '30-40%',
-      '40-50%',
-      '50-60%',
-      '60-70%',
-      '70-80%',
-      '80-90%',
-      '90-100%',
-      '100%'
-    ];
-    var values = [];
-    $.each(labels, function(key) {
-      values.push({x: labels[key], y: data[key]});
+        nv.addGraph(function () {
+            var chart = nv.models.scatterChart()
+                .showDistX(true)
+                .showDistY(true)
+                .showLegend(false)
+                .forceX([0, 100]);
+            chart.tooltipContent(function (graph) {
+                return '<p>' + graph.point.class + '</p>';
+            });
+
+            chart.xAxis.axisLabel('Code Coverage (in percent)');
+            chart.yAxis.axisLabel('Cyclomatic Complexity');
+
+            d3.select('#classComplexity svg')
+                .datum(getComplexityData([[0, 14, "<a href=\"Controller\/CommentController.php.html#16\">App\\Controller\\CommentController<\/a>"], [0, 2, "<a href=\"Controller\/IndexController.php.html#12\">App\\Controller\\IndexController<\/a>"], [0, 18, "<a href=\"Controller\/PostController.php.html#20\">App\\Controller\\PostController<\/a>"], [0, 6, "<a href=\"Controller\/RegistrationController.php.html#19\">App\\Controller\\RegistrationController<\/a>"], [0, 12, "<a href=\"Controller\/SecurityController.php.html#18\">App\\Controller\\SecurityController<\/a>"], [0, 13, "<a href=\"Controller\/UserController.php.html#26\">App\\Controller\\UserController<\/a>"], [0, 16, "<a href=\"Entity\/Comment.php.html#11\">App\\Entity\\Comment<\/a>"], [0, 13, "<a href=\"Entity\/Groups.php.html#13\">App\\Entity\\Groups<\/a>"], [0, 36, "<a href=\"Entity\/Post.php.html#20\">App\\Entity\\Post<\/a>"], [0, 40, "<a href=\"Entity\/User.php.html#20\">App\\Entity\\User<\/a>"], [0, 2, "<a href=\"Form\/ChangePasswordType.php.html#14\">App\\Form\\ChangePasswordType<\/a>"], [0, 2, "<a href=\"Form\/CommentType.php.html#11\">App\\Form\\CommentType<\/a>"], [0, 2, "<a href=\"Form\/ForgotPasswordType.php.html#10\">App\\Form\\ForgotPasswordType<\/a>"], [0, 2, "<a href=\"Form\/GroupsType.php.html#10\">App\\Form\\GroupsType<\/a>"], [0, 2, "<a href=\"Form\/PostType.php.html#17\">App\\Form\\PostType<\/a>"], [0, 2, "<a href=\"Form\/RegistrationFormType.php.html#25\">App\\Form\\RegistrationFormType<\/a>"], [0, 2, "<a href=\"Form\/SearchType.php.html#10\">App\\Form\\SearchType<\/a>"], [0, 2, "<a href=\"Form\/UserEditType.php.html#18\">App\\Form\\UserEditType<\/a>"], [0, 6, "<a href=\"Kernel.php.html#10\">App\\Kernel<\/a>"], [0, 1, "<a href=\"Repository\/CommentRepository.php.html#15\">App\\Repository\\CommentRepository<\/a>"], [0, 1, "<a href=\"Repository\/GroupsRepository.php.html#15\">App\\Repository\\GroupsRepository<\/a>"], [0, 2, "<a href=\"Repository\/PostRepository.php.html#15\">App\\Repository\\PostRepository<\/a>"], [0, 1, "<a href=\"Repository\/UserRepository.php.html#15\">App\\Repository\\UserRepository<\/a>"], [0, 3, "<a href=\"Security\/EmailVerifier.php.html#13\">App\\Security\\EmailVerifier<\/a>"], [0, 13, "<a href=\"Security\/UserAuthenticator.php.html#23\">App\\Security\\UserAuthenticator<\/a>"], [0, 6, "<a href=\"services\/image\/ImageServices.php.html#13\">App\\services\\image\\ImageServices<\/a>"], [0, 3, "<a href=\"services\/post\/PostServices.php.html#11\">App\\services\\post\\PostServices<\/a>"], [0, 11, "<a href=\"services\/videoServices\/videoLinkServices.php.html#7\">App\\services\\videoServices\\videoLinkServices<\/a>"]], 'Class Complexity'))
+                .transition()
+                .duration(500)
+                .call(chart);
+
+            nv.utils.windowResize(chart.update);
+
+            return chart;
+        });
+
+        nv.addGraph(function () {
+            var chart = nv.models.scatterChart()
+                .showDistX(true)
+                .showDistY(true)
+                .showLegend(false)
+                .forceX([0, 100]);
+            chart.tooltipContent(function (graph) {
+                return '<p>' + graph.point.class + '</p>';
+            });
+
+            chart.xAxis.axisLabel('Code Coverage (in percent)');
+            chart.yAxis.axisLabel('Method Complexity');
+
+            d3.select('#methodComplexity svg')
+                .datum(getComplexityData([[0, 1, "<a href=\"Controller\/CommentController.php.html#19\">App\\Controller\\CommentController::__construct<\/a>"], [0, 4, "<a href=\"Controller\/CommentController.php.html#24\">App\\Controller\\CommentController::new<\/a>"], [0, 4, "<a href=\"Controller\/CommentController.php.html#46\">App\\Controller\\CommentController::edit<\/a>"], [0, 5, "<a href=\"Controller\/CommentController.php.html#69\">App\\Controller\\CommentController::delete<\/a>"], [0, 1, "<a href=\"Controller\/IndexController.php.html#16\">App\\Controller\\IndexController::__construct<\/a>"], [0, 1, "<a href=\"Controller\/IndexController.php.html#28\">App\\Controller\\IndexController::index<\/a>"], [0, 1, "<a href=\"Controller\/PostController.php.html#30\">App\\Controller\\PostController::__construct<\/a>"], [0, 4, "<a href=\"Controller\/PostController.php.html#41\">App\\Controller\\PostController::new<\/a>"], [0, 2, "<a href=\"Controller\/PostController.php.html#70\">App\\Controller\\PostController::show<\/a>"], [0, 5, "<a href=\"Controller\/PostController.php.html#86\">App\\Controller\\PostController::edit<\/a>"], [0, 4, "<a href=\"Controller\/PostController.php.html#111\">App\\Controller\\PostController::delete<\/a>"], [0, 2, "<a href=\"Controller\/PostController.php.html#126\">App\\Controller\\PostController::imageDelete<\/a>"], [0, 1, "<a href=\"Controller\/RegistrationController.php.html#23\">App\\Controller\\RegistrationController::__construct<\/a>"], [0, 3, "<a href=\"Controller\/RegistrationController.php.html#32\">App\\Controller\\RegistrationController::register<\/a>"], [0, 2, "<a href=\"Controller\/RegistrationController.php.html#76\">App\\Controller\\RegistrationController::verifyUserEmail<\/a>"], [0, 1, "<a href=\"Controller\/SecurityController.php.html#22\">App\\Controller\\SecurityController::__construct<\/a>"], [0, 2, "<a href=\"Controller\/SecurityController.php.html#32\">App\\Controller\\SecurityController::login<\/a>"], [0, 1, "<a href=\"Controller\/SecurityController.php.html#48\">App\\Controller\\SecurityController::logout<\/a>"], [0, 4, "<a href=\"Controller\/SecurityController.php.html#56\">App\\Controller\\SecurityController::forgotPassword<\/a>"], [0, 4, "<a href=\"Controller\/SecurityController.php.html#94\">App\\Controller\\SecurityController::recoverPassword<\/a>"], [0, 1, "<a href=\"Controller\/UserController.php.html#32\">App\\Controller\\UserController::__construct<\/a>"], [0, 1, "<a href=\"Controller\/UserController.php.html#42\">App\\Controller\\UserController::index<\/a>"], [0, 5, "<a href=\"Controller\/UserController.php.html#53\">App\\Controller\\UserController::edit<\/a>"], [0, 4, "<a href=\"Controller\/UserController.php.html#82\">App\\Controller\\UserController::show<\/a>"], [0, 2, "<a href=\"Controller\/UserController.php.html#106\">App\\Controller\\UserController::delete<\/a>"], [0, 2, "<a href=\"Entity\/Comment.php.html#43\">App\\Entity\\Comment::getId<\/a>"], [0, 2, "<a href=\"Entity\/Comment.php.html#48\">App\\Entity\\Comment::getContent<\/a>"], [0, 1, "<a href=\"Entity\/Comment.php.html#53\">App\\Entity\\Comment::setContent<\/a>"], [0, 2, "<a href=\"Entity\/Comment.php.html#60\">App\\Entity\\Comment::getCreatedAt<\/a>"], [0, 1, "<a href=\"Entity\/Comment.php.html#65\">App\\Entity\\Comment::setCreatedAt<\/a>"], [0, 2, "<a href=\"Entity\/Comment.php.html#72\">App\\Entity\\Comment::getUser<\/a>"], [0, 2, "<a href=\"Entity\/Comment.php.html#77\">App\\Entity\\Comment::setUser<\/a>"], [0, 2, "<a href=\"Entity\/Comment.php.html#84\">App\\Entity\\Comment::getPost<\/a>"], [0, 2, "<a href=\"Entity\/Comment.php.html#89\">App\\Entity\\Comment::setPost<\/a>"], [0, 1, "<a href=\"Entity\/Groups.php.html#32\">App\\Entity\\Groups::__construct<\/a>"], [0, 2, "<a href=\"Entity\/Groups.php.html#37\">App\\Entity\\Groups::getId<\/a>"], [0, 2, "<a href=\"Entity\/Groups.php.html#42\">App\\Entity\\Groups::getName<\/a>"], [0, 1, "<a href=\"Entity\/Groups.php.html#47\">App\\Entity\\Groups::setName<\/a>"], [0, 1, "<a href=\"Entity\/Groups.php.html#58\">App\\Entity\\Groups::getPost<\/a>"], [0, 2, "<a href=\"Entity\/Groups.php.html#63\">App\\Entity\\Groups::addPost<\/a>"], [0, 3, "<a href=\"Entity\/Groups.php.html#73\">App\\Entity\\Groups::removePost<\/a>"], [0, 1, "<a href=\"Entity\/Groups.php.html#84\">App\\Entity\\Groups::__toString<\/a>"], [0, 1, "<a href=\"Entity\/Post.php.html#75\">App\\Entity\\Post::__construct<\/a>"], [0, 2, "<a href=\"Entity\/Post.php.html#80\">App\\Entity\\Post::getId<\/a>"], [0, 2, "<a href=\"Entity\/Post.php.html#85\">App\\Entity\\Post::getName<\/a>"], [0, 1, "<a href=\"Entity\/Post.php.html#90\">App\\Entity\\Post::setName<\/a>"], [0, 2, "<a href=\"Entity\/Post.php.html#97\">App\\Entity\\Post::getContent<\/a>"], [0, 1, "<a href=\"Entity\/Post.php.html#102\">App\\Entity\\Post::setContent<\/a>"], [0, 1, "<a href=\"Entity\/Post.php.html#112\">App\\Entity\\Post::getComment<\/a>"], [0, 2, "<a href=\"Entity\/Post.php.html#117\">App\\Entity\\Post::addComment<\/a>"], [0, 3, "<a href=\"Entity\/Post.php.html#127\">App\\Entity\\Post::removeComment<\/a>"], [0, 2, "<a href=\"Entity\/Post.php.html#139\">App\\Entity\\Post::getGroups<\/a>"], [0, 2, "<a href=\"Entity\/Post.php.html#144\">App\\Entity\\Post::setGroups<\/a>"], [0, 2, "<a href=\"Entity\/Post.php.html#151\">App\\Entity\\Post::getVideo<\/a>"], [0, 2, "<a href=\"Entity\/Post.php.html#156\">App\\Entity\\Post::setVideo<\/a>"], [0, 2, "<a href=\"Entity\/Post.php.html#163\">App\\Entity\\Post::getImages<\/a>"], [0, 1, "<a href=\"Entity\/Post.php.html#168\">App\\Entity\\Post::setImages<\/a>"], [0, 2, "<a href=\"Entity\/Post.php.html#175\">App\\Entity\\Post::getUser<\/a>"], [0, 2, "<a href=\"Entity\/Post.php.html#180\">App\\Entity\\Post::setUser<\/a>"], [0, 2, "<a href=\"Entity\/Post.php.html#187\">App\\Entity\\Post::getCreatedAt<\/a>"], [0, 1, "<a href=\"Entity\/Post.php.html#192\">App\\Entity\\Post::setCreatedAt<\/a>"], [0, 2, "<a href=\"Entity\/Post.php.html#199\">App\\Entity\\Post::getModifiedAt<\/a>"], [0, 1, "<a href=\"Entity\/Post.php.html#204\">App\\Entity\\Post::setModifiedAt<\/a>"], [0, 1, "<a href=\"Entity\/User.php.html#80\">App\\Entity\\User::__construct<\/a>"], [0, 2, "<a href=\"Entity\/User.php.html#87\">App\\Entity\\User::getId<\/a>"], [0, 2, "<a href=\"Entity\/User.php.html#92\">App\\Entity\\User::getMail<\/a>"], [0, 1, "<a href=\"Entity\/User.php.html#97\">App\\Entity\\User::setMail<\/a>"], [0, 1, "<a href=\"Entity\/User.php.html#109\">App\\Entity\\User::getUsername<\/a>"], [0, 1, "<a href=\"Entity\/User.php.html#117\">App\\Entity\\User::getRoles<\/a>"], [0, 1, "<a href=\"Entity\/User.php.html#126\">App\\Entity\\User::setRoles<\/a>"], [0, 1, "<a href=\"Entity\/User.php.html#136\">App\\Entity\\User::getPassword<\/a>"], [0, 1, "<a href=\"Entity\/User.php.html#141\">App\\Entity\\User::setPassword<\/a>"], [0, 1, "<a href=\"Entity\/User.php.html#148\">App\\Entity\\User::isVerified<\/a>"], [0, 1, "<a href=\"Entity\/User.php.html#153\">App\\Entity\\User::setIsVerified<\/a>"], [0, 1, "<a href=\"Entity\/User.php.html#163\">App\\Entity\\User::getSalt<\/a>"], [0, 1, "<a href=\"Entity\/User.php.html#171\">App\\Entity\\User::eraseCredentials<\/a>"], [0, 1, "<a href=\"Entity\/User.php.html#180\">App\\Entity\\User::getComments<\/a>"], [0, 2, "<a href=\"Entity\/User.php.html#185\">App\\Entity\\User::addComment<\/a>"], [0, 3, "<a href=\"Entity\/User.php.html#195\">App\\Entity\\User::removeComment<\/a>"], [0, 2, "<a href=\"Entity\/User.php.html#207\">App\\Entity\\User::getFirstName<\/a>"], [0, 1, "<a href=\"Entity\/User.php.html#212\">App\\Entity\\User::setFirstName<\/a>"], [0, 2, "<a href=\"Entity\/User.php.html#219\">App\\Entity\\User::getLastName<\/a>"], [0, 1, "<a href=\"Entity\/User.php.html#224\">App\\Entity\\User::setLastName<\/a>"], [0, 2, "<a href=\"Entity\/User.php.html#231\">App\\Entity\\User::getImage<\/a>"], [0, 1, "<a href=\"Entity\/User.php.html#236\">App\\Entity\\User::setImage<\/a>"], [0, 2, "<a href=\"Entity\/User.php.html#243\">App\\Entity\\User::getResetToken<\/a>"], [0, 2, "<a href=\"Entity\/User.php.html#248\">App\\Entity\\User::setResetToken<\/a>"], [0, 1, "<a href=\"Entity\/User.php.html#258\">App\\Entity\\User::getPosts<\/a>"], [0, 2, "<a href=\"Entity\/User.php.html#263\">App\\Entity\\User::addPost<\/a>"], [0, 3, "<a href=\"Entity\/User.php.html#273\">App\\Entity\\User::removePost<\/a>"], [0, 1, "<a href=\"Form\/ChangePasswordType.php.html#16\">App\\Form\\ChangePasswordType::buildForm<\/a>"], [0, 1, "<a href=\"Form\/ChangePasswordType.php.html#41\">App\\Form\\ChangePasswordType::configureOptions<\/a>"], [0, 1, "<a href=\"Form\/CommentType.php.html#13\">App\\Form\\CommentType::buildForm<\/a>"], [0, 1, "<a href=\"Form\/CommentType.php.html#22\">App\\Form\\CommentType::configureOptions<\/a>"], [0, 1, "<a href=\"Form\/ForgotPasswordType.php.html#12\">App\\Form\\ForgotPasswordType::buildForm<\/a>"], [0, 1, "<a href=\"Form\/ForgotPasswordType.php.html#19\">App\\Form\\ForgotPasswordType::configureOptions<\/a>"], [0, 1, "<a href=\"Form\/GroupsType.php.html#12\">App\\Form\\GroupsType::buildForm<\/a>"], [0, 1, "<a href=\"Form\/GroupsType.php.html#19\">App\\Form\\GroupsType::configureOptions<\/a>"], [0, 1, "<a href=\"Form\/PostType.php.html#19\">App\\Form\\PostType::buildForm<\/a>"], [0, 1, "<a href=\"Form\/PostType.php.html#58\">App\\Form\\PostType::configureOptions<\/a>"], [0, 1, "<a href=\"Form\/RegistrationFormType.php.html#27\">App\\Form\\RegistrationFormType::buildForm<\/a>"], [0, 1, "<a href=\"Form\/RegistrationFormType.php.html#59\">App\\Form\\RegistrationFormType::configureOptions<\/a>"], [0, 1, "<a href=\"Form\/SearchType.php.html#12\">App\\Form\\SearchType::buildForm<\/a>"], [0, 1, "<a href=\"Form\/SearchType.php.html#21\">App\\Form\\SearchType::configureOptions<\/a>"], [0, 1, "<a href=\"Form\/UserEditType.php.html#20\">App\\Form\\UserEditType::buildForm<\/a>"], [0, 1, "<a href=\"Form\/UserEditType.php.html#72\">App\\Form\\UserEditType::configureOptions<\/a>"], [0, 3, "<a href=\"Kernel.php.html#14\">App\\Kernel::configureContainer<\/a>"], [0, 3, "<a href=\"Kernel.php.html#27\">App\\Kernel::configureRoutes<\/a>"], [0, 1, "<a href=\"Repository\/CommentRepository.php.html#17\">App\\Repository\\CommentRepository::__construct<\/a>"], [0, 1, "<a href=\"Repository\/GroupsRepository.php.html#17\">App\\Repository\\GroupsRepository::__construct<\/a>"], [0, 1, "<a href=\"Repository\/PostRepository.php.html#17\">App\\Repository\\PostRepository::__construct<\/a>"], [0, 1, "<a href=\"Repository\/PostRepository.php.html#22\">App\\Repository\\PostRepository::search<\/a>"], [0, 1, "<a href=\"Repository\/UserRepository.php.html#17\">App\\Repository\\UserRepository::__construct<\/a>"], [0, 1, "<a href=\"Security\/EmailVerifier.php.html#19\">App\\Security\\EmailVerifier::__construct<\/a>"], [0, 1, "<a href=\"Security\/EmailVerifier.php.html#26\">App\\Security\\EmailVerifier::sendEmailConfirmation<\/a>"], [0, 1, "<a href=\"Security\/EmailVerifier.php.html#46\">App\\Security\\EmailVerifier::handleEmailConfirmation<\/a>"], [0, 1, "<a href=\"Security\/UserAuthenticator.php.html#34\">App\\Security\\UserAuthenticator::__construct<\/a>"], [0, 2, "<a href=\"Security\/UserAuthenticator.php.html#42\">App\\Security\\UserAuthenticator::supports<\/a>"], [0, 1, "<a href=\"Security\/UserAuthenticator.php.html#48\">App\\Security\\UserAuthenticator::getCredentials<\/a>"], [0, 3, "<a href=\"Security\/UserAuthenticator.php.html#63\">App\\Security\\UserAuthenticator::getUser<\/a>"], [0, 1, "<a href=\"Security\/UserAuthenticator.php.html#80\">App\\Security\\UserAuthenticator::checkCredentials<\/a>"], [0, 2, "<a href=\"Security\/UserAuthenticator.php.html#88\">App\\Security\\UserAuthenticator::getPassword<\/a>"], [0, 2, "<a href=\"Security\/UserAuthenticator.php.html#93\">App\\Security\\UserAuthenticator::onAuthenticationSuccess<\/a>"], [0, 1, "<a href=\"Security\/UserAuthenticator.php.html#102\">App\\Security\\UserAuthenticator::getLoginUrl<\/a>"], [0, 1, "<a href=\"services\/image\/ImageServices.php.html#16\">App\\services\\image\\ImageServices::__construct<\/a>"], [0, 2, "<a href=\"services\/image\/ImageServices.php.html#21\">App\\services\\image\\ImageServices::ImageUpload<\/a>"], [0, 1, "<a href=\"services\/image\/ImageServices.php.html#35\">App\\services\\image\\ImageServices::pictureUpload<\/a>"], [0, 2, "<a href=\"services\/image\/ImageServices.php.html#47\">App\\services\\image\\ImageServices::videoAdd<\/a>"], [0, 1, "<a href=\"services\/post\/PostServices.php.html#17\">App\\services\\post\\PostServices::__construct<\/a>"], [0, 2, "<a href=\"services\/post\/PostServices.php.html#24\">App\\services\\post\\PostServices::verifyURL<\/a>"], [0, 4, "<a href=\"services\/videoServices\/videoLinkServices.php.html#16\">App\\services\\videoServices\\videoLinkServices::extractPlatformFromURL<\/a>"], [0, 4, "<a href=\"services\/videoServices\/videoLinkServices.php.html#37\">App\\services\\videoServices\\videoLinkServices::encodeYoutube<\/a>"], [0, 3, "<a href=\"services\/videoServices\/videoLinkServices.php.html#60\">App\\services\\videoServices\\videoLinkServices::encodeDailymotion<\/a>"]], 'Method Complexity'))
+                .transition()
+                .duration(500)
+                .call(chart);
+
+            nv.utils.windowResize(chart.update);
+
+            return chart;
+        });
+
+        function getComplexityData(data, label) {
+            var values = [];
+            $.each(data, function (key) {
+                var value = Math.round(data[key][0] * 100) / 100;
+                values.push({
+                    x: value,
+                    y: data[key][1],
+                    class: data[key][2],
+                    size: 0.05,
+                    shape: 'diamond'
+                });
+            });
+
+            return [
+                {
+                    key: label,
+                    values: values,
+                    color: "#4572A7"
+                }
+            ];
+        }
     });
-
-    return [
-      {
-        key: label,
-        values: values,
-        color: "#4572A7"
-      }
-    ];
-  }
-  nv.addGraph(function() {
-    var chart = nv.models.scatterChart()
-      .showDistX(true)
-      .showDistY(true)
-      .showLegend(false)
-      .forceX([0, 100]);
-    chart.tooltipContent(function(graph) {
-      return '<p>' + graph.point.class + '</p>';
-    });
-
-    chart.xAxis.axisLabel('Code Coverage (in percent)');
-    chart.yAxis.axisLabel('Cyclomatic Complexity');
-
-    d3.select('#classComplexity svg')
-      .datum(getComplexityData([[0,14,"<a href=\"Controller\/CommentController.php.html#16\">App\\Controller\\CommentController<\/a>"],[0,2,"<a href=\"Controller\/IndexController.php.html#12\">App\\Controller\\IndexController<\/a>"],[0,18,"<a href=\"Controller\/PostController.php.html#20\">App\\Controller\\PostController<\/a>"],[0,6,"<a href=\"Controller\/RegistrationController.php.html#19\">App\\Controller\\RegistrationController<\/a>"],[0,12,"<a href=\"Controller\/SecurityController.php.html#18\">App\\Controller\\SecurityController<\/a>"],[0,13,"<a href=\"Controller\/UserController.php.html#26\">App\\Controller\\UserController<\/a>"],[0,16,"<a href=\"Entity\/Comment.php.html#11\">App\\Entity\\Comment<\/a>"],[0,13,"<a href=\"Entity\/Groups.php.html#13\">App\\Entity\\Groups<\/a>"],[0,36,"<a href=\"Entity\/Post.php.html#20\">App\\Entity\\Post<\/a>"],[0,40,"<a href=\"Entity\/User.php.html#20\">App\\Entity\\User<\/a>"],[0,2,"<a href=\"Form\/ChangePasswordType.php.html#14\">App\\Form\\ChangePasswordType<\/a>"],[0,2,"<a href=\"Form\/CommentType.php.html#11\">App\\Form\\CommentType<\/a>"],[0,2,"<a href=\"Form\/ForgotPasswordType.php.html#10\">App\\Form\\ForgotPasswordType<\/a>"],[0,2,"<a href=\"Form\/GroupsType.php.html#10\">App\\Form\\GroupsType<\/a>"],[0,2,"<a href=\"Form\/PostType.php.html#17\">App\\Form\\PostType<\/a>"],[0,2,"<a href=\"Form\/RegistrationFormType.php.html#25\">App\\Form\\RegistrationFormType<\/a>"],[0,2,"<a href=\"Form\/SearchType.php.html#10\">App\\Form\\SearchType<\/a>"],[0,2,"<a href=\"Form\/UserEditType.php.html#18\">App\\Form\\UserEditType<\/a>"],[0,6,"<a href=\"Kernel.php.html#10\">App\\Kernel<\/a>"],[0,1,"<a href=\"Repository\/CommentRepository.php.html#15\">App\\Repository\\CommentRepository<\/a>"],[0,1,"<a href=\"Repository\/GroupsRepository.php.html#15\">App\\Repository\\GroupsRepository<\/a>"],[0,2,"<a href=\"Repository\/PostRepository.php.html#15\">App\\Repository\\PostRepository<\/a>"],[0,1,"<a href=\"Repository\/UserRepository.php.html#15\">App\\Repository\\UserRepository<\/a>"],[0,3,"<a href=\"Security\/EmailVerifier.php.html#13\">App\\Security\\EmailVerifier<\/a>"],[0,13,"<a href=\"Security\/UserAuthenticator.php.html#23\">App\\Security\\UserAuthenticator<\/a>"],[0,6,"<a href=\"services\/image\/ImageServices.php.html#13\">App\\services\\image\\ImageServices<\/a>"],[0,3,"<a href=\"services\/post\/PostServices.php.html#11\">App\\services\\post\\PostServices<\/a>"],[0,11,"<a href=\"services\/videoServices\/videoLinkServices.php.html#7\">App\\services\\videoServices\\videoLinkServices<\/a>"]], 'Class Complexity'))
-      .transition()
-      .duration(500)
-      .call(chart);
-
-    nv.utils.windowResize(chart.update);
-
-    return chart;
-  });
-
-  nv.addGraph(function() {
-    var chart = nv.models.scatterChart()
-      .showDistX(true)
-      .showDistY(true)
-      .showLegend(false)
-      .forceX([0, 100]);
-    chart.tooltipContent(function(graph) {
-      return '<p>' + graph.point.class + '</p>';
-    });
-
-    chart.xAxis.axisLabel('Code Coverage (in percent)');
-    chart.yAxis.axisLabel('Method Complexity');
-
-    d3.select('#methodComplexity svg')
-      .datum(getComplexityData([[0,1,"<a href=\"Controller\/CommentController.php.html#19\">App\\Controller\\CommentController::__construct<\/a>"],[0,4,"<a href=\"Controller\/CommentController.php.html#24\">App\\Controller\\CommentController::new<\/a>"],[0,4,"<a href=\"Controller\/CommentController.php.html#46\">App\\Controller\\CommentController::edit<\/a>"],[0,5,"<a href=\"Controller\/CommentController.php.html#69\">App\\Controller\\CommentController::delete<\/a>"],[0,1,"<a href=\"Controller\/IndexController.php.html#16\">App\\Controller\\IndexController::__construct<\/a>"],[0,1,"<a href=\"Controller\/IndexController.php.html#28\">App\\Controller\\IndexController::index<\/a>"],[0,1,"<a href=\"Controller\/PostController.php.html#30\">App\\Controller\\PostController::__construct<\/a>"],[0,4,"<a href=\"Controller\/PostController.php.html#41\">App\\Controller\\PostController::new<\/a>"],[0,2,"<a href=\"Controller\/PostController.php.html#70\">App\\Controller\\PostController::show<\/a>"],[0,5,"<a href=\"Controller\/PostController.php.html#86\">App\\Controller\\PostController::edit<\/a>"],[0,4,"<a href=\"Controller\/PostController.php.html#111\">App\\Controller\\PostController::delete<\/a>"],[0,2,"<a href=\"Controller\/PostController.php.html#126\">App\\Controller\\PostController::imageDelete<\/a>"],[0,1,"<a href=\"Controller\/RegistrationController.php.html#23\">App\\Controller\\RegistrationController::__construct<\/a>"],[0,3,"<a href=\"Controller\/RegistrationController.php.html#32\">App\\Controller\\RegistrationController::register<\/a>"],[0,2,"<a href=\"Controller\/RegistrationController.php.html#76\">App\\Controller\\RegistrationController::verifyUserEmail<\/a>"],[0,1,"<a href=\"Controller\/SecurityController.php.html#22\">App\\Controller\\SecurityController::__construct<\/a>"],[0,2,"<a href=\"Controller\/SecurityController.php.html#32\">App\\Controller\\SecurityController::login<\/a>"],[0,1,"<a href=\"Controller\/SecurityController.php.html#48\">App\\Controller\\SecurityController::logout<\/a>"],[0,4,"<a href=\"Controller\/SecurityController.php.html#56\">App\\Controller\\SecurityController::forgotPassword<\/a>"],[0,4,"<a href=\"Controller\/SecurityController.php.html#94\">App\\Controller\\SecurityController::recoverPassword<\/a>"],[0,1,"<a href=\"Controller\/UserController.php.html#32\">App\\Controller\\UserController::__construct<\/a>"],[0,1,"<a href=\"Controller\/UserController.php.html#42\">App\\Controller\\UserController::index<\/a>"],[0,5,"<a href=\"Controller\/UserController.php.html#53\">App\\Controller\\UserController::edit<\/a>"],[0,4,"<a href=\"Controller\/UserController.php.html#82\">App\\Controller\\UserController::show<\/a>"],[0,2,"<a href=\"Controller\/UserController.php.html#106\">App\\Controller\\UserController::delete<\/a>"],[0,2,"<a href=\"Entity\/Comment.php.html#43\">App\\Entity\\Comment::getId<\/a>"],[0,2,"<a href=\"Entity\/Comment.php.html#48\">App\\Entity\\Comment::getContent<\/a>"],[0,1,"<a href=\"Entity\/Comment.php.html#53\">App\\Entity\\Comment::setContent<\/a>"],[0,2,"<a href=\"Entity\/Comment.php.html#60\">App\\Entity\\Comment::getCreatedAt<\/a>"],[0,1,"<a href=\"Entity\/Comment.php.html#65\">App\\Entity\\Comment::setCreatedAt<\/a>"],[0,2,"<a href=\"Entity\/Comment.php.html#72\">App\\Entity\\Comment::getUser<\/a>"],[0,2,"<a href=\"Entity\/Comment.php.html#77\">App\\Entity\\Comment::setUser<\/a>"],[0,2,"<a href=\"Entity\/Comment.php.html#84\">App\\Entity\\Comment::getPost<\/a>"],[0,2,"<a href=\"Entity\/Comment.php.html#89\">App\\Entity\\Comment::setPost<\/a>"],[0,1,"<a href=\"Entity\/Groups.php.html#32\">App\\Entity\\Groups::__construct<\/a>"],[0,2,"<a href=\"Entity\/Groups.php.html#37\">App\\Entity\\Groups::getId<\/a>"],[0,2,"<a href=\"Entity\/Groups.php.html#42\">App\\Entity\\Groups::getName<\/a>"],[0,1,"<a href=\"Entity\/Groups.php.html#47\">App\\Entity\\Groups::setName<\/a>"],[0,1,"<a href=\"Entity\/Groups.php.html#58\">App\\Entity\\Groups::getPost<\/a>"],[0,2,"<a href=\"Entity\/Groups.php.html#63\">App\\Entity\\Groups::addPost<\/a>"],[0,3,"<a href=\"Entity\/Groups.php.html#73\">App\\Entity\\Groups::removePost<\/a>"],[0,1,"<a href=\"Entity\/Groups.php.html#84\">App\\Entity\\Groups::__toString<\/a>"],[0,1,"<a href=\"Entity\/Post.php.html#75\">App\\Entity\\Post::__construct<\/a>"],[0,2,"<a href=\"Entity\/Post.php.html#80\">App\\Entity\\Post::getId<\/a>"],[0,2,"<a href=\"Entity\/Post.php.html#85\">App\\Entity\\Post::getName<\/a>"],[0,1,"<a href=\"Entity\/Post.php.html#90\">App\\Entity\\Post::setName<\/a>"],[0,2,"<a href=\"Entity\/Post.php.html#97\">App\\Entity\\Post::getContent<\/a>"],[0,1,"<a href=\"Entity\/Post.php.html#102\">App\\Entity\\Post::setContent<\/a>"],[0,1,"<a href=\"Entity\/Post.php.html#112\">App\\Entity\\Post::getComment<\/a>"],[0,2,"<a href=\"Entity\/Post.php.html#117\">App\\Entity\\Post::addComment<\/a>"],[0,3,"<a href=\"Entity\/Post.php.html#127\">App\\Entity\\Post::removeComment<\/a>"],[0,2,"<a href=\"Entity\/Post.php.html#139\">App\\Entity\\Post::getGroups<\/a>"],[0,2,"<a href=\"Entity\/Post.php.html#144\">App\\Entity\\Post::setGroups<\/a>"],[0,2,"<a href=\"Entity\/Post.php.html#151\">App\\Entity\\Post::getVideo<\/a>"],[0,2,"<a href=\"Entity\/Post.php.html#156\">App\\Entity\\Post::setVideo<\/a>"],[0,2,"<a href=\"Entity\/Post.php.html#163\">App\\Entity\\Post::getImages<\/a>"],[0,1,"<a href=\"Entity\/Post.php.html#168\">App\\Entity\\Post::setImages<\/a>"],[0,2,"<a href=\"Entity\/Post.php.html#175\">App\\Entity\\Post::getUser<\/a>"],[0,2,"<a href=\"Entity\/Post.php.html#180\">App\\Entity\\Post::setUser<\/a>"],[0,2,"<a href=\"Entity\/Post.php.html#187\">App\\Entity\\Post::getCreatedAt<\/a>"],[0,1,"<a href=\"Entity\/Post.php.html#192\">App\\Entity\\Post::setCreatedAt<\/a>"],[0,2,"<a href=\"Entity\/Post.php.html#199\">App\\Entity\\Post::getModifiedAt<\/a>"],[0,1,"<a href=\"Entity\/Post.php.html#204\">App\\Entity\\Post::setModifiedAt<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#80\">App\\Entity\\User::__construct<\/a>"],[0,2,"<a href=\"Entity\/User.php.html#87\">App\\Entity\\User::getId<\/a>"],[0,2,"<a href=\"Entity\/User.php.html#92\">App\\Entity\\User::getMail<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#97\">App\\Entity\\User::setMail<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#109\">App\\Entity\\User::getUsername<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#117\">App\\Entity\\User::getRoles<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#126\">App\\Entity\\User::setRoles<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#136\">App\\Entity\\User::getPassword<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#141\">App\\Entity\\User::setPassword<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#148\">App\\Entity\\User::isVerified<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#153\">App\\Entity\\User::setIsVerified<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#163\">App\\Entity\\User::getSalt<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#171\">App\\Entity\\User::eraseCredentials<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#180\">App\\Entity\\User::getComments<\/a>"],[0,2,"<a href=\"Entity\/User.php.html#185\">App\\Entity\\User::addComment<\/a>"],[0,3,"<a href=\"Entity\/User.php.html#195\">App\\Entity\\User::removeComment<\/a>"],[0,2,"<a href=\"Entity\/User.php.html#207\">App\\Entity\\User::getFirstName<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#212\">App\\Entity\\User::setFirstName<\/a>"],[0,2,"<a href=\"Entity\/User.php.html#219\">App\\Entity\\User::getLastName<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#224\">App\\Entity\\User::setLastName<\/a>"],[0,2,"<a href=\"Entity\/User.php.html#231\">App\\Entity\\User::getImage<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#236\">App\\Entity\\User::setImage<\/a>"],[0,2,"<a href=\"Entity\/User.php.html#243\">App\\Entity\\User::getResetToken<\/a>"],[0,2,"<a href=\"Entity\/User.php.html#248\">App\\Entity\\User::setResetToken<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#258\">App\\Entity\\User::getPosts<\/a>"],[0,2,"<a href=\"Entity\/User.php.html#263\">App\\Entity\\User::addPost<\/a>"],[0,3,"<a href=\"Entity\/User.php.html#273\">App\\Entity\\User::removePost<\/a>"],[0,1,"<a href=\"Form\/ChangePasswordType.php.html#16\">App\\Form\\ChangePasswordType::buildForm<\/a>"],[0,1,"<a href=\"Form\/ChangePasswordType.php.html#41\">App\\Form\\ChangePasswordType::configureOptions<\/a>"],[0,1,"<a href=\"Form\/CommentType.php.html#13\">App\\Form\\CommentType::buildForm<\/a>"],[0,1,"<a href=\"Form\/CommentType.php.html#22\">App\\Form\\CommentType::configureOptions<\/a>"],[0,1,"<a href=\"Form\/ForgotPasswordType.php.html#12\">App\\Form\\ForgotPasswordType::buildForm<\/a>"],[0,1,"<a href=\"Form\/ForgotPasswordType.php.html#19\">App\\Form\\ForgotPasswordType::configureOptions<\/a>"],[0,1,"<a href=\"Form\/GroupsType.php.html#12\">App\\Form\\GroupsType::buildForm<\/a>"],[0,1,"<a href=\"Form\/GroupsType.php.html#19\">App\\Form\\GroupsType::configureOptions<\/a>"],[0,1,"<a href=\"Form\/PostType.php.html#19\">App\\Form\\PostType::buildForm<\/a>"],[0,1,"<a href=\"Form\/PostType.php.html#58\">App\\Form\\PostType::configureOptions<\/a>"],[0,1,"<a href=\"Form\/RegistrationFormType.php.html#27\">App\\Form\\RegistrationFormType::buildForm<\/a>"],[0,1,"<a href=\"Form\/RegistrationFormType.php.html#59\">App\\Form\\RegistrationFormType::configureOptions<\/a>"],[0,1,"<a href=\"Form\/SearchType.php.html#12\">App\\Form\\SearchType::buildForm<\/a>"],[0,1,"<a href=\"Form\/SearchType.php.html#21\">App\\Form\\SearchType::configureOptions<\/a>"],[0,1,"<a href=\"Form\/UserEditType.php.html#20\">App\\Form\\UserEditType::buildForm<\/a>"],[0,1,"<a href=\"Form\/UserEditType.php.html#72\">App\\Form\\UserEditType::configureOptions<\/a>"],[0,3,"<a href=\"Kernel.php.html#14\">App\\Kernel::configureContainer<\/a>"],[0,3,"<a href=\"Kernel.php.html#27\">App\\Kernel::configureRoutes<\/a>"],[0,1,"<a href=\"Repository\/CommentRepository.php.html#17\">App\\Repository\\CommentRepository::__construct<\/a>"],[0,1,"<a href=\"Repository\/GroupsRepository.php.html#17\">App\\Repository\\GroupsRepository::__construct<\/a>"],[0,1,"<a href=\"Repository\/PostRepository.php.html#17\">App\\Repository\\PostRepository::__construct<\/a>"],[0,1,"<a href=\"Repository\/PostRepository.php.html#22\">App\\Repository\\PostRepository::search<\/a>"],[0,1,"<a href=\"Repository\/UserRepository.php.html#17\">App\\Repository\\UserRepository::__construct<\/a>"],[0,1,"<a href=\"Security\/EmailVerifier.php.html#19\">App\\Security\\EmailVerifier::__construct<\/a>"],[0,1,"<a href=\"Security\/EmailVerifier.php.html#26\">App\\Security\\EmailVerifier::sendEmailConfirmation<\/a>"],[0,1,"<a href=\"Security\/EmailVerifier.php.html#46\">App\\Security\\EmailVerifier::handleEmailConfirmation<\/a>"],[0,1,"<a href=\"Security\/UserAuthenticator.php.html#34\">App\\Security\\UserAuthenticator::__construct<\/a>"],[0,2,"<a href=\"Security\/UserAuthenticator.php.html#42\">App\\Security\\UserAuthenticator::supports<\/a>"],[0,1,"<a href=\"Security\/UserAuthenticator.php.html#48\">App\\Security\\UserAuthenticator::getCredentials<\/a>"],[0,3,"<a href=\"Security\/UserAuthenticator.php.html#63\">App\\Security\\UserAuthenticator::getUser<\/a>"],[0,1,"<a href=\"Security\/UserAuthenticator.php.html#80\">App\\Security\\UserAuthenticator::checkCredentials<\/a>"],[0,2,"<a href=\"Security\/UserAuthenticator.php.html#88\">App\\Security\\UserAuthenticator::getPassword<\/a>"],[0,2,"<a href=\"Security\/UserAuthenticator.php.html#93\">App\\Security\\UserAuthenticator::onAuthenticationSuccess<\/a>"],[0,1,"<a href=\"Security\/UserAuthenticator.php.html#102\">App\\Security\\UserAuthenticator::getLoginUrl<\/a>"],[0,1,"<a href=\"services\/image\/ImageServices.php.html#16\">App\\services\\image\\ImageServices::__construct<\/a>"],[0,2,"<a href=\"services\/image\/ImageServices.php.html#21\">App\\services\\image\\ImageServices::ImageUpload<\/a>"],[0,1,"<a href=\"services\/image\/ImageServices.php.html#35\">App\\services\\image\\ImageServices::pictureUpload<\/a>"],[0,2,"<a href=\"services\/image\/ImageServices.php.html#47\">App\\services\\image\\ImageServices::videoAdd<\/a>"],[0,1,"<a href=\"services\/post\/PostServices.php.html#17\">App\\services\\post\\PostServices::__construct<\/a>"],[0,2,"<a href=\"services\/post\/PostServices.php.html#24\">App\\services\\post\\PostServices::verifyURL<\/a>"],[0,4,"<a href=\"services\/videoServices\/videoLinkServices.php.html#16\">App\\services\\videoServices\\videoLinkServices::extractPlatformFromURL<\/a>"],[0,4,"<a href=\"services\/videoServices\/videoLinkServices.php.html#37\">App\\services\\videoServices\\videoLinkServices::encodeYoutube<\/a>"],[0,3,"<a href=\"services\/videoServices\/videoLinkServices.php.html#60\">App\\services\\videoServices\\videoLinkServices::encodeDailymotion<\/a>"]], 'Method Complexity'))
-      .transition()
-      .duration(500)
-      .call(chart);
-
-    nv.utils.windowResize(chart.update);
-
-    return chart;
-  });
-
-  function getComplexityData(data, label) {
-    var values = [];
-    $.each(data, function(key) {
-      var value = Math.round(data[key][0]*100) / 100;
-      values.push({
-        x: value,
-        y: data[key][1],
-        class: data[key][2],
-        size: 0.05,
-        shape: 'diamond'
-      });
-    });
-
-    return [
-      {
-        key: label,
-        values: values,
-        color: "#4572A7"
-      }
-    ];
-  }
-});
-  </script>
- </body>
+</script>
+</body>
 </html>

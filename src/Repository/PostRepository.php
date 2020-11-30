@@ -32,8 +32,7 @@ class PostRepository extends ServiceEntityRepository
                 )
 
             )
-            ->setParameter('query', '%' . $search . '%' )
-        ;
+            ->setParameter('query', '%' . $search . '%');
         return $qb
             ->getQuery()
             ->getResult();

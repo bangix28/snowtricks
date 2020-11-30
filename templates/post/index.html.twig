@@ -9,7 +9,7 @@
             <div class="col-12 text-center">
                 {{ form_start(search) }}
                 {{ form_widget(search.search) }}
-                        <button type="submit" class="btn btn-success rounded p-2 mt-3">Recherche</button>
+                <button type="submit" class="btn btn-success rounded p-2 mt-3">Recherche</button>
                 {{ form_end(search) }}
             </div>
         </div>
@@ -23,7 +23,8 @@
                 {% endif %}
                 <div class=" mt-4 col-12 col-sm-8 col-md-6 col-lg-4 p-4">
                     <div class="card card-list">
-                        <img class="card-img" style="height: 250px;" src="{{ defaultImage }}" alt="image de l'article !">
+                        <img class="card-img" style="height: 250px;" src="{{ defaultImage }}"
+                             alt="image de l'article !">
                         <div class="card-body">
                             <h4 class="card-title">{{ p.name }}</h4>
                             <p class="card-text">{{ p.content|striptags|slice(0,150) }}</p>
@@ -32,7 +33,8 @@
                             <div class="views">
                                 {{ p.createdAt|date('d/m/y') }}
                             </div>
-                            <a href="{{ url('post_show',{'id': p.id}) }}" class="stretched-link btn btn-dark">Lire l'article !</a>
+                            <a href="{{ url('post_show',{'id': p.id}) }}" class="stretched-link btn btn-dark">Lire
+                                l'article !</a>
                         </div>
                     </div>
                 </div>

@@ -16,7 +16,7 @@ class ChangePasswordType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('plainPassword',RepeatedType::class,[
+            ->add('plainPassword', RepeatedType::class, [
                 'type' => PasswordType::class,
                 'invalid_message' => 'Password fields must match.',
                 // instead of being set onto the object directly,
@@ -33,9 +33,7 @@ class ChangePasswordType extends AbstractType
                         'max' => 4096,
                     ]),
                 ],
-            ])
-
-        ;
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver)

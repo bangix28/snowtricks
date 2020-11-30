@@ -1,16 +1,18 @@
 {% extends 'base.html.twig' %}
-{% block stylesheets %}<link rel="stylesheet" href="{{ asset('assets/css/banner.css') }}">{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('assets/css/banner.css') }}">{% endblock %}
 {% block title %}Home | Snowtricks{% endblock %}
 
 {% block body %}
     <div class="banner">
-        <img src="{{ asset('assets/img/banner.jpg') }}" class="banner-img img img-fluid" width="100%" alt="banner of the website">
+        <img src="{{ asset('assets/img/banner.jpg') }}" class="banner-img img img-fluid" width="100%"
+             alt="banner of the website">
         <div class="text">
-        <h2>Snowtricks Too loud</h2>
+            <h2>Snowtricks Too loud</h2>
         </div>
         <div class="arrow">
             <a href="#tricks" class="badge badge-pill badge-dark float-right">
-            <i class="fas fa-arrow-down fa-5x"></i>
+                <i class="fas fa-arrow-down fa-5x"></i>
             </a>
         </div>
     </div>
@@ -19,7 +21,7 @@
     <div class="container p-5">
         <div class="row">
             <span class="tricks-anchor" id="tricks"></span>
-           {{ include('index/_tricks_for.html.twig') }}
+            {{ include('index/_tricks_for.html.twig') }}
             <div class="container">
                 <div class="row justify-content-center m-3">
                     <a href="#" id="loadMoreTrick"><i class="fas fa-plus-circle fa-3x"></i></a>
@@ -36,7 +38,9 @@
     <!-- End Tricks -->
 {% endblock %}
 {% block javascripts %}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+            integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+            crossorigin="anonymous"></script>
     <script>
         $('#load').click(function () {
             $.ajax({

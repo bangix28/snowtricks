@@ -99,13 +99,12 @@ class SecurityController extends AbstractController
             $this->addFlash('error', 'Unknow token');
             return $this->redirectToRoute('app_login');
         }
-        $form = $this->createForm(ChangePasswordType::class,$user);
+        $form = $this->createForm(ChangePasswordType::class, $user);
         $form->handleRequest($request);
-        if ($form->isSubmitted() && $form->isValid())
-        {
+        if ($form->isSubmitted() && $form->isValid()) {
             $user->setResetToken(null);
             $user->setPassword($passwordEncoder->encodePassword(
-                $user,$form->get('plainPassword')->getData()
+                $user, $form->get('plainPassword')->getData()
             ));
             $this->manager->persist($user);
             $this->manager->flush();

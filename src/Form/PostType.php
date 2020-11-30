@@ -5,7 +5,6 @@ namespace App\Form;
 use App\Entity\Post;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
-use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\UrlType;
@@ -19,7 +18,7 @@ class PostType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('images', CollectionType::class,[
+            ->add('images', CollectionType::class, [
                 'mapped' => false,
                 'entry_type' => FileType::class,
                 'by_reference' => false,
@@ -28,17 +27,17 @@ class PostType extends AbstractType
                 'label' => false,
                 'required' => false,
                 'constraints' => [
-        new All([
-            'constraints' => new File([
-                'mimeTypes' => [
-                    'image/*'
-                ],
-                'mimeTypesMessage' => "Only image are allowed",
+                    new All([
+                        'constraints' => new File([
+                            'mimeTypes' => [
+                                'image/*'
+                            ],
+                            'mimeTypesMessage' => "Only image are allowed",
+                        ])
+                    ])
+                ]
             ])
-        ])
-            ]
-            ])
-            ->add('video', CollectionType::class,[
+            ->add('video', CollectionType::class, [
                 'entry_type' => UrlType::class,
                 'allow_add' => true,
                 'allow_delete' => true,
@@ -47,12 +46,11 @@ class PostType extends AbstractType
                 'mapped' => false
             ])
             ->add('name')
-            ->add('content',TextareaType::class,[
+            ->add('content', TextareaType::class, [
                 'required' => false
 
             ])
-            ->add('groups')
-        ;
+            ->add('groups');
     }
 
     public function configureOptions(OptionsResolver $resolver)

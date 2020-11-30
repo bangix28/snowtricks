@@ -4,7 +4,6 @@
 namespace App\Tests\Entity;
 
 
-use App\Entity\Comment;
 use App\Entity\User;
 use PHPUnit\Framework\TestCase;
 
@@ -20,7 +19,8 @@ class UserTest extends TestCase
         $this->assertSame('test@gmail.com', $result);
     }
 
-    public function testGetRolesUser(){
+    public function testGetRolesUser()
+    {
         $user = new User();
         $result = $user->getRoles();
 
@@ -42,7 +42,7 @@ class UserTest extends TestCase
         $user->setIsVerified(false);
 
 
-        $this->assertSame(false ,$user->isVerified());
+        $this->assertSame(false, $user->isVerified());
     }
 
     public function testGetFirstNameUser()
@@ -52,6 +52,7 @@ class UserTest extends TestCase
 
         $this->assertSame('test', $user->getFirstName());
     }
+
     public function testGetLastNameUser()
     {
         $user = new User();
