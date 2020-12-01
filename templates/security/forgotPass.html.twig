@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+{% block title %}Récupération de mot de passe ! {% endblock %}
+
+{% block style %} <link href="assets/css/recover.css" type="text/css">  {% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row mt-5">
+            <div class="mx-auto">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="text-center">
+                            <h3><i class="fa fa-lock fa-4x"></i></h3>
+                            <h2 class="text-center">Forgot Password ?</h2>
+                            <p>Change it</p>
+                            <div class="panel-body">
+                                  {{ form_start(form) }}
+                                    {{ form_widget(form) }}
+                                <div class="form-group">
+                                    <button name="submit" class="btn btn-lg btn-primary btn-block">Change</button>
+                                </div>
+                                    {{ form_end(form) }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
