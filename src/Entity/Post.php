@@ -13,7 +13,7 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
  * @ORM\Entity(repositoryClass=PostRepository::class)
  * @UniqueEntity(
  *     fields={"name"},
- *     message="Ce tricks est déja crée"
+ *     message="This tricks is already created"
  * )
  */
 class Post
@@ -26,7 +26,7 @@ class Post
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, unique=true)
      */
     private $name;
 
