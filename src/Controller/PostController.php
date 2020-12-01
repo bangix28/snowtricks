@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Post;
 use App\Form\PostType;
+use App\Repository\CommentRepository;
 use App\Repository\PostRepository;
 use App\services\image\ImageServices;
 use App\services\post\PostServices;
@@ -67,7 +68,7 @@ class PostController extends AbstractController
     /**
      * @Route("/show/{id}", name="post_show")
      */
-    public function show(Post $post, Request $request, PaginatorInterface $paginator): Response
+    public function show(Post $post, Request $request, PaginatorInterface $paginator,CommentRepository $commentRepository): Response
     {
         $form = false;
         if ($this->getUser()) {
@@ -76,7 +77,7 @@ class PostController extends AbstractController
         return $this->render('post/show.html.twig', [
             'trick' => $post,
             'form' => $form,
-            'comment' => $paginator->paginate($post->getComment(), $request->query->getInt('page', 1), 10)
+            'comment' => $paginator->paginate($commentRepository->findBy(array(),array('id'=>'DESC')), $request->query->getInt('page', 1), 10)
         ]);
     }
 
